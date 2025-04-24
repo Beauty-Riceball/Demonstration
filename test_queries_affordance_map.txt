@@ -1,0 +1,92 @@
+new_query: a point 15 cm behind the red block
+new_query: a point 5 cm below the table
+new_query: a point on the door
+new_query: a point at the center of the blue block
+new_query: a point 10 cm to the left of the chair
+new_query: a point 20 cm above the green container
+new_query: anywhere within 15 cm of the yellow cup
+new_query: a point on the back side of the window
+new_query: a point 30 cm inside the top drawer
+new_query: a point 4 cm to the right of and 10 cm above the book
+new_query: a point 10 cm outside the robot arm
+new_query: a point at the midpoint between two blocks
+new_query: a point 5 cm above the table and 3 cm to the left of the red block
+new_query: a point 25 cm in front of [10, 20, 30]
+new_query: a point on the front right corner of the chair
+new_query: anywhere within 20 cm of the green door
+new_query: a point 8 cm below and 6 cm behind the blue window
+new_query: a point at the edge of the yellow table
+new_query: a point 15 cm away from the black cup
+new_query: a point 10 cm to the right of and 5 cm above [45, 49, 66]
+new_query: a point 5 cm in front of the red table
+new_query: a point 5 cm in front of the red container
+new_query: a point 5 cm in front of the red door
+new_query: a point 5 cm in front of the red book
+new_query: a point 5 cm behind the red table
+new_query: a point 5 cm behind the red container
+new_query: a point 5 cm behind the red door
+new_query: a point 5 cm behind the red book
+new_query: a point 5 cm to the right of the red table
+new_query: a point 5 cm to the right of the red container
+new_query: a point 5 cm to the right of the red door
+new_query: a point 5 cm to the right of the red book
+new_query: a point 5 cm above the red table
+new_query: a point 5 cm above the red container
+new_query: a point 5 cm above the red door
+new_query: a point 5 cm above the red book
+new_query: a point 5 cm inside the red table
+new_query: a point 5 cm inside the red container
+new_query: a point 5 cm inside the red door
+new_query: a point 5 cm inside the red book
+new_query: a point 5 cm on top of the red table
+new_query: a point 5 cm on top of the red container
+new_query: a point 5 cm on top of the red door
+new_query: a point 5 cm on top of the red book
+new_query: a point 25 cm in front of the red table
+new_query: a point 25 cm in front of the red container
+new_query: a point 25 cm in front of the red door
+new_query: a point 25 cm in front of the red book
+new_query: a point 25 cm behind the red table
+new_query: a point 25 cm behind the red container
+new_query: a point 25 cm behind the red door
+new_query: a point 25 cm behind the red book
+new_query: a point 25 cm to the right of the red table
+new_query: a point 25 cm to the right of the red container
+new_query: a point 25 cm to the right of the red door
+new_query: a point 25 cm to the right of the red book
+new_query: a point 25 cm above the red table
+new_query: a point 25 cm above the red container
+new_query: a point 25 cm above the red door
+new_query: a point 25 cm above the red book
+new_query: a point 25 cm inside the red table
+new_query: a point 25 cm inside the red container
+new_query: a point 25 cm inside the red door
+new_query: a point 25 cm inside the red book
+new_query: a point 25 cm on top of the red table
+new_query: a point 25 cm on top of the red container
+new_query: a point 25 cm on top of the red door
+new_query: a point 25 cm on top of the red book
+new_query: a point 50 cm in front of the red table
+new_query: a point 50 cm in front of the red container
+new_query: a point 50 cm in front of the red door
+new_query: a point 50 cm in front of the red book
+new_query: a point 50 cm behind the red table
+new_query: a point 50 cm behind the red container
+new_query: a point 50 cm behind the red door
+new_query: a point 50 cm behind the red book
+new_query: a point 50 cm to the right of the red table
+new_query: a point 50 cm to the right of the red container
+new_query: a point 50 cm to the right of the red door
+new_query: a point 50 cm to the right of the red book
+new_query: a point 50 cm above the red table
+new_query: a point 50 cm above the red container
+new_query: a point 50 cm above the red door
+new_query: a point 50 cm above the red book
+new_query: a point 50 cm inside the red table
+new_query: a point 50 cm inside the red container
+new_query: a point 50 cm inside the red door
+new_query: a point 50 cm inside the red book
+new_query: a point 50 cm on top of the red table
+new_query: a point 50 cm on top of the red container
+new_query: a point 50 cm on top of the red door
+new_query: a point 50 cm on top of the red book
