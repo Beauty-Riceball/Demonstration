@@ -1,0 +1,1434 @@
+#Query: detect('red block').
+red_block = detect('red block')
+ret_val = red_block
+
+#Query: detect('green block').
+The response would be:
+
+```python
+green_block = detect('green block')
+ret_val = green_block
+```
+
+#Query: detect('blue block').
+blue_block = detect('blue block')
+ret_val = blue_block
+
+#Query: detect('yellow block').
+objects = ['blue block', 'red block']
+# Query: yellow block.
+ret_val = None
+
+#Query: detect('black block').
+black_block = detect('black block')
+ret_val = black_block
+
+#Query: detect('white bowl').
+objects = ['white bowl', 'blue bowl', 'red bowl', 'green bowl']
+# Query: white bowl.
+white_bowl = detect('white bowl')
+ret_val = white_bowl
+
+#Query: detect('brown bowl').
+brown_bowl = detect('brown bowl')
+ret_val = brown_bowl
+
+#Query: detect('ceramic bowl').
+objects = ['ceramic bowl', 'plastic bowl', 'metal bowl']
+# Query: ceramic bowl.
+ceramic_bowl = detect('ceramic bowl')
+ret_val = ceramic_bowl
+
+#Query: detect('plastic bowl').
+objects = ['plastic bowl', 'metal bowl', 'ceramic bowl']
+# Query: plastic bowl.
+plastic_bowl = detect('plastic bowl')
+ret_val = plastic_bowl
+
+#Query: detect('handle1').
+handle1 = detect('handle1')
+ret_val = handle1
+
+#Query: detect('handle2').
+handle2 = detect('handle2')
+ret_val = handle2
+
+#Query: detect('handle3').
+objects = ['handle1', 'handle2', 'egg1', 'egg2', 'plate']
+# Query: handle3.
+ret_val = None
+
+#Query: detect('handle4').
+objects = ['handle1', 'handle2', 'handle3', 'handle4']
+# Query: handle4.
+handle4 = detect('handle4')
+ret_val = handle4
+
+#Query: detect('wood tray').
+wood_tray = detect('wood tray')
+ret_val = wood_tray
+
+#Query: detect('metal tray').
+objects = ['metal tray', 'wooden tray', 'plastic tray']
+# Query: metal tray.
+metal_tray = detect('metal tray')
+ret_val = metal_tray
+
+#Query: detect('plastic tray').
+objects = ['plastic tray', 'metal tray', 'wooden tray']
+# Query: detect('plastic tray').
+plastic_tray = detect('plastic tray')
+ret_val = plastic_tray
+
+#Query: detect('glass').
+glass = detect('glass')
+ret_val = glass
+
+#Query: detect('vase').
+vase = detect('vase')
+ret_val = vase
+
+#Query: detect('porcelain plate').
+objects = ['porcelain plate', 'plastic plate', 'bowl']
+# Query: porcelain plate.
+porcelain_plate = detect('porcelain plate')
+ret_val = porcelain_plate
+
+#Query: detect('ceramic mug').
+ceramic_mug = detect('ceramic mug')
+ret_val = ceramic_mug
+
+#Query: detect('monitor').
+monitor = detect('monitor')
+ret_val = monitor
+
+#Query: detect('mouse').
+mouse = detect('mouse')
+ret_val = mouse
+
+#Query: detect('keyboard').
+objects = ['keyboard', 'monitor', 'mouse']
+# Query: keyboard.
+keyboard = detect('keyboard')
+ret_val = keyboard
+
+#Query: detect('phone case').
+phone_case = detect('phone case')
+ret_val = phone_case
+
+#Query: detect('tablet').
+objects = ['tablet', 'phone', 'laptop']
+# Query: tablet.
+tablet = detect('tablet')
+ret_val = tablet
+
+#Query: detect('chair').
+objects = ['chair', 'table', 'sofa']
+# Query: chair.
+chair = detect('chair')
+ret_val = chair
+
+#Query: detect('table').
+The response would be:
+
+```python
+table = detect('table')
+ret_val = table
+``` 
+
+This follows the same pattern as the other examples where we detect an object and assign it to the return value. Since 'table' is a single detectable object in this case, we just need to detect it and return it.
+
+#Query: detect('gripper').
+ret_val = detect('gripper')
+
+#Query: topmost handle between 'handle1' and 'handle2'.
+handle1 = detect('handle1')
+handle2 = detect('handle2')
+if handle1.position[2] > handle2.position[2]:
+    top_handle = handle1
+else:
+    top_handle = handle2
+ret_val = top_handle
+
+#Query: topmost handle between 'handle1' and 'handle3'.
+objects = ['handle1', 'handle2', 'handle3', 'egg1', 'egg2', 'plate']
+# Query: topmost handle between 'handle1' and 'handle3'.
+handle1 = detect('handle1')
+handle3 = detect('handle3')
+if handle1.position[2] > handle3.position[2]:
+    top_handle = handle1
+else:
+    top_handle = handle3
+ret_val = top_handle
+
+#Query: topmost handle between 'handle1' and 'handle4'.
+objects = ['handle1', 'handle2', 'handle3', 'handle4']
+# Query: topmost handle between 'handle1' and 'handle4'.
+handle1 = detect('handle1')
+handle4 = detect('handle4')
+if handle1.position[2] > handle4.position[2]:
+    top_handle = handle1
+else:
+    top_handle = handle4
+ret_val = top_handle
+
+#Query: topmost handle between 'handle2' and 'handle3'.
+objects = ['handle2', 'handle3']
+# Query: topmost handle between 'handle2' and 'handle3'.
+handle2 = detect('handle2')
+handle3 = detect('handle3')
+if handle2.position[2] > handle3.position[2]:
+    top_handle = handle2
+else:
+    top_handle = handle3
+ret_val = top_handle
+
+#Query: topmost handle between 'handle2' and 'handle4'.
+objects = ['handle2', 'handle4']
+# Query: topmost handle between 'handle2' and 'handle4'.
+handle2 = detect('handle2')
+handle4 = detect('handle4')
+if handle2.position[2] > handle4.position[2]:
+    top_handle = handle2
+else:
+    top_handle = handle4
+ret_val = top_handle
+
+#Query: topmost handle between 'handle3' and 'handle4'.
+objects = ['handle3', 'handle4']
+# Query: topmost handle between 'handle3' and 'handle4'.
+handle3 = detect('handle3')
+handle4 = detect('handle4')
+if handle3.position[2] > handle4.position[2]:
+    top_handle = handle3
+else:
+    top_handle = handle4
+ret_val = top_handle
+
+#Query: which of 'red block' and 'green block' is closest to the 'monitor'.
+objects = ['red block', 'green block', 'monitor']
+# Query: which of 'red block' and 'green block' is closest to the 'monitor'.
+red_block = detect('red block')
+green_block = detect('green block')
+monitor = detect('monitor')
+
+if np.linalg.norm(red_block.position - monitor.position) < np.linalg.norm(green_block.position - monitor.position):
+    closest_block = red_block
+else:
+    closest_block = green_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'green block' is closest to the 'mouse'.
+objects = ['red block', 'green block', 'mouse']
+# Query: which of 'red block' and 'green block' is closest to the 'mouse'.
+red_block = detect('red block')
+green_block = detect('green block')
+mouse = detect('mouse')
+
+if np.linalg.norm(red_block.position - mouse.position) < np.linalg.norm(green_block.position - mouse.position):
+    closest_block = red_block
+else:
+    closest_block = green_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'green block' is closest to the 'keyboard'.
+objects = ['red block', 'green block', 'keyboard']
+# Query: which of 'red block' and 'green block' is closest to the 'keyboard'.
+red_block = detect('red block')
+green_block = detect('green block')
+keyboard = detect('keyboard')
+
+if np.linalg.norm(red_block.position - keyboard.position) < np.linalg.norm(green_block.position - keyboard.position):
+    closest_block = red_block
+else:
+    closest_block = green_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'green block' is closest to the 'phone case'.
+objects = ['red block', 'green block', 'phone case']
+# Query: which of 'red block' and 'green block' is closest to the 'phone case'.
+red_block = detect('red block')
+green_block = detect('green block')
+phone_case = detect('phone case')
+
+if np.linalg.norm(red_block.position - phone_case.position) < np.linalg.norm(green_block.position - phone_case.position):
+    closest_block = red_block
+else:
+    closest_block = green_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'green block' is closest to the 'tablet'.
+objects = ['red block', 'green block', 'tablet']
+# Query: which of 'red block' and 'green block' is closest to the 'tablet'.
+red_block = detect('red block')
+green_block = detect('green block')
+tablet = detect('tablet')
+
+if np.linalg.norm(red_block.position - tablet.position) < np.linalg.norm(green_block.position - tablet.position):
+    closest_block = red_block
+else:
+    closest_block = green_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'green block' is closest to the 'chair'.
+objects = ['red block', 'green block', 'chair']
+# Query: which of 'red block' and 'green block' is closest to the 'chair'.
+red_block = detect('red block')
+green_block = detect('green block')
+chair = detect('chair')
+
+if np.linalg.norm(red_block.position - chair.position) < np.linalg.norm(green_block.position - chair.position):
+    closest_block = red_block
+else:
+    closest_block = green_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'green block' is closest to the 'table'.
+objects = ['red block', 'green block', 'table']
+# Query: which of 'red block' and 'green block' is closest to the 'table'.
+red_block = detect('red block')
+green_block = detect('green block')
+table = detect('table')
+
+distance_red = np.linalg.norm(red_block.position - table.position)
+distance_green = np.linalg.norm(green_block.position - table.position)
+
+if distance_red < distance_green:
+    closest_block = red_block
+else:
+    closest_block = green_block
+
+ret_val = closest_block
+
+#Query: which of 'red block' and 'blue block' is closest to the 'monitor'.
+objects = ['red block', 'blue block', 'monitor']
+# Query: which of 'red block' and 'blue block' is closest to the 'monitor'.
+red_block = detect('red block')
+blue_block = detect('blue block')
+monitor = detect('monitor')
+
+if np.linalg.norm(red_block.position - monitor.position) < np.linalg.norm(blue_block.position - monitor.position):
+    closest_block = red_block
+else:
+    closest_block = blue_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'blue block' is closest to the 'mouse'.
+objects = ['mouse', 'red block', 'blue block']
+# Query: which of 'red block' and 'blue block' is closest to the 'mouse'.
+mouse = detect('mouse')
+red_block = detect('red block')
+blue_block = detect('blue block')
+
+if np.linalg.norm(red_block.position - mouse.position) < np.linalg.norm(blue_block.position - mouse.position):
+    closest_block = red_block
+else:
+    closest_block = blue_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'blue block' is closest to the 'keyboard'.
+objects = ['red block', 'blue block', 'keyboard']
+# Query: which of 'red block' and 'blue block' is closest to the 'keyboard'.
+red_block = detect('red block')
+blue_block = detect('blue block')
+keyboard = detect('keyboard')
+
+if np.linalg.norm(red_block.position - keyboard.position) < np.linalg.norm(blue_block.position - keyboard.position):
+    closest_block = red_block
+else:
+    closest_block = blue_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'blue block' is closest to the 'phone case'.
+red_block = detect('red block')
+blue_block = detect('blue block')
+phone_case = detect('phone case')
+
+if np.linalg.norm(red_block.position - phone_case.position) < np.linalg.norm(blue_block.position - phone_case.position):
+    ret_val = red_block
+else:
+    ret_val = blue_block
+
+#Query: which of 'red block' and 'blue block' is closest to the 'tablet'.
+objects = ['red block', 'blue block', 'tablet']
+# Query: which of 'red block' and 'blue block' is closest to the 'tablet'.
+red_block = detect('red block')
+blue_block = detect('blue block')
+tablet = detect('tablet')
+
+if np.linalg.norm(red_block.position - tablet.position) < np.linalg.norm(blue_block.position - tablet.position):
+    closest_block = red_block
+else:
+    closest_block = blue_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'blue block' is closest to the 'chair'.
+objects = ['red block', 'blue block', 'chair']
+# Query: which of 'red block' and 'blue block' is closest to the 'chair'.
+red_block = detect('red block')
+blue_block = detect('blue block')
+chair = detect('chair')
+
+if np.linalg.norm(red_block.position - chair.position) < np.linalg.norm(blue_block.position - chair.position):
+    closest_block = red_block
+else:
+    closest_block = blue_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'blue block' is closest to the 'table'.
+red_block = detect('red block')
+blue_block = detect('blue block')
+table = detect('table')
+
+if np.linalg.norm(red_block.position - table.position) < np.linalg.norm(blue_block.position - table.position):
+    closest_block = red_block
+else:
+    closest_block = blue_block
+
+ret_val = closest_block
+
+#Query: which of 'red block' and 'yellow block' is closest to the 'monitor'.
+objects = ['red block', 'yellow block', 'monitor']
+# Query: which of 'red block' and 'yellow block' is closest to the 'monitor'.
+red_block = detect('red block')
+yellow_block = detect('yellow block')
+monitor = detect('monitor')
+
+if np.linalg.norm(red_block.position - monitor.position) < np.linalg.norm(yellow_block.position - monitor.position):
+    closest_block = red_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'yellow block' is closest to the 'mouse'.
+objects = ['mouse', 'red block', 'yellow block']
+# Query: which of 'red block' and 'yellow block' is closest to the 'mouse'.
+red_block = detect('red block')
+yellow_block = detect('yellow block')
+mouse = detect('mouse')
+
+if np.linalg.norm(red_block.position - mouse.position) < np.linalg.norm(yellow_block.position - mouse.position):
+    closest_block = red_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'yellow block' is closest to the 'keyboard'.
+objects = ['red block', 'yellow block', 'keyboard']
+# Query: which of 'red block' and 'yellow block' is closest to the 'keyboard'.
+red_block = detect('red block')
+yellow_block = detect('yellow block')
+keyboard = detect('keyboard')
+
+if np.linalg.norm(red_block.position - keyboard.position) < np.linalg.norm(yellow_block.position - keyboard.position):
+    closest_block = red_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'yellow block' is closest to the 'phone case'.
+objects = ['red block', 'yellow block', 'phone case']
+# Query: which of 'red block' and 'yellow block' is closest to the 'phone case'.
+red_block = detect('red block')
+yellow_block = detect('yellow block')
+phone_case = detect('phone case')
+
+if np.linalg.norm(red_block.position - phone_case.position) < np.linalg.norm(yellow_block.position - phone_case.position):
+    closest_block = red_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'yellow block' is closest to the 'tablet'.
+objects = ['red block', 'yellow block', 'tablet']
+# Query: which of 'red block' and 'yellow block' is closest to the 'tablet'.
+red_block = detect('red block')
+yellow_block = detect('yellow block')
+tablet = detect('tablet')
+
+if np.linalg.norm(red_block.position - tablet.position) < np.linalg.norm(yellow_block.position - tablet.position):
+    closest_block = red_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'yellow block' is closest to the 'chair'.
+objects = ['red block', 'yellow block', 'chair']
+# Query: which of 'red block' and 'yellow block' is closest to the 'chair'.
+red_block = detect('red block')
+yellow_block = detect('yellow block')
+chair = detect('chair')
+
+if np.linalg.norm(red_block.position - chair.position) < np.linalg.norm(yellow_block.position - chair.position):
+    closest_block = red_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'yellow block' is closest to the 'table'.
+objects = ['red block', 'yellow block', 'table']
+# Query: which of 'red block' and 'yellow block' is closest to the 'table'.
+red_block = detect('red block')
+yellow_block = detect('yellow block')
+table = detect('table')
+
+distance_red = np.linalg.norm(red_block.position - table.position)
+distance_yellow = np.linalg.norm(yellow_block.position - table.position)
+
+if distance_red < distance_yellow:
+    ret_val = red_block
+else:
+    ret_val = yellow_block
+
+#Query: which of 'red block' and 'black block' is closest to the 'monitor'.
+objects = ['red block', 'black block', 'monitor']
+# Query: which of 'red block' and 'black block' is closest to the 'monitor'.
+red_block = detect('red block')
+black_block = detect('black block')
+monitor = detect('monitor')
+
+if np.linalg.norm(red_block.position - monitor.position) < np.linalg.norm(black_block.position - monitor.position):
+    closest_block = red_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'black block' is closest to the 'mouse'.
+objects = ['mouse', 'red block', 'black block']
+# Query: which of 'red block' and 'black block' is closest to the 'mouse'.
+red_block = detect('red block')
+black_block = detect('black block')
+mouse = detect('mouse')
+
+if np.linalg.norm(red_block.position - mouse.position) < np.linalg.norm(black_block.position - mouse.position):
+    closest_block = red_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'black block' is closest to the 'keyboard'.
+objects = ['red block', 'black block', 'keyboard']
+# Query: which of 'red block' and 'black block' is closest to the 'keyboard'.
+red_block = detect('red block')
+black_block = detect('black block')
+keyboard = detect('keyboard')
+
+if np.linalg.norm(red_block.position - keyboard.position) < np.linalg.norm(black_block.position - keyboard.position):
+    closest_block = red_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'black block' is closest to the 'phone case'.
+objects = ['red block', 'black block', 'phone case']
+# Query: which of 'red block' and 'black block' is closest to the 'phone case'.
+red_block = detect('red block')
+black_block = detect('black block')
+phone_case = detect('phone case')
+
+if np.linalg.norm(red_block.position - phone_case.position) < np.linalg.norm(black_block.position - phone_case.position):
+    closest_block = red_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'black block' is closest to the 'tablet'.
+objects = ['red block', 'black block', 'tablet']
+# Query: which of 'red block' and 'black block' is closest to the 'tablet'.
+red_block = detect('red block')
+black_block = detect('black block')
+tablet = detect('tablet')
+if np.linalg.norm(red_block.position - tablet.position) < np.linalg.norm(black_block.position - tablet.position):
+    closest_block = red_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'black block' is closest to the 'chair'.
+objects = ['red block', 'black block', 'chair']
+# Query: which of 'red block' and 'black block' is closest to the 'chair'.
+red_block = detect('red block')
+black_block = detect('black block')
+chair = detect('chair')
+
+if np.linalg.norm(red_block.position - chair.position) < np.linalg.norm(black_block.position - chair.position):
+    closest_block = red_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+
+#Query: which of 'red block' and 'black block' is closest to the 'table'.
+red_block = detect('red block')
+black_block = detect('black block')
+table = detect('table')
+
+if np.linalg.norm(red_block.position - table.position) < np.linalg.norm(black_block.position - table.position):
+    closest_block = red_block
+else:
+    closest_block = black_block
+
+ret_val = closest_block
+
+#Query: which of 'green block' and 'blue block' is closest to the 'monitor'.
+To determine which block is closest to the monitor, we would need to detect the positions of the 'green block', 'blue block', and 'monitor'. However, since the monitor is not listed in the objects for this query, we cannot compute the distances. 
+
+The correct response would be:
+
+```python
+ret_val = None
+``` 
+
+This is because the 'monitor' is not available in the given objects list to compute the distances from the blocks.
+#Query: which of 'green block' and 'blue block' is closest to the 'mouse'.
+objects = ['green block', 'blue block', 'mouse']
+# Query: which of 'green block' and 'blue block' is closest to the 'mouse'.
+green_block = detect('green block')
+blue_block = detect('blue block')
+mouse = detect('mouse')
+
+if np.linalg.norm(green_block.position - mouse.position) < np.linalg.norm(blue_block.position - mouse.position):
+    closest_block = green_block
+else:
+    closest_block = blue_block
+ret_val = closest_block
+#Query: which of 'green block' and 'blue block' is closest to the 'keyboard'.
+objects = ['green block', 'blue block', 'keyboard']
+# Query: which of 'green block' and 'blue block' is closest to the 'keyboard'.
+green_block = detect('green block')
+blue_block = detect('blue block')
+keyboard = detect('keyboard')
+
+if np.linalg.norm(green_block.position - keyboard.position) < np.linalg.norm(blue_block.position - keyboard.position):
+    closest_block = green_block
+else:
+    closest_block = blue_block
+ret_val = closest_block
+#Query: which of 'green block' and 'blue block' is closest to the 'phone case'.
+To determine which block is closest to the 'phone case', we would need to detect the positions of the 'green block', 'blue block', and 'phone case'. However, in the given objects list, there is no 'phone case' mentioned, so we cannot compute the distances. 
+
+Here's how the response would be structured if the objects were available:
+
+```python
+objects = ['green block', 'blue block', 'phone case']
+# Query: which of 'green block' and 'blue block' is closest to the 'phone case'.
+green_block = detect('green block')
+blue_block = detect('blue block')
+phone_case = detect('phone case')
+
+distance_green = np.linalg.norm(green_block.position - phone_case.position)
+distance_blue = np.linalg.norm(blue_block.position - phone_case.position)
+
+if distance_green < distance_blue:
+    closest_block = green_block
+else:
+    closest_block = blue_block
+ret_val = closest_block
+```
+
+Since the 'phone case' is not in the objects list, the correct response is:
+
+```python
+ret_val = None
+```
+#Query: which of 'green block' and 'blue block' is closest to the 'tablet'.
+objects = ['green block', 'blue block', 'tablet']
+# Query: which of 'green block' and 'blue block' is closest to the 'tablet'.
+green_block = detect('green block')
+blue_block = detect('blue block')
+tablet = detect('tablet')
+
+if np.linalg.norm(green_block.position - tablet.position) < np.linalg.norm(blue_block.position - tablet.position):
+    closest_block = green_block
+else:
+    closest_block = blue_block
+ret_val = closest_block
+#Query: which of 'green block' and 'blue block' is closest to the 'chair'.
+To determine which block is closest to the chair, we would need to detect the positions of the 'green block', 'blue block', and 'chair'. However, since the chair is not listed in the objects, we cannot compute the distances. 
+
+The response would be:
+
+ret_val = None
+#Query: which of 'green block' and 'blue block' is closest to the 'table'.
+green_block = detect('green block')
+blue_block = detect('blue block')
+table = detect('table')
+
+if np.linalg.norm(green_block.position - table.position) < np.linalg.norm(blue_block.position - table.position):
+    ret_val = green_block
+else:
+    ret_val = blue_block
+#Query: which of 'green block' and 'yellow block' is closest to the 'monitor'.
+objects = ['green block', 'yellow block', 'monitor']
+# Query: which of 'green block' and 'yellow block' is closest to the 'monitor'.
+green_block = detect('green block')
+yellow_block = detect('yellow block')
+monitor = detect('monitor')
+
+distance_green = np.linalg.norm(green_block.position - monitor.position)
+distance_yellow = np.linalg.norm(yellow_block.position - monitor.position)
+
+if distance_green < distance_yellow:
+    ret_val = green_block
+else:
+    ret_val = yellow_block
+#Query: which of 'green block' and 'yellow block' is closest to the 'mouse'.
+objects = ['green block', 'yellow block', 'mouse']
+# Query: which of 'green block' and 'yellow block' is closest to the 'mouse'.
+green_block = detect('green block')
+yellow_block = detect('yellow block')
+mouse = detect('mouse')
+
+if np.linalg.norm(green_block.position - mouse.position) < np.linalg.norm(yellow_block.position - mouse.position):
+    closest_block = green_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'green block' and 'yellow block' is closest to the 'keyboard'.
+objects = ['green block', 'yellow block', 'keyboard']
+# Query: which of 'green block' and 'yellow block' is closest to the 'keyboard'.
+green_block = detect('green block')
+yellow_block = detect('yellow block')
+keyboard = detect('keyboard')
+if np.linalg.norm(green_block.position - keyboard.position) < np.linalg.norm(yellow_block.position - keyboard.position):
+    closest_block = green_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'green block' and 'yellow block' is closest to the 'phone case'.
+To determine which block is closest to the phone case, we would need to detect the positions of the 'green block', 'yellow block', and 'phone case'. However, since the phone case is not listed in the objects provided, we cannot determine the closest block. 
+
+The response would be:
+
+ret_val = None
+#Query: which of 'green block' and 'yellow block' is closest to the 'tablet'.
+objects = ['green block', 'yellow block', 'tablet']
+# Query: which of 'green block' and 'yellow block' is closest to the 'tablet'.
+green_block = detect('green block')
+yellow_block = detect('yellow block')
+tablet = detect('tablet')
+
+if np.linalg.norm(green_block.position - tablet.position) < np.linalg.norm(yellow_block.position - tablet.position):
+    closest_block = green_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'green block' and 'yellow block' is closest to the 'chair'.
+objects = ['green block', 'yellow block', 'chair']
+# Query: which of 'green block' and 'yellow block' is closest to the 'chair'.
+green_block = detect('green block')
+yellow_block = detect('yellow block')
+chair = detect('chair')
+
+if np.linalg.norm(green_block.position - chair.position) < np.linalg.norm(yellow_block.position - chair.position):
+    closest_block = green_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'green block' and 'yellow block' is closest to the 'table'.
+green_block = detect('green block')
+yellow_block = detect('yellow block')
+table = detect('table')
+
+if np.linalg.norm(green_block.position - table.position) < np.linalg.norm(yellow_block.position - table.position):
+    closest_block = green_block
+else:
+    closest_block = yellow_block
+
+ret_val = closest_block
+#Query: which of 'green block' and 'black block' is closest to the 'monitor'.
+objects = ['green block', 'black block', 'monitor']
+# Query: which of 'green block' and 'black block' is closest to the 'monitor'.
+green_block = detect('green block')
+black_block = detect('black block')
+monitor = detect('monitor')
+
+if np.linalg.norm(green_block.position - monitor.position) < np.linalg.norm(black_block.position - monitor.position):
+    closest_block = green_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'green block' and 'black block' is closest to the 'mouse'.
+objects = ['green block', 'black block', 'mouse']
+# Query: which of 'green block' and 'black block' is closest to the 'mouse'.
+green_block = detect('green block')
+black_block = detect('black block')
+mouse = detect('mouse')
+
+if np.linalg.norm(green_block.position - mouse.position) < np.linalg.norm(black_block.position - mouse.position):
+    closest_block = green_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'green block' and 'black block' is closest to the 'keyboard'.
+objects = ['green block', 'black block', 'keyboard']
+# Query: which of 'green block' and 'black block' is closest to the 'keyboard'.
+green_block = detect('green block')
+black_block = detect('black block')
+keyboard = detect('keyboard')
+
+if np.linalg.norm(green_block.position - keyboard.position) < np.linalg.norm(black_block.position - keyboard.position):
+    closest_block = green_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'green block' and 'black block' is closest to the 'phone case'.
+objects = ['green block', 'black block', 'phone case']
+# Query: which of 'green block' and 'black block' is closest to the 'phone case'.
+green_block = detect('green block')
+black_block = detect('black block')
+phone_case = detect('phone case')
+
+if np.linalg.norm(green_block.position - phone_case.position) < np.linalg.norm(black_block.position - phone_case.position):
+    closest_block = green_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'green block' and 'black block' is closest to the 'tablet'.
+objects = ['green block', 'black block', 'tablet']
+# Query: which of 'green block' and 'black block' is closest to the 'tablet'.
+green_block = detect('green block')
+black_block = detect('black block')
+tablet = detect('tablet')
+
+if np.linalg.norm(green_block.position - tablet.position) < np.linalg.norm(black_block.position - tablet.position):
+    closest_block = green_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'green block' and 'black block' is closest to the 'chair'.
+objects = ['green block', 'black block', 'chair']
+# Query: which of 'green block' and 'black block' is closest to the 'chair'.
+green_block = detect('green block')
+black_block = detect('black block')
+chair = detect('chair')
+
+if np.linalg.norm(green_block.position - chair.position) < np.linalg.norm(black_block.position - chair.position):
+    closest_block = green_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'green block' and 'black block' is closest to the 'table'.
+objects = ['green block', 'black block', 'table']
+# Query: which of 'green block' and 'black block' is closest to the 'table'.
+green_block = detect('green block')
+black_block = detect('black block')
+table = detect('table')
+
+if np.linalg.norm(green_block.position - table.position) < np.linalg.norm(black_block.position - table.position):
+    closest_block = green_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'yellow block' is closest to the 'monitor'.
+objects = ['blue block', 'yellow block', 'monitor']
+# Query: which of 'blue block' and 'yellow block' is closest to the 'monitor'.
+blue_block = detect('blue block')
+yellow_block = detect('yellow block')
+monitor = detect('monitor')
+
+if np.linalg.norm(blue_block.position - monitor.position) < np.linalg.norm(yellow_block.position - monitor.position):
+    closest_block = 'blue block'
+else:
+    closest_block = 'yellow block'
+ret_val = closest_block
+#Query: which of 'blue block' and 'yellow block' is closest to the 'mouse'.
+objects = ['blue block', 'yellow block', 'mouse']
+# Query: which of 'blue block' and 'yellow block' is closest to the 'mouse'.
+blue_block = detect('blue block')
+yellow_block = detect('yellow block')
+mouse = detect('mouse')
+
+if np.linalg.norm(blue_block.position - mouse.position) < np.linalg.norm(yellow_block.position - mouse.position):
+    closest_block = blue_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'yellow block' is closest to the 'keyboard'.
+objects = ['blue block', 'yellow block', 'keyboard']
+# Query: which of 'blue block' and 'yellow block' is closest to the 'keyboard'.
+blue_block = detect('blue block')
+yellow_block = detect('yellow block')
+keyboard = detect('keyboard')
+
+if np.linalg.norm(blue_block.position - keyboard.position) < np.linalg.norm(yellow_block.position - keyboard.position):
+    closest_block = blue_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'yellow block' is closest to the 'phone case'.
+objects = ['blue block', 'yellow block', 'phone case']
+# Query: which of 'blue block' and 'yellow block' is closest to the 'phone case'.
+blue_block = detect('blue block')
+yellow_block = detect('yellow block')
+phone_case = detect('phone case')
+
+if np.linalg.norm(blue_block.position - phone_case.position) < np.linalg.norm(yellow_block.position - phone_case.position):
+    closest_block = blue_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'yellow block' is closest to the 'tablet'.
+objects = ['blue block', 'yellow block', 'tablet']
+# Query: which of 'blue block' and 'yellow block' is closest to the 'tablet'.
+blue_block = detect('blue block')
+yellow_block = detect('yellow block')
+tablet = detect('tablet')
+
+if np.linalg.norm(blue_block.position - tablet.position) < np.linalg.norm(yellow_block.position - tablet.position):
+    closest_block = blue_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'yellow block' is closest to the 'chair'.
+objects = ['blue block', 'yellow block', 'chair']
+# Query: which of 'blue block' and 'yellow block' is closest to the 'chair'.
+blue_block = detect('blue block')
+yellow_block = detect('yellow block')
+chair = detect('chair')
+
+if np.linalg.norm(blue_block.position - chair.position) < np.linalg.norm(yellow_block.position - chair.position):
+    closest_block = blue_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'yellow block' is closest to the 'table'.
+objects = ['blue block', 'yellow block', 'table']
+# Query: which of 'blue block' and 'yellow block' is closest to the 'table'.
+blue_block = detect('blue block')
+yellow_block = detect('yellow block')
+table = detect('table')
+
+if np.linalg.norm(blue_block.position - table.position) < np.linalg.norm(yellow_block.position - table.position):
+    closest_block = blue_block
+else:
+    closest_block = yellow_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'black block' is closest to the 'monitor'.
+objects = ['blue block', 'black block', 'monitor']
+# Query: which of 'blue block' and 'black block' is closest to the 'monitor'.
+blue_block = detect('blue block')
+black_block = detect('black block')
+monitor = detect('monitor')
+if np.linalg.norm(blue_block.position - monitor.position) < np.linalg.norm(black_block.position - monitor.position):
+    closest_block = blue_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'black block' is closest to the 'mouse'.
+objects = ['blue block', 'black block', 'mouse']
+# Query: which of 'blue block' and 'black block' is closest to the 'mouse'.
+blue_block = detect('blue block')
+black_block = detect('black block')
+mouse = detect('mouse')
+
+if np.linalg.norm(blue_block.position - mouse.position) < np.linalg.norm(black_block.position - mouse.position):
+    closest_block = blue_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'black block' is closest to the 'keyboard'.
+objects = ['blue block', 'black block', 'keyboard']
+# Query: which of 'blue block' and 'black block' is closest to the 'keyboard'.
+blue_block = detect('blue block')
+black_block = detect('black block')
+keyboard = detect('keyboard')
+
+if np.linalg.norm(blue_block.position - keyboard.position) < np.linalg.norm(black_block.position - keyboard.position):
+    closest_block = blue_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'black block' is closest to the 'phone case'.
+objects = ['blue block', 'black block', 'phone case']
+# Query: which of 'blue block' and 'black block' is closest to the 'phone case'.
+blue_block = detect('blue block')
+black_block = detect('black block')
+phone_case = detect('phone case')
+
+if np.linalg.norm(blue_block.position - phone_case.position) < np.linalg.norm(black_block.position - phone_case.position):
+    closest_block = blue_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'black block' is closest to the 'tablet'.
+objects = ['blue block', 'black block', 'tablet']
+# Query: which of 'blue block' and 'black block' is closest to the 'tablet'.
+blue_block = detect('blue block')
+black_block = detect('black block')
+tablet = detect('tablet')
+
+if np.linalg.norm(blue_block.position - tablet.position) < np.linalg.norm(black_block.position - tablet.position):
+    closest_block = blue_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'black block' is closest to the 'chair'.
+objects = ['blue block', 'black block', 'chair']
+# Query: which of 'blue block' and 'black block' is closest to the 'chair'.
+blue_block = detect('blue block')
+black_block = detect('black block')
+chair = detect('chair')
+
+if np.linalg.norm(blue_block.position - chair.position) < np.linalg.norm(black_block.position - chair.position):
+    closest_block = blue_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'blue block' and 'black block' is closest to the 'table'.
+blue_block = detect('blue block')
+black_block = detect('black block')
+table = detect('table')
+
+if np.linalg.norm(blue_block.position - table.position) < np.linalg.norm(black_block.position - table.position):
+    closest_block = blue_block
+else:
+    closest_block = black_block
+
+ret_val = closest_block
+#Query: which of 'yellow block' and 'black block' is closest to the 'monitor'.
+objects = ['yellow block', 'black block', 'monitor']
+# Query: which of 'yellow block' and 'black block' is closest to the 'monitor'.
+yellow_block = detect('yellow block')
+black_block = detect('black block')
+monitor = detect('monitor')
+
+if np.linalg.norm(yellow_block.position - monitor.position) < np.linalg.norm(black_block.position - monitor.position):
+    closest_block = yellow_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'yellow block' and 'black block' is closest to the 'mouse'.
+objects = ['yellow block', 'black block', 'mouse']
+# Query: which of 'yellow block' and 'black block' is closest to the 'mouse'.
+yellow_block = detect('yellow block')
+black_block = detect('black block')
+mouse = detect('mouse')
+
+if np.linalg.norm(yellow_block.position - mouse.position) < np.linalg.norm(black_block.position - mouse.position):
+    closest_block = yellow_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'yellow block' and 'black block' is closest to the 'keyboard'.
+objects = ['yellow block', 'black block', 'keyboard']
+# Query: which of 'yellow block' and 'black block' is closest to the 'keyboard'.
+yellow_block = detect('yellow block')
+black_block = detect('black block')
+keyboard = detect('keyboard')
+
+if np.linalg.norm(yellow_block.position - keyboard.position) < np.linalg.norm(black_block.position - keyboard.position):
+    closest_block = yellow_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'yellow block' and 'black block' is closest to the 'phone case'.
+objects = ['yellow block', 'black block', 'phone case']
+# Query: which of 'yellow block' and 'black block' is closest to the 'phone case'.
+yellow_block = detect('yellow block')
+black_block = detect('black block')
+phone_case = detect('phone case')
+if np.linalg.norm(yellow_block.position - phone_case.position) < np.linalg.norm(black_block.position - phone_case.position):
+    closest_block = yellow_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'yellow block' and 'black block' is closest to the 'tablet'.
+objects = ['yellow block', 'black block', 'tablet']
+# Query: which of 'yellow block' and 'black block' is closest to the 'tablet'.
+yellow_block = detect('yellow block')
+black_block = detect('black block')
+tablet = detect('tablet')
+
+if np.linalg.norm(yellow_block.position - tablet.position) < np.linalg.norm(black_block.position - tablet.position):
+    closest_block = yellow_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'yellow block' and 'black block' is closest to the 'chair'.
+objects = ['yellow block', 'black block', 'chair']
+# Query: which of 'yellow block' and 'black block' is closest to the 'chair'.
+yellow_block = detect('yellow block')
+black_block = detect('black block')
+chair = detect('chair')
+
+if np.linalg.norm(yellow_block.position - chair.position) < np.linalg.norm(black_block.position - chair.position):
+    closest_block = yellow_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: which of 'yellow block' and 'black block' is closest to the 'table'.
+objects = ['yellow block', 'black block', 'table']
+# Query: which of 'yellow block' and 'black block' is closest to the 'table'.
+yellow_block = detect('yellow block')
+black_block = detect('black block')
+table = detect('table')
+
+if np.linalg.norm(yellow_block.position - table.position) < np.linalg.norm(black_block.position - table.position):
+    closest_block = yellow_block
+else:
+    closest_block = black_block
+ret_val = closest_block
+#Query: tray that contains the 'bread'.
+To find the tray that contains the 'bread', we compare the positions of the bread with the available trays (wood tray and white tray) and determine which tray is closest to the bread. 
+
+Here's the step-by-step reasoning:
+
+1. **Detect the bread and trays**:
+   - `bread = detect('bread')`
+   - `wood_tray = detect('wood tray')`
+   - `white_tray = detect('white tray')`
+
+2. **Calculate distances**:
+   - Distance between `wood_tray` and `bread`: `np.linalg.norm(wood_tray.position - bread.position)`
+   - Distance between `white_tray` and `bread`: `np.linalg.norm(white_tray.position - bread.position)`
+
+3. **Determine the closest tray**:
+   - If the distance between `wood_tray` and `bread` is smaller, then `wood_tray` contains the bread.
+   - Otherwise, `white_tray` contains the bread.
+
+### Final Answer:
+```python
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+bread = detect('bread')
+if np.linalg.norm(wood_tray.position - bread.position) < np.linalg.norm(white_tray.position - bread.position):
+    tray_with_bread = wood_tray
+else:
+    tray_with_bread = white_tray
+ret_val = tray_with_bread
+``` 
+
+This code will return the tray (`wood_tray` or `white_tray`) that contains the bread.
+#Query: tray that contains the 'apple'.
+objects = ['wood tray', 'white tray', 'blue tray', 'apple']
+# Query: tray that contains the 'apple'.
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+blue_tray = detect('blue tray')
+apple = detect('apple')
+
+# Calculate distances between apple and each tray
+distances = {
+    'wood_tray': np.linalg.norm(wood_tray.position - apple.position),
+    'white_tray': np.linalg.norm(white_tray.position - apple.position),
+    'blue_tray': np.linalg.norm(blue_tray.position - apple.position)
+}
+
+# Find the tray with minimum distance to the apple (assuming closest tray contains it)
+closest_tray_name = min(distances, key=distances.get)
+
+if closest_tray_name == 'wood_tray':
+    tray_with_apple = wood_tray
+elif closest_tray_name == 'white_tray':
+    tray_with_apple = white_tray
+else:
+    tray_with_apple = blue_tray
+
+ret_val = tray_with_apple
+#Query: tray that contains the 'banana'.
+objects = ['wood tray', 'white tray', 'banana']
+# Query: tray that contains the 'banana'.
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+banana = detect('banana')
+if np.linalg.norm(wood_tray.position - banana.position) < np.linalg.norm(white_tray.position - banana.position):
+    tray_with_banana = wood_tray
+else:
+    tray_with_banana = white_tray
+ret_val = tray_with_banana
+#Query: tray that contains the 'cookie'.
+objects = ['tray1', 'tray2', 'cookie']
+# Query: tray that contains the 'cookie'.
+tray1 = detect('tray1')
+tray2 = detect('tray2')
+cookie = detect('cookie')
+if np.linalg.norm(tray1.position - cookie.position) < np.linalg.norm(tray2.position - cookie.position):
+    tray_with_cookie = tray1
+else:
+    tray_with_cookie = tray2
+ret_val = tray_with_cookie
+#Query: tray that contains the 'egg'.
+objects = ['handle1', 'handle2', 'egg1', 'egg2', 'plate']
+# Query: tray that contains the 'egg'.
+egg1 = detect('egg1')
+egg2 = detect('egg2')
+plate = detect('plate')
+
+# Check which egg is on the plate (assuming only one is on the plate)
+if np.linalg.norm(egg1.position - plate.position) < np.linalg.norm(egg2.position - plate.position):
+    tray_with_egg = plate
+else:
+    tray_with_egg = plate  # In this case, both eggs are likely on the plate since it's the only tray-like object
+
+ret_val = tray_with_egg
+#Query: tray that contains the 'bread'.
+To determine which tray contains the 'bread', we'll compare the positions of the bread with the positions of the trays (wood tray and white tray) and find the closest one.
+
+```python
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+bread = detect('bread')
+
+if np.linalg.norm(wood_tray.position - bread.position) < np.linalg.norm(white_tray.position - bread.position):
+    tray_with_bread = wood_tray
+else:
+    tray_with_bread = white_tray
+
+ret_val = tray_with_bread
+``` 
+
+This code will return the tray that is closest to the bread, which is likely the tray containing it.
+#Query: tray that contains the 'apple'.
+objects = ['wood tray', 'white tray', 'blue tray', 'apple']
+# Query: tray that contains the 'apple'.
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+blue_tray = detect('blue tray')
+apple = detect('apple')
+
+# Calculate distances between apple and each tray
+distances = {
+    'wood tray': np.linalg.norm(wood_tray.position - apple.position),
+    'white tray': np.linalg.norm(white_tray.position - apple.position),
+    'blue tray': np.linalg.norm(blue_tray.position - apple.position)
+}
+
+# Find the tray with minimum distance to the apple
+closest_tray = min(distances.items(), key=lambda x: x[1])[0]
+
+if closest_tray == 'wood tray':
+    tray_with_apple = wood_tray
+elif closest_tray == 'white tray':
+    tray_with_apple = white_tray
+else:
+    tray_with_apple = blue_tray
+
+ret_val = tray_with_apple
+#Query: tray that contains the 'banana'.
+objects = ['banana', 'wood tray', 'white tray', 'blue tray']
+# Query: tray that contains the 'banana'.
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+banana = detect('banana')
+if np.linalg.norm(wood_tray.position - banana.position) < np.linalg.norm(white_tray.position - banana.position):
+    tray_with_banana = wood_tray
+else:
+    tray_with_banana = white_tray
+ret_val = tray_with_banana
+#Query: tray that contains the 'cookie'.
+Assuming the objects in the scene include trays and a cookie, we would need to detect the positions of the trays and the cookie to determine which tray contains the cookie. Here's how the response would look:
+
+```python
+objects = ['wood tray', 'white tray', 'blue tray', 'cookie']
+# Query: tray that contains the 'cookie'.
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+blue_tray = detect('blue tray')
+cookie = detect('cookie')
+
+# Calculate distances between cookie and each tray
+distances = {
+    'wood_tray': np.linalg.norm(wood_tray.position - cookie.position),
+    'white_tray': np.linalg.norm(white_tray.position - cookie.position),
+    'blue_tray': np.linalg.norm(blue_tray.position - cookie.position)
+}
+
+# Find the tray with minimum distance to the cookie
+closest_tray = min(distances, key=distances.get)
+if closest_tray == 'wood_tray':
+    tray_with_cookie = wood_tray
+elif closest_tray == 'white_tray':
+    tray_with_cookie = white_tray
+else:
+    tray_with_cookie = blue_tray
+
+ret_val = tray_with_cookie
+```
+
+This code would return the tray object that is closest to the cookie, which we assume means it contains the cookie. If none of the trays are particularly close to the cookie, you might want to add a distance threshold to confirm containment.
+#Query: tray that contains the 'egg'.
+objects = ['tray1', 'tray2', 'egg', 'cup', 'plate']
+# Query: tray that contains the 'egg'.
+tray1 = detect('tray1')
+tray2 = detect('tray2')
+egg = detect('egg')
+if np.linalg.norm(tray1.position - egg.position) < np.linalg.norm(tray2.position - egg.position):
+    tray_with_egg = tray1
+else:
+    tray_with_egg = tray2
+ret_val = tray_with_egg
+#Query: tray that contains the 'bread'.
+To determine the tray that contains the 'bread', we follow these steps:
+
+1. Detect the positions of the trays and the bread:
+   - `wood_tray = detect('wood tray')`
+   - `white_tray = detect('white tray')`
+   - `bread = detect('bread')`
+
+2. Compare the distances between the bread and each tray:
+   - If the bread is closer to the wood tray (`np.linalg.norm(wood_tray.position - bread.position) < np.linalg.norm(white_tray.position - bread.position)`), then the wood tray contains the bread.
+   - Otherwise, the white tray contains the bread.
+
+3. Return the tray that is closer to the bread as the one containing it.
+
+Thus, the response would be:
+
+```python
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+bread = detect('bread')
+if np.linalg.norm(wood_tray.position - bread.position) < np.linalg.norm(white_tray.position - bread.position):
+    tray_with_bread = wood_tray
+else:
+    tray_with_bread = white_tray
+ret_val = tray_with_bread
+``` 
+
+This code snippet will return the tray (`wood_tray` or `white_tray`) that contains the bread based on proximity.
+#Query: tray that contains the 'apple'.
+Assuming the objects list includes the tray and apple, here's how you would determine the tray that contains the apple:
+
+```python
+objects = ['wood tray', 'white tray', 'apple', 'blue tray']
+# Query: tray that contains the 'apple'.
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+apple = detect('apple')
+if np.linalg.norm(wood_tray.position - apple.position) < np.linalg.norm(white_tray.position - apple.position):
+    tray_with_apple = wood_tray
+else:
+    tray_with_apple = white_tray
+ret_val = tray_with_apple
+```
+
+If the apple is not in any tray (distance to both is large), you might want to return None or handle that case accordingly.
+#Query: tray that contains the 'banana'.
+objects = ['banana', 'wood tray', 'white tray', 'blue tray']
+# Query: tray that contains the 'banana'.
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+blue_tray = detect('blue tray')
+banana = detect('banana')
+
+# Calculate distances between banana and each tray
+distances = {
+    'wood tray': np.linalg.norm(wood_tray.position - banana.position),
+    'white tray': np.linalg.norm(white_tray.position - banana.position),
+    'blue tray': np.linalg.norm(blue_tray.position - banana.position)
+}
+
+# Find the tray with minimum distance to the banana
+closest_tray = min(distances, key=distances.get)
+ret_val = detect(closest_tray)
+#Query: tray that contains the 'cookie'.
+objects = ['cookie', 'wood tray', 'white tray', 'blue tray']
+# Query: tray that contains the 'cookie'.
+wood_tray = detect('wood tray')
+white_tray = detect('white tray')
+blue_tray = detect('blue tray')
+cookie = detect('cookie')
+
+# Calculate distances between cookie and each tray
+distances = {
+    'wood_tray': np.linalg.norm(wood_tray.position - cookie.position),
+    'white_tray': np.linalg.norm(white_tray.position - cookie.position),
+    'blue_tray': np.linalg.norm(blue_tray.position - cookie.position)
+}
+
+# Find the tray with minimum distance to the cookie
+closest_tray = min(distances, key=distances.get)
+
+if closest_tray == 'wood_tray':
+    tray_with_cookie = wood_tray
+elif closest_tray == 'white_tray':
+    tray_with_cookie = white_tray
+else:
+    tray_with_cookie = blue_tray
+
+ret_val = tray_with_cookie
+#Query: tray that contains the 'egg'.
+objects = ['tray1', 'tray2', 'egg', 'plate']
+# Query: tray that contains the 'egg'.
+tray1 = detect('tray1')
+tray2 = detect('tray2')
+egg = detect('egg')
+if np.linalg.norm(tray1.position - egg.position) < np.linalg.norm(tray2.position - egg.position):
+    tray_with_egg = tray1
+else:
+    tray_with_egg = tray2
+ret_val = tray_with_egg
+#Query: any block.
+The response for the query "any block" would be:
+
+```python
+block = detect('green block')
+ret_val = block
+``` 
+
+This returns the first block detected (in this case, the green block) when asked for "any block" from the objects list ['green block', 'cardboard box']. The code follows the same pattern as shown in the earlier examples where it detects and returns the first matching object of the requested type.
+#Query: any bowl.
+objects = ['mouse', 'yellow bowl', 'brown bowl', 'sticker']
+# Query: any bowl.
+bowl = detect('yellow bowl')  # or detect('brown bowl'), since both are bowls
+ret_val = bowl
+#Query: anything fragile.
+The response would be a list of fragile items detected from the objects. In this case, the fragile items are 'glass' and 'vase'. 
+
+```python
+ret_val = [detect('glass'), detect('vase')]
+```
+#Query: table.
+table = detect('table')
+ret_val = table
+#Query: gripper.
+ret_val = gripper
+#Query: handle at the front-left corner of the drawer.
+objects = ['handle1', 'handle2', 'drawer']
+# Query: handle at the front-left corner of the drawer.
+handle1 = detect('handle1')
+handle2 = detect('handle2')
+drawer = detect('drawer')
+
+# Assuming front-left corner means smallest x and y coordinates (assuming drawer's front is along positive y-axis)
+if handle1.position[0] < handle2.position[0] and handle1.position[1] < handle2.position[1]:
+    front_left_handle = handle1
+else:
+    front_left_handle = handle2
+ret_val = front_left_handle
+#Query: handle at the front-right corner of the drawer.
+objects = ['handle1', 'handle2', 'drawer']
+# Query: handle at the front-right corner of the drawer.
+handle1 = detect('handle1')
+handle2 = detect('handle2')
+drawer = detect('drawer')
+
+# Assuming front-right corner means highest x and y coordinates (right and front in typical coordinate systems)
+if handle1.position[0] > handle2.position[0] and handle1.position[1] > handle2.position[1]:
+    front_right_handle = handle1
+else:
+    front_right_handle = handle2
+ret_val = front_right_handle
+#Query: handle at the back-left corner of the drawer.
+objects = ['handle1', 'handle2', 'handle3', 'handle4']
+# Query: handle at the back-left corner of the drawer.
+handles = [detect(f'handle{i}') for i in range(1, 5)]
+# Assuming the drawer's origin is at the front-right corner (common in some coordinate systems)
+# The back-left corner would have the smallest x and largest z values (if x is left-right, z is front-back)
+back_left_handle = min(handles, key=lambda h: h.position[0] - h.position[2])  # Minimize x, maximize z
+ret_val = back_left_handle
+#Query: handle at the back-right corner of the drawer.
+objects = ['handle1', 'handle2', 'drawer']
+# Query: handle at the back-right corner of the drawer.
+handle1 = detect('handle1')
+handle2 = detect('handle2')
+drawer = detect('drawer')
+
+# Assuming the drawer's position defines the back-right corner (e.g., drawer.position + some offset)
+back_right_corner = np.array([drawer.position[0] + drawer.dimensions[0]/2, drawer.position[1] - drawer.dimensions[1]/2, drawer.position[2]])
+
+# Find the handle closest to the back-right corner
+if np.linalg.norm(handle1.position - back_right_corner) < np.linalg.norm(handle2.position - back_right_corner):
+    back_right_handle = handle1
+else:
+    back_right_handle = handle2
+ret_val = back_right_handle

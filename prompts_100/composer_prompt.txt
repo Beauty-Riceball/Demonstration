@@ -1,0 +1,140 @@
+Query: move ee forward for 40cm.
+Query: move ee backward for 5cm.
+Query: move ee backward for 15cm.
+Query: move to the front of the bowl.
+Query: move to the back of the bowl.
+Query: move to the front of the plate.
+Query: move to the back of the plate.
+Query: move to the front of the cup.
+Query: move to the back of the cup.
+Query: move to the front of the bottle.
+Query: move to the back of the bottle.
+Query: move to the left of the drawer handle.
+Query: move to the right of the drawer handle.
+Query: move to the left of the beer cap.
+Query: move to the right of the beer cap.
+Query: move to the left of the tray.
+Query: move to the right of the tray.
+Query: move to the front of the mug.
+Query: move to the back of the mug.
+Query: move to 40cm above the bowl, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the bowl, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the bowl, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the bowl, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the plate, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the plate, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the plate, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the plate, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the cup, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the cup, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the cup, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the cup, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the bottle, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the bottle, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the bottle, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the bottle, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the block, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the block, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the block, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the block, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the drawer handle, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the drawer handle, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+Query: move to 40cm above the drawer handle, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: move to 40cm above the drawer handle, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+Query: drop the block inside the drawer.
+Query: drop the drawer handle inside the drawer.
+Query: drop the soup bowl inside the container.
+Query: drop the soup bowl inside the cupboard.
+Query: drop the soda can inside the container.
+Query: drop the soda can inside the cupboard.
+Query: push the cup along the red line.
+Query: push the cup along the green line.
+Query: push the bottle along the red line.
+Query: push the bottle along the green line.
+Query: push the block along the red line.
+Query: push the block along the green line.
+Query: push the drawer handle along the red line.
+Query: push the drawer handle along the green line.
+Query: push the beer cap along the red line.
+Query: push the beer cap along the green line.
+Query: push the tray along the red line.
+Query: push the tray along the green line.
+Query: push the soup bowl along the red line.
+Query: push the soup bowl along the green line.
+Query: push the soda can along the red line.
+Query: push the soda can along the green line.
+Query: push the mug along the red line.
+Query: push the mug along the green line.
+Query: push the bowl along the table edge.
+Query: push the plate along the table edge.
+Query: grasp the cup from the bench at 0.25x speed.
+Query: grasp the cup from the bench at 0.5x speed.
+Query: grasp the cup from the bench at 0.75x speed.
+Query: grasp the cup from the desk at 0.25x speed.
+Query: grasp the cup from the desk at 0.5x speed.
+Query: grasp the cup from the desk at 0.75x speed.
+Query: grasp the bottle from the bench at 0.25x speed.
+Query: grasp the bottle from the bench at 0.5x speed.
+Query: grasp the bottle from the bench at 0.75x speed.
+Query: grasp the bottle from the desk at 0.25x speed.
+Query: grasp the bottle from the desk at 0.5x speed.
+Query: grasp the bottle from the desk at 0.75x speed.
+Query: grasp the block from the bench at 0.25x speed.
+Query: grasp the block from the bench at 0.5x speed.
+Query: grasp the block from the bench at 0.75x speed.
+Query: grasp the block from the desk at 0.25x speed.
+Query: grasp the block from the desk at 0.5x speed.
+Query: grasp the block from the desk at 0.75x speed.
+Query: grasp the drawer handle from the bench at 0.25x speed.
+Query: grasp the drawer handle from the bench at 0.5x speed.
+Query: grasp the drawer handle from the bench at 0.75x speed.
+Query: grasp the drawer handle from the desk at 0.25x speed.
+Query: grasp the drawer handle from the desk at 0.5x speed.
+Query: grasp the drawer handle from the desk at 0.75x speed.
+Query: grasp the beer cap from the bench at 0.25x speed.
+Query: grasp the beer cap from the bench at 0.5x speed.
+Query: grasp the beer cap from the bench at 0.75x speed.
+Query: grasp the beer cap from the desk at 0.25x speed.
+Query: grasp the beer cap from the desk at 0.5x speed.
+Query: grasp the beer cap from the desk at 0.75x speed.
+Query: grasp the tray from the bench at 0.25x speed.
+Query: grasp the tray from the bench at 0.5x speed.
+Query: grasp the tray from the bench at 0.75x speed.
+Query: grasp the tray from the desk at 0.25x speed.
+Query: grasp the tray from the desk at 0.5x speed.
+Query: grasp the tray from the desk at 0.75x speed.
+Query: wipe the soup bowl but avoid the bowl.
+Query: wipe the soup bowl but avoid the plate.
+Query: wipe the soup bowl but avoid the cup.
+Query: wipe the soda can but avoid the bowl.
+Query: wipe the soda can but avoid the plate.
+Query: wipe the soda can but avoid the cup.
+Query: wipe the mug but avoid the bowl.
+Query: wipe the mug but avoid the plate.
+Query: wipe the mug but avoid the cup.
+Query: turn clockwise by 45 degrees.
+Query: turn counter-clockwise by 45 degrees.
+Query: turn clockwise by 90 degrees.
+Query: turn counter-clockwise by 90 degrees.
+Query: turn clockwise by 135 degrees.
+Query: turn counter-clockwise by 135 degrees.
+Query: turn clockwise by 180 degrees.
+Query: turn counter-clockwise by 180 degrees.
+Query: open gripper.
+Query: close gripper.
+Query: sweep all crumbs to the front side of the table.
+Query: sweep all crumbs to the front side of the shelf.
+Query: sweep all crumbs to the back side of the table.
+Query: sweep all crumbs to the back side of the shelf.
+Query: sweep all crumbs to the top of the table.
+Query: sweep all crumbs to the top of the shelf.
+Query: sweep all crumbs to the bottom of the table.
+Query: sweep all crumbs to the bottom of the shelf.
+Query: sweep all particles to the left side of the bench.
+Query: sweep all particles to the left side of the desk.
+Query: sweep all particles to the right side of the bench.
+Query: sweep all particles to the right side of the desk.
+Query: sweep all debris to the left side of the bench.
+Query: sweep all debris to the left side of the desk.
+Query: sweep all debris to the right side of the bench.
+Query: sweep all debris to the right side of the desk.

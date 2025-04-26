@@ -1,0 +1,110 @@
+Query: 25cm from the bowl.
+Query: 25cm near the bowl.
+Query: 25cm around the bowl.
+Query: 25cm from the mug.
+Query: 25cm near the mug.
+Query: 25cm around the mug.
+Query: 25cm from the plate.
+Query: 25cm near the plate.
+Query: 25cm around the plate.
+Query: 25cm from the bottle.
+Query: 25cm near the bottle.
+Query: 25cm around the bottle.
+Query: 50cm from the bowl.
+Query: 50cm near the bowl.
+Query: 50cm around the bowl.
+Query: 50cm from the mug.
+Query: 50cm near the mug.
+Query: 50cm around the mug.
+Query: 50cm from the plate.
+Query: 50cm near the plate.
+Query: 50cm around the plate.
+Query: 50cm from the bottle.
+Query: 50cm near the bottle.
+Query: 50cm around the bottle.
+Query: 5cm from the green cylinder.
+Query: 5cm near the green cylinder.
+Query: 5cm around the green cylinder.
+Query: 5cm from the yellow sphere.
+Query: 5cm near the yellow sphere.
+Query: 5cm around the yellow sphere.
+Query: 5cm from the cup.
+Query: 5cm near the cup.
+Query: 5cm around the cup.
+Query: 5cm from the fork.
+Query: 5cm near the fork.
+Query: 5cm around the fork.
+Query: 15cm from the green cylinder.
+Query: 15cm near the green cylinder.
+Query: 15cm around the green cylinder.
+Query: 15cm from the yellow sphere.
+Query: 15cm near the yellow sphere.
+Query: 15cm around the yellow sphere.
+Query: 15cm from the cup.
+Query: 15cm near the cup.
+Query: 15cm around the cup.
+Query: 15cm from the fork.
+Query: 15cm near the fork.
+Query: 15cm around the fork.
+Query: 5cm from anything soft.
+Query: 5cm from anything sharp.
+Query: 15cm from anything soft.
+Query: 15cm from anything sharp.
+Query: 25cm from anything fragile.
+Query: 25cm from anything metallic.
+Query: 50cm from anything fragile.
+Query: 50cm from anything metallic.
+Query: 5cm around the bowl and 50cm around the mug.
+Query: 5cm around the bowl and 50cm around the plate.
+Query: 5cm around the bowl and 50cm around the bottle.
+Query: 5cm around the bowl and 50cm around the red block.
+Query: 5cm around the mug and 50cm around the plate.
+Query: 5cm around the mug and 50cm around the bottle.
+Query: 5cm around the mug and 50cm around the red block.
+Query: 5cm around the plate and 50cm around the bottle.
+Query: 5cm around the plate and 50cm around the red block.
+Query: 5cm around the bottle and 50cm around the red block.
+Query: 25cm around the blue block and 25cm around the green cylinder.
+Query: 25cm around the blue block and 25cm around the yellow sphere.
+Query: 25cm around the blue block and 25cm around the cup.
+Query: 25cm around the blue block and 25cm around the fork.
+Query: 25cm around the green cylinder and 25cm around the yellow sphere.
+Query: 25cm around the green cylinder and 25cm around the cup.
+Query: 25cm around the green cylinder and 25cm around the fork.
+Query: 25cm around the yellow sphere and 25cm around the cup.
+Query: 25cm around the yellow sphere and 25cm around the fork.
+Query: 25cm around the cup and 25cm around the fork.
+Query: 25cm around the blue block and 50cm around the green cylinder.
+Query: 25cm around the blue block and 50cm around the yellow sphere.
+Query: 25cm around the blue block and 50cm around the cup.
+Query: 25cm around the blue block and 50cm around the fork.
+Query: 25cm around the green cylinder and 50cm around the yellow sphere.
+Query: 25cm around the green cylinder and 50cm around the cup.
+Query: 25cm around the green cylinder and 50cm around the fork.
+Query: 25cm around the yellow sphere and 50cm around the cup.
+Query: 25cm around the yellow sphere and 50cm around the fork.
+Query: 25cm around the cup and 50cm around the fork.
+Query: 50cm around the blue block and 25cm around the green cylinder.
+Query: 50cm around the blue block and 25cm around the yellow sphere.
+Query: 50cm around the blue block and 25cm around the cup.
+Query: 50cm around the blue block and 25cm around the fork.
+Query: 50cm around the green cylinder and 25cm around the yellow sphere.
+Query: 50cm around the green cylinder and 25cm around the cup.
+Query: 50cm around the green cylinder and 25cm around the fork.
+Query: 50cm around the yellow sphere and 25cm around the cup.
+Query: 50cm around the yellow sphere and 25cm around the fork.
+Query: 50cm around the cup and 25cm around the fork.
+Query: 50cm around the blue block and 50cm around the green cylinder.
+Query: 50cm around the blue block and 50cm around the yellow sphere.
+Query: 50cm around the blue block and 50cm around the cup.
+Query: 50cm around the blue block and 50cm around the fork.
+Query: 50cm around the green cylinder and 50cm around the yellow sphere.
+Query: 50cm around the green cylinder and 50cm around the cup.
+Query: 50cm around the green cylinder and 50cm around the fork.
+Query: 50cm around the yellow sphere and 50cm around the cup.
+Query: 50cm around the yellow sphere and 50cm around the fork.
+Query: 50cm around the cup and 50cm around the fork.
+Query: slower when within 5cm of the bowl and faster when outside 5cm.
+Query: slower when within 15cm of the bowl and faster when outside 15cm.
+Query: slower when within 25cm of the bowl and faster when outside 25cm.
+Query: slower when within 50cm of the bowl and faster when outside 50cm.

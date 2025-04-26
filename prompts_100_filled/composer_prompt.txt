@@ -1,0 +1,1149 @@
+Query: move ee forward for 40cm.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map(f'a point 40cm in front of {movable.position}')
+execute(movable, affordance_map)
+```
+
+Query: move ee backward for 5cm.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map(f'a point 5cm behind {movable.position}')
+execute(movable, affordance_map)
+```
+
+Query: move ee backward for 15cm.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map(f'a point 15cm behind {movable.position}')
+execute(movable, affordance_map)
+```
+
+Query: move to the front of the bowl.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm in front of the bowl')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: move to the back of the bowl.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm behind the bowl')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the front of the plate.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm in front of the plate')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the back of the plate.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm behind the plate')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the front of the cup.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm in front of the cup')
+execute(movable, affordance_map)
+
+Query: move to the back of the cup.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm behind the cup')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: move to the front of the bottle.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm in front of the bottle')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: move to the back of the bottle.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm behind the bottle')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the left of the drawer handle.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm to the left of the drawer handle')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: move to the right of the drawer handle.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm to the right of the drawer handle')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the left of the beer cap.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm to the left of the beer cap')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the right of the beer cap.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm to the right of the beer cap')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the left of the tray.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm to the left of the tray')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the right of the tray.
+# Query: move to the right of the tray.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm to the right of the tray')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the front of the mug.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm in front of the mug')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to the back of the mug.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 10cm behind the mug')
+execute(movable, affordance_map=affordance_map)
+
+Query: move to 40cm above the bowl, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the bowl')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+
+Query: move to 40cm above the bowl, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the bowl')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('1x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+
+Query: move to 40cm above the bowl, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the bowl')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the bowl, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the bowl')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('1x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the plate, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the plate')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the plate, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the plate')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('1x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the plate, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the plate')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the plate, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the plate')
+avoidance_map = get_avoidance_map('40cm from the mug') 
+velocity_map = get_velocity_map('1x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the cup, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the cup')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the cup, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the cup')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('1x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the cup, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the cup')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the cup, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the cup')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('1x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the bottle, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the bottle')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the bottle, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the bottle')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('1x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the bottle, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the bottle')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the bottle, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the bottle')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('1x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the block, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the block')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the block, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the block')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('1x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the block, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the block')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the block, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the block')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('1x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+
+Query: move to 40cm above the drawer handle, at 0.75x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the drawer handle')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the drawer handle, at 1x speed when within 80cm of the soda can, and keep at least 40cm away from the soda can.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the drawer handle')
+avoidance_map = get_avoidance_map('40cm from the soda can')
+velocity_map = get_velocity_map('1x speed when within 80cm of the soda can')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the drawer handle, at 0.75x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the drawer handle')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('0.75x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: move to 40cm above the drawer handle, at 1x speed when within 80cm of the mug, and keep at least 40cm away from the mug.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 40cm above the drawer handle')
+avoidance_map = get_avoidance_map('40cm from the mug')
+velocity_map = get_velocity_map('1x speed when within 80cm of the mug')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map, velocity_map=velocity_map)
+```
+
+Query: drop the block inside the drawer.
+```python
+movable = parse_query_obj('gripper')  # Assuming the block is already grasped by the gripper
+affordance_map = get_affordance_map('a point 15cm inside the drawer')
+gripper_map = get_gripper_map('open when inside the drawer')
+execute(movable, affordance_map=affordance_map, gripper_map=gripper_map)
+```
+
+Query: drop the drawer handle inside the drawer.
+To drop the drawer handle inside the drawer, we need to:
+
+1. Move the gripper to the drawer handle
+2. Grasp the handle
+3. Move it inside the drawer
+4. Release the handle
+
+Here's how we can execute this:
+
+```python
+# First move to the drawer handle
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the drawer handle')
+rotation_map = get_rotation_map('face the drawer handle')
+gripper_map = get_gripper_map('open everywhere except 1cm around the drawer handle')
+execute(movable, affordance_map=affordance_map, rotation_map=rotation_map, gripper_map=gripper_map)
+
+# Then move the handle inside the drawer
+movable = parse_query_obj('drawer handle')
+affordance_map = get_affordance_map('a point 20cm inside the drawer')
+execute(movable, affordance_map=affordance_map)
+
+# Finally release the handle
+movable = parse_query_obj('gripper')
+gripper_map = get_gripper_map('open everywhere')
+execute(movable, gripper_map=gripper_map)
+```
+
+This sequence will:
+1. Position the gripper facing the drawer handle
+2. Close the gripper to grasp the handle when close enough
+3. Push the handle 20cm into the drawer
+4. Open the gripper to release the handle inside the drawer
+
+Query: drop the soup bowl inside the container.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 15cm above the container')
+gripper_map = get_gripper_map('close everywhere but open when on top of the container')
+execute(movable, affordance_map=affordance_map, gripper_map=gripper_map)
+```
+
+Query: drop the soup bowl inside the cupboard.
+```python
+# Query: drop the soup bowl inside the cupboard.
+movable = parse_query_obj('gripper')  # Assuming we're controlling the gripper holding the bowl
+affordance_map = get_affordance_map('a point inside the cupboard')
+gripper_map = get_gripper_map('open when inside the cupboard')
+execute(movable, affordance_map=affordance_map, gripper_map=gripper_map)
+```
+
+Query: drop the soda can inside the container.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 15cm above the container')
+gripper_map = get_gripper_map('close everywhere but open when on top of the container')
+execute(movable, affordance_map=affordance_map, gripper_map=gripper_map)
+```
+
+Query: drop the soda can inside the cupboard.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point 15cm inside the cupboard')
+gripper_map = get_gripper_map('close everywhere but open when inside the cupboard')
+execute(movable, affordance_map=affordance_map, gripper_map=gripper_map)
+```
+
+Query: push the cup along the red line.
+movable = parse_query_obj('cup')  
+affordance_map = get_affordance_map('the red line')  
+execute(movable, affordance_map=affordance_map)
+
+Query: push the cup along the green line.
+movable = parse_query_obj('cup')  
+affordance_map = get_affordance_map('the green line')  
+execute(movale, affordance_map=affordance_map)
+
+Query: push the bottle along the red line.
+```python
+movable = parse_query_obj('bottle')
+affordance_map = get_affordance_map('the red line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the bottle along the green line.
+movable = parse_query_obj('bottle')
+affordance_map = get_affordance_map('the green line')
+execute(movable, affordance_map=affordance_map)
+
+Query: push the block along the red line.
+```python
+movable = parse_query_obj('block')
+affordance_map = get_affordance_map('the red line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the block along the green line.
+```python
+movable = parse_query_obj('block')
+affordance_map = get_affordance_map('the green line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the drawer handle along the red line.
+```python
+movable = parse_query_obj('drawer handle')
+affordance_map = get_affordance_map('the red line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the drawer handle along the green line.
+movable = parse_query_obj('drawer handle')
+affordance_map = get_affordance_map('the green line')
+execute(movable, affordance_map=affordance_map)
+
+Query: push the beer cap along the red line.
+movable = parse_query_obj('beer cap')
+affordance_map = get_affordance_map('the red line')
+execute(movable, affordance_map=affordance_map)
+
+Query: push the beer cap along the green line.
+```python
+movable = parse_query_obj('beer cap')
+affordance_map = get_affordance_map('the green line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the tray along the red line.
+```python
+movable = parse_query_obj('tray')
+affordance_map = get_affordance_map('the red line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the tray along the green line.
+```python
+movable = parse_query_obj('tray')
+affordance_map = get_affordance_map('the green line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the soup bowl along the red line.
+```python
+movable = parse_query_obj('soup bowl')
+affordance_map = get_affordance_map('the red line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the soup bowl along the green line.
+movable = parse_query_obj('soup bowl')
+affordance_map = get_affordance_map('the green line')
+execute(movable, affordance_map=affordance_map)
+
+Query: push the soda can along the red line.
+```python
+movable = parse_query_obj('soda can')
+affordance_map = get_affordance_map('the red line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the soda can along the green line.
+movable = parse_query_obj('soda can')
+affordance_map = get_affordance_map('the green line')
+execute(movable, affordance_map=affordance_map)
+
+Query: push the mug along the red line.
+```python
+movable = parse_query_obj('mug')
+affordance_map = get_affordance_map('the red line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the mug along the green line.
+```python
+movable = parse_query_obj('mug')
+affordance_map = get_affordance_map('the green line')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the bowl along the table edge.
+```python
+movable = parse_query_obj('bowl')
+affordance_map = get_affordance_map('the table edge')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: push the plate along the table edge.
+```python
+movable = parse_query_obj('plate')
+affordance_map = get_affordance_map('the table edge')
+execute(movable, affordance_map=affordance_map)
+```
+
+Query: grasp the cup from the bench at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the cup handle')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the cup handle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the cup from the bench at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the cup on the bench')
+velocity_map = get_velocity_map('0.5x speed')
+rotation_map = get_rotation_map('face the cup')
+gripper_map = get_gripper_map('open everywhere except 1cm around the cup')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, rotation_map=rotation_map, gripper_map=gripper_map)
+```
+
+Query: grasp the cup from the bench at 0.75x speed.
+Here's the response to the query:
+
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the cup on the bench')
+velocity_map = get_velocity_map('0.75x speed')
+rotation_map = get_rotation_map('face the cup on the bench')
+gripper_map = get_gripper_map('open everywhere except 1cm around the cup')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, rotation_map=rotation_map, gripper_map=gripper_map)
+```
+
+This will:
+1. Identify the gripper as the movable object
+2. Create an affordance map targeting the center of the cup on the bench
+3. Set the movement speed to 0.75x normal speed
+4. Ensure the gripper faces the cup
+5. Open the gripper everywhere except when within 1cm of the cup (to grasp it)
+6. Execute the movement with all these parameters
+
+Query: grasp the cup from the desk at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the cup')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the cup')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the cup from the desk at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the cup')
+velocity_map = get_velocity_map('0.5x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the cup')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the cup from the desk at 0.75x speed.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the cup')
+velocity_map = get_velocity_map('0.75x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the cup')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+
+Query: grasp the bottle from the bench at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the bottle on the bench')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the bottle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the bottle from the bench at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the bottle')
+velocity_map = get_velocity_map('0.5x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the bottle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the bottle from the bench at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the bottle')
+velocity_map = get_velocity_map('0.75x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the bottle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the bottle from the desk at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the bottle')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the bottle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the bottle from the desk at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the bottle')
+velocity_map = get_velocity_map('0.5x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the bottle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the bottle from the desk at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the bottle')
+velocity_map = get_velocity_map('0.75x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the bottle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the block from the bench at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the block on the bench')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the block')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the block from the bench at 0.5x speed.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the block on the bench')
+velocity_map = get_velocity_map('0.5x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the block')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+
+Query: grasp the block from the bench at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the block on the bench')
+velocity_map = get_velocity_map('0.75x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the block')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the block from the desk at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the block')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the block')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the block from the desk at 0.5x speed.
+Here's the response for the query:
+
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the block on the desk')
+velocity_map = get_velocity_map('0.5x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the block')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+This will:
+1. Identify the gripper as the movable object
+2. Create an affordance map targeting the center of the block on the desk
+3. Set the movement speed to half of normal (0.5x)
+4. Configure the gripper to be open during approach and close when within 1cm of the block
+5. Execute the movement with these parameters
+
+Query: grasp the block from the desk at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the block on the desk')
+velocity_map = get_velocity_map('0.75x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the block')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the drawer handle from the bench at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the drawer handle from the bench')
+velocity_map = get_velocity_map('0.25x speed')
+rotation_map = get_rotation_map('face the drawer handle from the bench')
+gripper_map = get_gripper_map('open everywhere except 1cm around the drawer handle from the bench')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, rotation_map=rotation_map, gripper_map=gripper_map)
+```
+
+Query: grasp the drawer handle from the bench at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the drawer handle from the bench')
+velocity_map = get_velocity_map('0.5x speed')
+rotation_map = get_rotation_map('face the drawer handle from the bench')
+gripper_map = get_gripper_map('open everywhere except 1cm around the drawer handle from the bench')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, rotation_map=rotation_map, gripper_map=gripper_map)
+```
+
+Query: grasp the drawer handle from the bench at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the drawer handle from the bench')
+velocity_map = get_velocity_map('0.75x speed')
+rotation_map = get_rotation_map('face the drawer handle from the bench')
+gripper_map = get_gripper_map('open everywhere except 1cm around the drawer handle from the bench')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, rotation_map=rotation_map, gripper_map=gripper_map)
+```
+
+Query: grasp the drawer handle from the desk at 0.25x speed.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the drawer handle from the desk')
+velocity_map = get_velocity_map('0.25x speed')
+rotation_map = get_rotation_map('face the drawer handle')
+gripper_map = get_gripper_map('open everywhere except 1cm around the drawer handle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, rotation_map=rotation_map, gripper_map=gripper_map)
+
+Query: grasp the drawer handle from the desk at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the drawer handle from the desk')
+velocity_map = get_velocity_map('0.5x speed')
+rotation_map = get_rotation_map('face the drawer handle')
+gripper_map = get_gripper_map('open everywhere except 1cm around the drawer handle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, rotation_map=rotation_map, gripper_map=gripper_map)
+```
+
+Query: grasp the drawer handle from the desk at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the drawer handle')
+velocity_map = get_velocity_map('0.75x speed')
+rotation_map = get_rotation_map('face the drawer handle')
+gripper_map = get_gripper_map('open everywhere except 1cm around the drawer handle')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, rotation_map=rotation_map, gripper_map=gripper_map)
+```
+
+Query: grasp the beer cap from the bench at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the beer cap')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the beer cap')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the beer cap from the bench at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the beer cap')
+velocity_map = get_velocity_map('0.5x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the beer cap')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the beer cap from the bench at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the beer cap')
+velocity_map = get_velocity_map('0.75x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the beer cap')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the beer cap from the desk at 0.25x speed.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the beer cap')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the beer cap')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+
+Query: grasp the beer cap from the desk at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the beer cap')
+velocity_map = get_velocity_map('0.5x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the beer cap')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the beer cap from the desk at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the beer cap')
+velocity_map = get_velocity_map('0.75x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the beer cap')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the tray from the bench at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the tray on the bench')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the tray')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the tray from the bench at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the tray on the bench')
+velocity_map = get_velocity_map('0.5x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the tray')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the tray from the bench at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the tray on the bench')
+velocity_map = get_velocity_map('0.75x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the tray')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the tray from the desk at 0.25x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the tray')
+velocity_map = get_velocity_map('0.25x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the tray')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the tray from the desk at 0.5x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the tray')
+velocity_map = get_velocity_map('0.5x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the tray')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: grasp the tray from the desk at 0.75x speed.
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a point at the center of the tray')
+velocity_map = get_velocity_map('0.75x speed')
+gripper_map = get_gripper_map('open everywhere except 1cm around the tray')
+execute(movable, affordance_map=affordance_map, velocity_map=velocity_map, gripper_map=gripper_map)
+```
+
+Query: wipe the soup bowl but avoid the bowl.
+To wipe the soup bowl while avoiding the bowl itself, we can focus on wiping the area around the bowl (like the table surface near it) or the exterior of the bowl. Here's how we can execute this:
+
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('a circular path around the soup bowl (10cm radius)')  # Wiping around the bowl
+avoidance_map = get_avoidance_map('5cm from the soup bowl')  # Avoid touching the bowl itself
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map)
+```
+
+This will make the gripper perform a wiping motion in the area surrounding the bowl while maintaining a safe distance from the bowl itself. If you meant wiping the exterior surface of the bowl, we could adjust the avoidance distance to be very small (like 1mm) to just graze the exterior without applying pressure to the bowl. Would you like that instead?
+
+Query: wipe the soup bowl but avoid the plate.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('the soup bowl surface')
+avoidance_map = get_avoidance_map('10cm from the plate')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map)
+
+Query: wipe the soup bowl but avoid the cup.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('the soup bowl')
+avoidance_map = get_avoidance_map('10cm from the cup')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map)
+
+Query: wipe the soda can but avoid the bowl.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('the surface of the soda can')
+avoidance_map = get_avoidance_map('10cm from the bowl')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map)
+
+Query: wipe the soda can but avoid the plate.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('the surface of the soda can')
+avoidance_map = get_avoidance_map('10cm from the plate')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map)
+
+Query: wipe the soda can but avoid the cup.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('the surface of the soda can')
+avoidance_map = get_avoidance_map('10cm from the cup')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map)
+
+Query: wipe the mug but avoid the bowl.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('the mug surface')
+avoidance_map = get_avoidance_map('10cm from the bowl')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map)
+
+Query: wipe the mug but avoid the plate.
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('the mug')
+avoidance_map = get_avoidance_map('10cm from the plate')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map)
+
+Query: wipe the mug but avoid the cup.
+Here's the response for the query "wipe the mug but avoid the cup":
+
+```python
+movable = parse_query_obj('gripper')
+affordance_map = get_affordance_map('the surface of the mug')
+avoidance_map = get_avoidance_map('10cm from the cup')
+execute(movable, affordance_map=affordance_map, avoidance_map=avoidance_map)
+```
+
+This will:
+1. Identify the gripper as the movable object
+2. Create an affordance map targeting the mug's surface for wiping
+3. Create an avoidance map to stay at least 10cm away from the cup
+4. Execute the movement while respecting both constraints
+
+Query: turn clockwise by 45 degrees.
+movable = parse_query_obj('gripper')
+rotation_map = get_rotation_map('turn clockwise by 45 degrees')
+execute(movable, rotation_map=rotation_map)
+
+Query: turn counter-clockwise by 45 degrees.
+```python
+movable = parse_query_obj('gripper')
+rotation_map = get_rotation_map('turn counter-clockwise by 45 degrees')
+execute(movable, rotation_map=rotation_map)
+```
+
+Query: turn clockwise by 90 degrees.
+movable = parse_query_obj('gripper')
+rotation_map = get_rotation_map('turn clockwise by 90 degrees')
+execute(movable, rotation_map=rotation_map)
+
+Query: turn counter-clockwise by 90 degrees.
+```python
+movable = parse_query_obj('gripper')
+rotation_map = get_rotation_map('turn counter-clockwise by 90 degrees')
+execute(movable, rotation_map=rotation_map)
+```
+
+Query: turn clockwise by 135 degrees.
+```python
+movable = parse_query_obj('gripper')
+rotation_map = get_rotation_map('turn clockwise by 135 degrees')
+execute(movable, rotation_map=rotation_map)
+```
+
+Query: turn counter-clockwise by 135 degrees.
+```python
+movable = parse_query_obj('gripper')
+rotation_map = get_rotation_map('turn counter-clockwise by 135 degrees')
+execute(movable, rotation_map=rotation_map)
+```
+
+Query: turn clockwise by 180 degrees.
+```python
+movable = parse_query_obj('gripper')
+rotation_map = get_rotation_map('turn clockwise by 180 degrees')
+execute(movable, rotation_map=rotation_map)
+```
+
+Query: turn counter-clockwise by 180 degrees.
+```python
+movable = parse_query_obj('gripper')
+rotation_map = get_rotation_map('turn counter-clockwise by 180 degrees')
+execute(movable, rotation_map=rotation_map)
+```
+
+Query: open gripper.
+```python
+movable = parse_query_obj('gripper')
+gripper_map = get_gripper_map('open everywhere')
+execute(movable, gripper_map=gripper_map)
+```
+
+Query: close gripper.
+movable = parse_query_obj('gripper')
+gripper_map = get_gripper_map('close everywhere')
+execute(movable, gripper_map=gripper_map)
+
+
+# Query: sweep all crumbs to the front side of the table.
+crumbs = parse_query_obj('crumbs')
+for crumb in crumbs:
+    movable = crumb
+    affordance_map = get_affordance_map('a point on the front side of the table')
+    execute(crumb, affordance_map=affordance_map)
+
+Query: sweep all crumbs to the front side of the shelf.
+```python
+# Query: sweep all crumbs to the front side of the shelf.
+crumbs = parse_query_obj('crumbs')
+for crumb in crumbs:
+    movable = crumb
+    affordance_map = get_affordance_map('a point on the front side of the shelf')
+    execute(crumb, affordance_map=affordance_map)
+```
+
+# Query: sweep all crumbs to the back side of the table.
+crumbs = parse_query_obj('crumbs')
+for crumb in crumbs:
+    movable = crumb
+    affordance_map = get_affordance_map('a point on the back side of the table')
+    execute(crumb, affordance_map=affordance_map)
+
+
+# Query: sweep all crumbs to the back side of the shelf.
+crumbs = parse_query_obj('crumbs')
+for crumb in crumbs:
+    movable = crumb
+    affordance_map = get_affordance_map('a point on the back side of the shelf')
+    execute(crumb, affordance_map=affordance_map)
+
+
+# Query: sweep all crumbs to the top of the table.
+crumbs = parse_query_obj('crumbs')
+for crumb in crumbs:
+    movable = crumb
+    affordance_map = get_affordance_map('a point on the top of the table')
+    execute(crumb, affordance_map=affordance_map)
+
+# Query: sweep all crumbs to the top of the shelf.
+crumbs = parse_query_obj('crumbs')
+for crumb in crumbs:
+    movable = crumb
+    affordance_map = get_affordance_map('a point on the top of the shelf')
+    execute(crumb, affordance_map=affordance_map)
+
+
+# Query: sweep all crumbs to the bottom of the table.
+crumbs = parse_query_obj('crumbs')
+for crumb in crumbs:
+    movable = crumb
+    affordance_map = get_affordance_map('a point at the bottom of the table')
+    execute(crumb, affordance_map=affordance_map)
+
+Query: sweep all crumbs to the bottom of the shelf.
+```python
+# Query: sweep all crumbs to the bottom of the shelf.
+crumbs = parse_query_obj('crumbs')
+for crumb in crumbs:
+    movable = crumb
+    affordance_map = get_affordance_map('a point at the bottom of the shelf')
+    execute(crumb, affordance_map=affordance_map)
+```
+
+Query: sweep all particles to the left side of the bench.
+```python
+# Query: sweep all particles to the left side of the bench.
+particles = parse_query_obj('particles')
+for particle in particles:
+    movable = particle
+    affordance_map = get_affordance_map('a point on the left side of the bench')
+    execute(particle, affordance_map=affordance_map)
+```
+
+Query: sweep all particles to the left side of the desk.
+```python
+particles = parse_query_obj('particles')
+for particle in particles:
+    movable = particle
+    affordance_map = get_affordance_map('a point on the left side of the desk')
+    execute(particle, affordance_map=affordance_map)
+```
+
+Query: sweep all particles to the right side of the bench.
+```python
+# Query: sweep all particles to the right side of the bench.
+particles = parse_query_obj('particles')
+for particle in particles:
+    movable = particle
+    affordance_map = get_affordance_map('a point on the right side of the bench')
+    execute(particle, affordance_map=affordance_map)
+```
+
+Query: sweep all particles to the right side of the desk.
+```python
+# Query: sweep all particles to the right side of the desk.
+particles = parse_query_obj('particles')
+for particle in particles:
+    movable = particle
+    affordance_map = get_affordance_map('a point on the right side of the desk')
+    execute(particle, affordance_map=affordance_map)
+```
+
+Query: sweep all debris to the left side of the bench.
+```python
+# Query: sweep all debris to the left side of the bench.
+debris = parse_query_obj('debris')
+for piece in debris:
+    movable = piece
+    affordance_map = get_affordance_map('a point on the left side of the bench')
+    execute(piece, affordance_map=affordance_map)
+```
+Query: sweep all debris to the left side of the desk.
+Here's the response for sweeping all debris to the left side of the desk:
+
+```python
+# Query: sweep all debris to the left side of the desk.
+debris_pieces = parse_query_obj('debris')
+for debris in debris_pieces:
+    movable = debris
+    affordance_map = get_affordance_map('a point on the left side of the desk')
+    execute(debris, affordance_map=affordance_map)
+```
+
+This code:
+1. Identifies all debris objects in the scene using parse_query_obj()
+2. For each piece of debris:
+   - Sets it as the movable object
+   - Creates an affordance map targeting the left side of the desk
+   - Executes the movement to push the debris to that location
+
+The code will sequentially move each piece of debris to the left side of the desk, effectively sweeping them all to that area.
+
+
+# Query: sweep all debris to the right side of the bench.
+debris = parse_query_obj('debris')
+for piece in debris:
+    movable = piece
+    affordance_map = get_affordance_map('a point on the right side of the bench')
+    execute(piece, affordance_map=affordance_map)
+
+
+# Query: sweep all debris to the right side of the desk.
+debris = parse_query_obj('debris')
+for piece in debris:
+    movable = piece
+    affordance_map = get_affordance_map('a point on the right side of the desk')
+    execute(piece, affordance_map=affordance_map)

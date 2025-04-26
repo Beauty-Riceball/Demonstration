@@ -1,0 +1,1272 @@
+Query: open everywhere except 15cm around the brown bowl.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 15cm around the brown bowl
+brown_bowl = parse_query_obj('brown bowl')
+set_voxel_by_radius(gripper_map, brown_bowl.position, radius_cm=15, value=0)
+ret_val = gripper_map
+
+Query: open everywhere except 30cm around the brown bowl.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 30cm around the brown bowl
+brown_bowl = parse_query_obj('brown bowl')
+set_voxel_by_radius(gripper_map, brown_bowl.position, radius_cm=30, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 50cm around the brown bowl.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 50cm around the brown bowl
+brown_bowl = parse_query_obj('brown bowl')
+set_voxel_by_radius(gripper_map, brown_bowl.position, radius_cm=50, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 15cm around the brown bottle.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 15cm around the brown bottle
+brown_bottle = parse_query_obj('brown bottle')
+set_voxel_by_radius(gripper_map, brown_bottle.position, radius_cm=15, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 30cm around the brown bottle.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 30cm around the brown bottle
+brown_bottle = parse_query_obj('brown bottle')
+set_voxel_by_radius(gripper_map, brown_bottle.position, radius_cm=30, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 50cm around the brown bottle.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 50cm around the brown bottle
+brown_bottle = parse_query_obj('brown bottle')
+set_voxel_by_radius(gripper_map, brown_bottle.position, radius_cm=50, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 15cm around the white bowl.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 15cm around the white bowl
+white_bowl = parse_query_obj('white bowl')
+set_voxel_by_radius(gripper_map, white_bowl.position, radius_cm=15, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 30cm around the white bowl.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 30cm around the white bowl
+white_bowl = parse_query_obj('white bowl')
+set_voxel_by_radius(gripper_map, white_bowl.position, radius_cm=30, value=0)
+ret_val = gripper_map
+
+Query: open everywhere except 50cm around the white bowl.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 50cm around the white bowl
+white_bowl = parse_query_obj('white bowl')
+set_voxel_by_radius(gripper_map, white_bowl.position, radius_cm=50, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 15cm around the white bottle.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 15cm around the white bottle
+white_bottle = parse_query_obj('white bottle')
+set_voxel_by_radius(gripper_map, white_bottle.position, radius_cm=15, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 30cm around the white bottle.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 30cm around the white bottle
+white_bottle = parse_query_obj('white bottle')
+set_voxel_by_radius(gripper_map, white_bottle.position, radius_cm=30, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 50cm around the white bottle.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 50cm around the white bottle
+white_bottle = parse_query_obj('white bottle')
+set_voxel_by_radius(gripper_map, white_bottle.position, radius_cm=50, value=0)
+ret_val = gripper_map
+
+Query: open everywhere except 15cm around the black bowl.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 15cm around the black bowl
+black_bowl = parse_query_obj('black bowl')
+set_voxel_by_radius(gripper_map, black_bowl.position, radius_cm=15, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 30cm around the black bowl.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 30cm around the black bowl
+black_bowl = parse_query_obj('black bowl')
+set_voxel_by_radius(gripper_map, black_bowl.position, radius_cm=30, value=0)
+ret_val = gripper_map
+
+Query: open everywhere except 50cm around the black bowl.
+Here's the implementation for the query "open everywhere except 50cm around the black bowl":
+
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 50cm around the black bowl
+black_bowl = parse_query_obj('black bowl')
+set_voxel_by_radius(gripper_map, black_bowl.position, radius_cm=50, value=0)
+ret_val = gripper_map
+```
+
+This code:
+1. Creates an empty gripper map
+2. Sets all voxels to open (value 1) by default
+3. Finds the position of the black bowl using parse_query_obj
+4. Sets all voxels within 50cm radius of the black bowl to closed (value 0)
+5. Returns the resulting gripper map
+
+The gripper will be open everywhere except within a 50cm sphere around the black bowl's position.
+
+Query: open everywhere except 15cm around the black bottle.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 15cm around the black bottle
+black_bottle = parse_query_obj('black bottle')
+set_voxel_by_radius(gripper_map, black_bottle.position, radius_cm=15, value=0)
+ret_val = gripper_map
+
+Query: open everywhere except 30cm around the black bottle.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 30cm around the black bottle
+black_bottle = parse_query_obj('black bottle')
+set_voxel_by_radius(gripper_map, black_bottle.position, radius_cm=30, value=0)
+ret_val = gripper_map
+```
+
+Query: open everywhere except 50cm around the black bottle.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 50cm around the black bottle
+black_bottle = parse_query_obj('black bottle')
+set_voxel_by_radius(gripper_map, black_bottle.position, radius_cm=50, value=0)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the red block.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the red block
+red_block = parse_query_obj('red block')
+set_voxel_by_radius(gripper_map, red_block.position, radius_cm=2, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 5cm around the red block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the red block
+red_block = parse_query_obj('red block')
+set_voxel_by_radius(gripper_map, red_block.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the red block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the red block
+red_block = parse_query_obj('red block')
+set_voxel_by_radius(gripper_map, red_block.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the red sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the red sphere
+red_sphere = parse_query_obj('red sphere')
+set_voxel_by_radius(gripper_map, red_sphere.position, radius_cm=2, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 5cm around the red sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the red sphere
+red_sphere = parse_query_obj('red sphere')
+set_voxel_by_radius(gripper_map, red_sphere.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the red sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the red sphere
+red_sphere = parse_query_obj('red sphere')
+set_voxel_by_radius(gripper_map, red_sphere.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the red cylinder.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the red cylinder
+red_cylinder = parse_query_obj('red cylinder')
+set_voxel_by_radius(gripper_map, red_cylinder.position, radius_cm=2, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 5cm around the red cylinder.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the red cylinder
+red_cylinder = parse_query_obj('red cylinder')
+set_voxel_by_radius(gripper_map, red_cylinder.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the red cylinder.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the red cylinder
+red_cylinder = parse_query_obj('red cylinder')
+set_voxel_by_radius(gripper_map, red_cylinder.position, radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 2cm around the red cup.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the red cup
+red_cup = parse_query_obj('red cup')
+set_voxel_by_radius(gripper_map, red_cup.position, radius_cm=2, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 5cm around the red cup.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the red cup
+red_cup = parse_query_obj('red cup')
+set_voxel_by_radius(gripper_map, red_cup.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the red cup.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the red cup
+red_cup = parse_query_obj('red cup')
+set_voxel_by_radius(gripper_map, red_cup.position, radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 2cm around the blue block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the blue block
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(gripper_map, blue_block.position, radius_cm=2, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 5cm around the blue block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the blue block
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(gripper_map, blue_block.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the blue block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the blue block
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(gripper_map, blue_block.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the blue sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the blue sphere
+blue_sphere = parse_query_obj('blue sphere')
+set_voxel_by_radius(gripper_map, blue_sphere.position, radius_cm=2, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 5cm around the blue sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the blue sphere
+blue_sphere = parse_query_obj('blue sphere')
+set_voxel_by_radius(gripper_map, blue_sphere.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the blue sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the blue sphere
+blue_sphere = parse_query_obj('blue sphere')
+set_voxel_by_radius(gripper_map, blue_sphere.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the blue cylinder.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the blue cylinder
+blue_cylinder = parse_query_obj('blue cylinder')
+set_voxel_by_radius(gripper_map, blue_cylinder.position, radius_cm=2, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 5cm around the blue cylinder.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the blue cylinder
+blue_cylinder = parse_query_obj('blue cylinder')
+set_voxel_by_radius(gripper_map, blue_cylinder.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the blue cylinder.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the blue cylinder
+blue_cylinder = parse_query_obj('blue cylinder')
+set_voxel_by_radius(gripper_map, blue_cylinder.position, radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 2cm around the blue cup.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the blue cup
+blue_cup = parse_query_obj('blue cup')
+set_voxel_by_radius(gripper_map, blue_cup.position, radius_cm=2, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 5cm around the blue cup.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the blue cup
+blue_cup = parse_query_obj('blue cup')
+set_voxel_by_radius(gripper_map, blue_cup.position, radius_cm=50, value=1)  # 5cm = 50mm
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the blue cup.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the blue cup
+blue_cup = parse_query_obj('blue cup')
+set_voxel_by_radius(gripper_map, blue_cup.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the green block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the green block
+green_block = parse_query_obj('green block')
+set_voxel_by_radius(gripper_map, green_block.position, radius_cm=2, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 5cm around the green block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the green block
+green_block = parse_query_obj('green block')
+set_voxel_by_radius(gripper_map, green_block.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the green block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the green block
+green_block = parse_query_obj('green block')
+set_voxel_by_radius(gripper_map, green_block.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the green sphere.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the green sphere
+green_sphere = parse_query_obj('green sphere')
+set_voxel_by_radius(gripper_map, green_sphere.position, radius_cm=2, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 5cm around the green sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the green sphere
+green_sphere = parse_query_obj('green sphere')
+set_voxel_by_radius(gripper_map, green_sphere.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the green sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the green sphere
+green_sphere = parse_query_obj('green sphere')
+set_voxel_by_radius(gripper_map, green_sphere.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the green cylinder.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the green cylinder
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(gripper_map, green_cylinder.position, radius_cm=2, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 5cm around the green cylinder.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the green cylinder
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(gripper_map, green_cylinder.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the green cylinder.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the green cylinder
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(gripper_map, green_cylinder.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the green cup.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the green cup
+green_cup = parse_query_obj('green cup')
+set_voxel_by_radius(gripper_map, green_cup.position, radius_cm=2, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 5cm around the green cup.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the green cup
+green_cup = parse_query_obj('green cup')
+set_voxel_by_radius(gripper_map, green_cup.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the green cup.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the green cup
+green_cup = parse_query_obj('green cup')
+set_voxel_by_radius(gripper_map, green_cup.position, radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 2cm around the yellow block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the yellow block
+yellow_block = parse_query_obj('yellow block')
+set_voxel_by_radius(gripper_map, yellow_block.position, radius_cm=2, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 5cm around the yellow block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the yellow block
+yellow_block = parse_query_obj('yellow block')
+set_voxel_by_radius(gripper_map, yellow_block.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the yellow block.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the yellow block
+yellow_block = parse_query_obj('yellow block')
+set_voxel_by_radius(gripper_map, yellow_block.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the yellow sphere.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the yellow sphere
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(gripper_map, yellow_sphere.position, radius_cm=2, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 5cm around the yellow sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the yellow sphere
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(gripper_map, yellow_sphere.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the yellow sphere.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the yellow sphere
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(gripper_map, yellow_sphere.position, radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 2cm around the yellow cylinder.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the yellow cylinder
+yellow_cylinder = parse_query_obj('yellow cylinder')
+set_voxel_by_radius(gripper_map, yellow_cylinder.position, radius_cm=2, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 5cm around the yellow cylinder.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the yellow cylinder
+yellow_cylinder = parse_query_obj('yellow cylinder')
+set_voxel_by_radius(gripper_map, yellow_cylinder.position, radius_cm=5, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 10cm around the yellow cylinder.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the yellow cylinder
+yellow_cylinder = parse_query_obj('yellow cylinder')
+set_voxel_by_radius(gripper_map, yellow_cylinder.position, radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: close everywhere except 2cm around the yellow cup.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 2cm around the yellow cup
+yellow_cup = parse_query_obj('yellow cup')
+set_voxel_by_radius(gripper_map, yellow_cup.position, radius_cm=20, value=1)  # 2cm = 20mm
+ret_val = gripper_map
+```
+
+Query: close everywhere except 5cm around the yellow cup.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 5cm around the yellow cup
+yellow_cup = parse_query_obj('yellow cup')
+set_voxel_by_radius(gripper_map, yellow_cup.position, radius_cm=5, value=1)
+ret_val = gripper_map
+```
+
+Query: close everywhere except 10cm around the yellow cup.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when 10cm around the yellow cup
+yellow_cup = parse_query_obj('yellow cup')
+set_voxel_by_radius(gripper_map, yellow_cup.position, radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: always open except on the left side of the table.
+```python
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close when you are on the left side of the table
+table = parse_query_obj('table')
+center_x, center_y, center_z = table.position
+# left side so y is less than center_y
+gripper_map[:, :center_y, :] = 0
+ret_val = gripper_map
+```
+
+Query: always open except on the right side of the table.
+```python
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close on the right side of the table
+table = parse_query_obj('table')
+center_x, center_y, center_z = table.position
+# right side is y > center_y
+gripper_map[:, center_y:, :] = 0
+ret_val = gripper_map
+```
+
+Query: always open except on the front side of the chair.
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close when on the front side of the chair
+chair = parse_query_obj('chair')
+center_x, center_y, center_z = chair.position
+# front side so x is greater than center_x
+gripper_map[center_x:, :, :] = 0
+ret_val = gripper_map
+
+Query: always open except on the back side of the shelf.
+```python
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close when you are on the back side of the shelf
+shelf = parse_query_obj('shelf')
+center_x, center_y, center_z = shelf.position
+# back side so x is less than center_x
+gripper_map[:center_x, :, :] = 0
+ret_val = gripper_map
+```
+
+Query: always open except on the top of the cabinet.
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close when on top of the cabinet
+cabinet = parse_query_obj('cabinet')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = cabinet.aabb
+center_x, center_y, center_z = cabinet.position
+# top of cabinet is max_z
+z = max_z + cm2index(1, 'z')  # 1cm above cabinet top
+set_voxel_by_radius(gripper_map, (center_x, center_y, z), radius_cm=100, value=0)  # large radius to cover entire top surface
+ret_val = gripper_map
+
+Query: always open except on the bottom of the box.
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close on the bottom of the box
+box = parse_query_obj('box')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = box.aabb
+# bottom is min_z
+gripper_map[:, :, min_z] = 0
+ret_val = gripper_map
+
+Query: always open except on the front-left corner of the desk.
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close on the front-left corner of the desk
+desk = parse_query_obj('desk')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = desk.aabb
+center_x, center_y, center_z = desk.position
+# front so x = max_x, left so y = min_y
+x = max_x
+y = min_y
+z = min_z  # corner is at the base
+set_voxel_by_radius(gripper_map, (x, y, z), radius_cm=10, value=0)
+ret_val = gripper_map
+
+Query: always open except on the back-right corner of the bench.
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close on the back-right corner of the bench
+bench = parse_query_obj('bench')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = bench.aabb
+# back so x = min_x, right so y = max_y
+x = min_x
+y = max_y
+z = max_z  # corner is at the top surface
+set_voxel_by_radius(gripper_map, (x, y, z), radius_cm=10, value=0)
+ret_val = gripper_map
+
+Query: always open except on the wall next to the table.
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close when on the wall next to the table
+table = parse_query_obj('table')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = table.aabb
+# wall is typically at x=0 (left wall) or x=max_x (right wall)
+# assuming wall is on the left side (x=0)
+wall_x = 0
+# close voxels within 1cm of the wall (adjust radius as needed)
+set_voxel_by_radius(gripper_map, (wall_x, table.position[1], table.position[2]), radius_cm=1, value=0)
+ret_val = gripper_map
+
+Query: always open except on the window near the desk.
+gripper_map = get_empty_gripper_map()
+# always open
+gripper_map[:, :, :] = 1
+# close when near the window by the desk
+window = parse_query_obj('window')
+desk = parse_query_obj('desk')
+# Find midpoint between window and desk
+window_pos = window.position
+desk_pos = desk.position
+midpoint = ((window_pos[0] + desk_pos[0])/2, 
+            (window_pos[1] + desk_pos[1])/2,
+            (window_pos[2] + desk_pos[2])/2)
+# Close within 15cm radius of midpoint
+set_voxel_by_radius(gripper_map, midpoint, radius_cm=15, value=0)
+ret_val = gripper_map
+
+Query: always close except on the left side of the table.
+```python
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open when you are on the left side of the table
+table = parse_query_obj('table')
+center_x, center_y, center_z = table.position
+# left side so y is less than center_y
+gripper_map[:, :center_y, :] = 1
+ret_val = gripper_map
+```
+
+Query: always close except on the right side of the table.
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open when you are on the right side of the table
+table = parse_query_obj('table')
+center_x, center_y, center_z = table.position
+# right side so y is greater than center_y
+gripper_map[:, center_y:, :] = 1
+ret_val = gripper_map
+
+Query: always close except on the front side of the chair.
+```python
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open when you are on the front side of the chair
+chair = parse_query_obj('chair')
+center_x, center_y, center_z = chair.position
+# front side so x is greater than center_x
+gripper_map[center_x:, :, :] = 1
+ret_val = gripper_map
+```
+
+Query: always close except on the back side of the shelf.
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open when you are on the back side of the shelf
+shelf = parse_query_obj('shelf')
+center_x, center_y, center_z = shelf.position
+# back side so x is less than center_x
+gripper_map[:center_x, :, :] = 1
+ret_val = gripper_map
+
+Query: always close except on the top of the cabinet.
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open when on top of the cabinet
+cabinet = parse_query_obj('cabinet')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = cabinet.aabb
+center_x, center_y, center_z = cabinet.position
+# top of cabinet is max_z plus some offset
+z = max_z + cm2index(5, 'z')  # 5cm above cabinet top
+set_voxel_by_radius(gripper_map, (center_x, center_y, z), radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: always close except on the bottom of the box.
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open when on the bottom of the box
+box = parse_query_obj('box')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = box.aabb
+# bottom is min_z
+gripper_map[:, :, min_z] = 1
+ret_val = gripper_map
+
+Query: always close except on the front-left corner of the desk.
+```python
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open when on the front-left corner of the desk
+desk = parse_query_obj('desk')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = desk.aabb
+center_x, center_y, center_z = desk.position
+# front so x = max_x, left so y = min_y, corner so we take the intersection
+x = max_x
+y = min_y
+z = max_z  # assuming corner means top surface
+set_voxel_by_radius(gripper_map, (x, y, z), radius_cm=10, value=1)
+ret_val = gripper_map
+```
+
+Query: always close except on the back-right corner of the bench.
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open on the back-right corner of the bench
+bench = parse_query_obj('bench')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = bench.aabb
+# back so x = min_x, right so y = max_y, corner so we take the corner position
+x = min_x
+y = max_y
+z = max_z  # assuming we want the top surface
+set_voxel_by_radius(gripper_map, (x, y, z), radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: always close except on the wall next to the table.
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open when on the wall next to the table
+table = parse_query_obj('table')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = table.aabb
+# wall is at x=0 (left wall), next to table means same y range as table
+gripper_map[0, min_y:max_y, min_z:max_z] = 1
+ret_val = gripper_map
+
+Query: always close except on the window near the desk.
+gripper_map = get_empty_gripper_map()
+# always close
+gripper_map[:, :, :] = 0
+# open when near the window by the desk
+window = parse_query_obj('window')
+desk = parse_query_obj('desk')
+# Get midpoint between window and desk
+window_pos = np.array(window.position)
+desk_pos = np.array(desk.position)
+midpoint = (window_pos + desk_pos) / 2
+# Open area around midpoint
+set_voxel_by_radius(gripper_map, midpoint, radius_cm=15, value=1)
+ret_val = gripper_map
+
+Query: open only when above the red block.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when above the red block
+red_block = parse_query_obj('red block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = red_block.aabb
+center_x, center_y, center_z = red_block.position
+# above means we add to z coordinate
+z = max_z + cm2index(15, 'z')
+set_voxel_by_radius(gripper_map, (center_x, center_y, z), radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: open only when below the blue sphere.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open only when below the blue sphere
+blue_sphere = parse_query_obj('blue sphere')
+x, y, z = blue_sphere.position
+# below means z is less than the sphere's z position
+gripper_map[:, :, :z] = 1
+ret_val = gripper_map
+
+Query: open only when in front of the yellow cylinder.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when in front of the yellow cylinder
+yellow_cylinder = parse_query_obj('yellow cylinder')
+center_x, center_y, center_z = yellow_cylinder.position
+# front side is y less than center_y (assuming y-axis is front-back)
+gripper_map[:, :center_y, :] = 1
+ret_val = gripper_map
+
+Query: open only when behind the green cup.
+```python
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when behind the green cup
+green_cup = parse_query_obj('green cup')
+# behind means x is less than the cup's x position
+gripper_map[:green_cup.position[0], :, :] = 1
+ret_val = gripper_map
+```
+
+Query: open only when between the bowl and the plate.
+To implement the query "open only when between the bowl and the plate," we need to:
+
+1. Get the positions of the bowl and plate
+2. Define the region "between" them (midpoint or line segment)
+3. Set the gripper to open only in that region
+
+Here's the implementation:
+
+```python
+gripper_map = get_empty_gripper_map()
+# Close everywhere by default
+gripper_map[:, :, :] = 0
+
+# Get object positions
+bowl = parse_query_obj('bowl')
+plate = parse_query_obj('plate')
+
+# Calculate midpoint between bowl and plate
+midpoint = (
+    (bowl.position[0] + plate.position[0]) // 2,
+    (bowl.position[1] + plate.position[1]) // 2,
+    (bowl.position[2] + plate.position[2]) // 2
+)
+
+# Open in a region around the midpoint (adjust radius as needed)
+set_voxel_by_radius(gripper_map, midpoint, radius_cm=10, value=1)
+
+ret_val = gripper_map
+```
+
+This implementation:
+1. Starts with all positions closed
+2. Finds the positions of both objects
+3. Calculates the midpoint between them
+4. Opens the gripper in a spherical region around that midpoint (10cm radius)
+
+You can adjust the radius to make the "between" region larger or smaller as needed. For a more precise "between" definition, you could instead open along the line segment connecting the two objects.
+
+Query: open only when at the center of the table.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open only at the center of the table
+table = parse_query_obj('table')
+center_x, center_y, center_z = table.position
+set_voxel_by_radius(gripper_map, (center_x, center_y, center_z), radius_cm=5, value=1)
+ret_val = gripper_map
+
+Query: open only when at the back-left corner of the shelf.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when at the back-left corner of the shelf
+shelf = parse_query_obj('shelf')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = shelf.aabb
+# back-left corner: x = min_x, y = min_y, z can be any height (we'll use min_z as base)
+set_voxel_by_radius(gripper_map, (min_x, min_y, min_z), radius_cm=5, value=1)
+ret_val = gripper_map
+
+Query: open only when on top of the chair.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when on top of the chair
+chair = parse_query_obj('chair')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = chair.aabb
+center_x, center_y, center_z = chair.position
+# on top means we add to z
+z = max_z + cm2index(15, 'z')
+set_voxel_by_radius(gripper_map, (center_x, center_y, z), radius_cm=10, value=1)
+ret_val = gripper_map
+
+Query: open only when under the desk.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when under the desk
+desk = parse_query_obj('desk')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = desk.aabb
+center_x, center_y, center_z = desk.position
+# under means z is less than min_z
+z = min_z - cm2index(15, 'z')
+set_voxel_by_radius(gripper_map, (center_x, center_y, z), radius_cm=20, value=1)
+ret_val = gripper_map
+
+Query: open only when on the right side of the cabinet.
+gripper_map = get_empty_gripper_map()
+# close everywhere
+gripper_map[:, :, :] = 0
+# open when on the right side of the cabinet
+cabinet = parse_query_obj('cabinet')
+center_x, center_y, center_z = cabinet.position
+# right side so y is greater than center_y
+gripper_map[:, center_y:, :] = 1
+ret_val = gripper_map
+
+Query: close only when above the red block.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when above the red block
+red_block = parse_query_obj('red block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = red_block.aabb
+center_x, center_y, center_z = red_block.position
+# above means same x,y but higher z
+x = center_x
+y = center_y
+z = max_z + cm2index(1, 'z')  # 1cm above the block
+set_voxel_by_radius(gripper_map, (x, y, z), radius_cm=1, value=0)
+ret_val = gripper_map
+
+Query: close only when below the blue sphere.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when below the blue sphere
+blue_sphere = parse_query_obj('blue sphere')
+# Below means z is less than the sphere's z position
+gripper_map[:, :, :blue_sphere.position[2]] = 0
+ret_val = gripper_map
+
+Query: close only when in front of the yellow cylinder.
+Here's the implementation for the query "close only when in front of the yellow cylinder":
+
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere by default
+gripper_map[:, :, :] = 1
+# close when in front of the yellow cylinder
+yellow_cylinder = parse_query_obj('yellow cylinder')
+center_x, center_y, center_z = yellow_cylinder.position
+# "front" typically means positive x direction in many coordinate systems
+# We'll close voxels that are in front (greater x) and within some y,z range
+front_distance_cm = 10  # distance considered "in front"
+front_distance = cm2index(front_distance_cm, 'x')
+set_voxel_by_radius(gripper_map, 
+                   (center_x + front_distance, center_y, center_z),
+                   radius_cm=5,  # radius around the front area to close
+                   value=0)
+ret_val = gripper_map
+```
+
+This implementation:
+1. Starts with all voxels open (value 1)
+2. Finds the yellow cylinder's position
+3. Defines "front" as the positive x direction (you may need to adjust this based on your coordinate system)
+4. Closes (sets to 0) voxels that are within 5cm radius of a point 10cm in front of the cylinder
+5. Returns the resulting gripper map
+
+You can adjust the `front_distance_cm` and radius parameters to change how far in front and how wide the closed area should be.
+
+Query: close only when behind the green cup.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when behind the green cup
+green_cup = parse_query_obj('green cup')
+# "behind" means x coordinate is less than the cup's x position
+gripper_map[:green_cup.position[0], :, :] = 0
+ret_val = gripper_map
+
+Query: close only when between the bowl and the plate.
+To implement the query "close only when between the bowl and the plate", we need to:
+
+1. Get the positions of the bowl and plate
+2. Determine the region "between" them (we'll assume this means along the line connecting their centers)
+3. Set gripper_map to be open (1) everywhere by default
+4. Set it to closed (0) in the region between the two objects
+
+Here's the implementation:
+
+```python
+gripper_map = get_empty_gripper_map()
+# Open everywhere by default
+gripper_map[:, :, :] = 1
+
+# Get object positions
+bowl = parse_query_obj('bowl')
+plate = parse_query_obj('plate')
+
+# Calculate the vector between bowl and plate
+vec = np.array(plate.position) - np.array(bowl.position)
+distance = np.linalg.norm(vec)
+unit_vec = vec / distance
+
+# Set voxels to closed along the line between objects
+for t in np.linspace(0.2, 0.8, 10):  # Only between them, not at their centers
+    point = bowl.position + t * vec
+    set_voxel_by_radius(gripper_map, point, radius_cm=5, value=0)
+
+ret_val = gripper_map
+```
+
+This implementation:
+1. Makes the gripper open everywhere by default
+2. Finds the positions of the bowl and plate
+3. Calculates the vector between them
+4. Sets voxels to closed (0) at several points along the line between them (excluding points too close to either object)
+5. Uses a radius of 5cm around each point to create a "tube" of closed voxels between the objects
+
+The exact parameters (like the radius and how many points to sample) can be adjusted based on your specific requirements.
+
+
+Query: close only when at the center of the table.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when at the center of the table
+table = parse_query_obj('table')
+center_x, center_y, center_z = table.position
+set_voxel_by_radius(gripper_map, (center_x, center_y, center_z), radius_cm=5, value=0)
+ret_val = gripper_map
+```
+
+Query: close only when at the back-left corner of the shelf.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when at the back-left corner of the shelf
+shelf = parse_query_obj('shelf')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = shelf.aabb
+# back-left corner is min_x, min_y, min_z
+set_voxel_by_radius(gripper_map, (min_x, min_y, min_z), radius_cm=5, value=0)
+ret_val = gripper_map
+```
+
+Query: close only when on top of the chair.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when on top of the chair
+chair = parse_query_obj('chair')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = chair.aabb
+center_x, center_y, center_z = chair.position
+# on top means we add to z
+z = max_z + cm2index(5, 'z')  # 5cm above the chair
+set_voxel_by_radius(gripper_map, (center_x, center_y, z), radius_cm=10, value=0)
+ret_val = gripper_map
+
+Query: close only when under the desk.
+```python
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when under the desk
+desk = parse_query_obj('desk')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = desk.aabb
+# under means z is less than min_z
+gripper_map[:, :, :min_z] = 0
+ret_val = gripper_map
+```
+
+Query: close only when on the right side of the cabinet.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when on the right side of the cabinet
+cabinet = parse_query_obj('cabinet')
+center_x, center_y, center_z = cabinet.position
+# right side so y is greater than center_y
+gripper_map[:, center_y:, :] = 0
+ret_val = gripper_map

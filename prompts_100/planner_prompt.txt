@@ -1,0 +1,144 @@
+Query: slide the grill towards the lemon
+Query: slide the drill towards the hot soup
+Query: slide the grill towards the fork
+Query: take the iPhone out of the tray and put it flat on the book
+Query: sweep the steak into the box
+Query: place the yellow block on the iPhone
+Query: take the box out of the tray and put it flat on the book
+Query: unplug the drawer handle from the broom
+Query: slide the grill towards the box
+Query: take the yellow bowl out of the tray and put it flat on the bottle
+Query: unplug the bowl from the broom
+Query: slide the grill towards the red ball
+Query: slide the lemon towards the box
+Query: unplug the plate from the broom
+Query: drop the book inside the tray
+Query: slide the beer cap towards the yellow block
+Query: set up the airpods for the yellow block
+Query: slide the beer cap towards the spoon
+Query: slide the grill towards the tissue
+Query: slide the beer cap towards the fridge
+Query: place the blue block on the iPhone
+Query: slide the grill towards the tablet
+Query: slide the router towards the cyan bowl
+Query: slide the beer cap towards the orange
+Query: drop the charger inside the tray
+Query: slide the beer cap towards the soda can
+Query: slide the drill towards the yellow bowl
+Query: drop the tissue inside the tray
+Query: slide the grill towards the lamp
+Query: slide the beer cap towards the mug
+Query: turn off the lamp
+Query: unplug the plate from the bread
+Query: slide the grill towards the spoon
+Query: unplug the tray from the bread
+Query: slide the beer cap towards the bowl
+Query: slide the beer cap towards the keyboard
+Query: slide the grill towards the iPhone
+Query: slide the lemon towards the fridge
+Query: place the blue block on the tablet
+Query: slide the grill towards the hot soup
+Query: slide the beer cap towards the bread
+Query: slide the grill towards the bottle
+Query: slide the beer cap towards the book
+Query: slide the grill towards the keyboard
+Query: take the yellow bowl out of the tray and put it flat on the book
+Query: unplug the plate from the outlet
+Query: slide the beer cap towards the router
+Query: slide the grill towards the yellow block
+Query: slide the beer cap towards the lamp
+Query: place the yellow block on the airpods
+Query: slide the grill towards the switch
+Query: slide the grill towards the tray
+Query: sweep the orange into the container
+Query: slide the router towards the fridge
+Query: take the airpods out of the tray and put it flat on the book
+Query: slide the lemon towards the hot soup
+Query: slide the grill towards the beer cap
+Query: take the airpods out of the tray and put it flat on the bottle
+Query: slide the beer cap towards the blue block
+Query: slide the grill towards the router
+Query: slide the grill towards the orange
+Query: slide the router towards the box
+Query: slide the beer cap towards the outlet
+Query: set up the yellow bowl for the yellow block
+Query: slide the beer cap towards the red ball
+Query: slide the grill towards the yellow bowl
+Query: unplug the bowl from the bread
+Query: slide the grill towards the soda can
+Query: slide the grill towards the broom
+Query: slide the grill towards the knife
+Query: slide the beer cap towards the mouse
+Query: slide the beer cap towards the fork
+Query: close the shelf
+Query: pass me a mug and place it behind the mouse
+Query: unplug the tray from the outlet
+Query: slide the grill towards the green cup
+Query: slide the grill towards the cyan bowl
+Query: slide the drill towards the box
+Query: slide the beer cap towards the steak
+Query: slide the beer cap towards the charger
+Query: slide the beer cap towards the lemon
+Query: slide the beer cap towards the airpods
+Query: slide the beer cap towards the broom
+Query: unplug the bowl from the outlet
+Query: place the blue block on the airpods
+Query: slide the grill towards the bowl
+Query: slide the grill towards the mouse
+Query: sweep the broom into the container
+Query: slide the beer cap towards the tray
+Query: set up the airpods for the blue block
+Query: sweep the soda can into the box
+Query: pass me a mug and place it behind the keyboard
+Query: open the cupboard
+Query: slide the grill towards the steak
+Query: set up the box for the blue block
+Query: place the yellow block on the tablet
+Query: slide the beer cap towards the cyan bowl
+Query: turn the mouse
+Query: slide the router towards the yellow bowl
+Query: slide the beer cap towards the drawer handle
+Query: slide the router towards the hot soup
+Query: slide the grill towards the drawer handle
+Query: take the iPhone out of the tray and put it flat on the bottle
+Query: slide the beer cap towards the grill
+Query: turn the tablet
+Query: slide the grill towards the book
+Query: slide the lemon towards the yellow bowl
+Query: sweep the outlet into the container
+Query: slide the grill towards the blue block
+Query: slide the beer cap towards the yellow bowl
+Query: slide the grill towards the airpods
+Query: take the box out of the tray and put it flat on the bottle
+Query: slide the beer cap towards the marbles
+Query: slide the beer cap towards the bottle
+Query: slide the grill towards the drill
+Query: unplug the drawer handle from the outlet
+Query: slide the beer cap towards the switch
+Query: unplug the drawer handle from the bread
+Query: slide the beer cap towards the iPhone
+Query: drop the bottle inside the tray
+Query: slide the grill towards the outlet
+Query: slide the grill towards the fridge
+Query: slide the drill towards the cyan bowl
+Query: slide the beer cap towards the drill
+Query: slide the grill towards the plate
+Query: slide the drill towards the fridge
+Query: set up the box for the yellow block
+Query: drop the marbles inside the tray
+Query: slide the grill towards the bread
+Query: slide the beer cap towards the box
+Query: slide the beer cap towards the tissue
+Query: slide the grill towards the marbles
+Query: slide the beer cap towards the knife
+Query: sweep the bread into the container
+Query: turn the keyboard
+Query: slide the beer cap towards the tablet
+Query: set up the yellow bowl for the blue block
+Query: slide the beer cap towards the plate
+Query: slide the grill towards the mug
+Query: slide the beer cap towards the hot soup
+Query: slide the lemon towards the cyan bowl
+Query: slide the beer cap towards the green cup
+Query: unplug the tray from the broom
+Query: slide the grill towards the charger

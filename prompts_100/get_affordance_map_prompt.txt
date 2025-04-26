@@ -1,0 +1,134 @@
+Query: a point 5cm top of the bowl.
+Query: a point 5cm bottom of the bowl.
+Query: a point 5cm top of the mug.
+Query: a point 5cm bottom of the mug.
+Query: a point 5cm top of the plate.
+Query: a point 5cm bottom of the plate.
+Query: a point 10cm back of the tray.
+Query: a point 25cm back of the tray.
+Query: a point 50cm back of the tray.
+Query: a point 10cm back of the lemon.
+Query: a point 25cm back of the lemon.
+Query: a point 50cm back of the lemon.
+Query: a point 10cm back of the topmost drawer handle.
+Query: a point 25cm back of the topmost drawer handle.
+Query: a point 50cm back of the topmost drawer handle.
+Query: a point 10cm back of the leftmost block.
+Query: a point 25cm back of the leftmost block.
+Query: a point 50cm back of the leftmost block.
+Query: a point 25cm in front of the bowl.
+Query: a point 25cm above the bowl.
+Query: a point 25cm in front of the mug.
+Query: a point 25cm above the mug.
+Query: a point 25cm in front of the plate.
+Query: a point 25cm above the plate.
+Query: a point 25cm in front of the container.
+Query: a point 25cm above the container.
+Query: a point 5cm in front of the yellow bowl.
+Query: a point 5cm above the yellow bowl.
+Query: a point 5cm in front of the blue circle.
+Query: a point 5cm above the blue circle.
+Query: a point 5cm in front of the tray.
+Query: a point 5cm above the tray.
+Query: a point 5cm in front of the lemon.
+Query: a point 5cm above the lemon.
+Query: a point 25cm to the left of the container and 25cm on top of the brown block.
+Query: a point 25cm to the left of the container and 50cm on top of the brown block.
+Query: a point 50cm to the left of the container and 25cm on top of the brown block.
+Query: a point 50cm to the left of the container and 50cm on top of the brown block.
+Query: a point 25cm to the left of the container and 25cm on top of the blue block.
+Query: a point 25cm to the left of the container and 50cm on top of the blue block.
+Query: a point 50cm to the left of the container and 25cm on top of the blue block.
+Query: a point 50cm to the left of the container and 50cm on top of the blue block.
+Query: a point 25cm to the left of the container and 25cm on top of the green block.
+Query: a point 25cm to the left of the container and 50cm on top of the green block.
+Query: a point 50cm to the left of the container and 25cm on top of the green block.
+Query: a point 50cm to the left of the container and 50cm on top of the green block.
+Query: a point 25cm to the left of the container and 25cm on top of the yellow bowl.
+Query: a point 25cm to the left of the container and 50cm on top of the yellow bowl.
+Query: a point 50cm to the left of the container and 25cm on top of the yellow bowl.
+Query: a point 50cm to the left of the container and 50cm on top of the yellow bowl.
+Query: a point 25cm to the left of the container and 25cm on top of the blue circle.
+Query: a point 25cm to the left of the container and 50cm on top of the blue circle.
+Query: a point 50cm to the left of the container and 25cm on top of the blue circle.
+Query: a point 50cm to the left of the container and 50cm on top of the blue circle.
+Query: a point 25cm to the left of the brown block and 25cm on top of the blue block.
+Query: a point 25cm to the left of the brown block and 50cm on top of the blue block.
+Query: a point 50cm to the left of the brown block and 25cm on top of the blue block.
+Query: a point 50cm to the left of the brown block and 50cm on top of the blue block.
+Query: a point 25cm to the left of the brown block and 25cm on top of the green block.
+Query: a point 25cm to the left of the brown block and 50cm on top of the green block.
+Query: a point 50cm to the left of the brown block and 25cm on top of the green block.
+Query: a point 50cm to the left of the brown block and 50cm on top of the green block.
+Query: a point 25cm to the left of the brown block and 25cm on top of the yellow bowl.
+Query: a point 25cm to the left of the brown block and 50cm on top of the yellow bowl.
+Query: a point 50cm to the left of the brown block and 25cm on top of the yellow bowl.
+Query: a point 50cm to the left of the brown block and 50cm on top of the yellow bowl.
+Query: a point 25cm to the left of the brown block and 25cm on top of the blue circle.
+Query: a point 25cm to the left of the brown block and 50cm on top of the blue circle.
+Query: a point 50cm to the left of the brown block and 25cm on top of the blue circle.
+Query: a point 50cm to the left of the brown block and 50cm on top of the blue circle.
+Query: a point 25cm to the left of the blue block and 25cm on top of the green block.
+Query: a point 25cm to the left of the blue block and 50cm on top of the green block.
+Query: a point 50cm to the left of the blue block and 25cm on top of the green block.
+Query: a point 50cm to the left of the blue block and 50cm on top of the green block.
+Query: a point 25cm to the left of the blue block and 25cm on top of the yellow bowl.
+Query: a point 25cm to the left of the blue block and 50cm on top of the yellow bowl.
+Query: a point 50cm to the left of the blue block and 25cm on top of the yellow bowl.
+Query: a point 50cm to the left of the blue block and 50cm on top of the yellow bowl.
+Query: a point 25cm to the left of the blue block and 25cm on top of the blue circle.
+Query: a point 25cm to the left of the blue block and 50cm on top of the blue circle.
+Query: a point 50cm to the left of the blue block and 25cm on top of the blue circle.
+Query: a point 50cm to the left of the blue block and 50cm on top of the blue circle.
+Query: a point 25cm to the left of the green block and 25cm on top of the yellow bowl.
+Query: a point 25cm to the left of the green block and 50cm on top of the yellow bowl.
+Query: a point 50cm to the left of the green block and 25cm on top of the yellow bowl.
+Query: a point 50cm to the left of the green block and 50cm on top of the yellow bowl.
+Query: a point 25cm to the left of the green block and 25cm on top of the blue circle.
+Query: a point 25cm to the left of the green block and 50cm on top of the blue circle.
+Query: a point 50cm to the left of the green block and 25cm on top of the blue circle.
+Query: a point 50cm to the left of the green block and 50cm on top of the blue circle.
+Query: a point 25cm to the left of the yellow bowl and 25cm on top of the blue circle.
+Query: a point 25cm to the left of the yellow bowl and 50cm on top of the blue circle.
+Query: a point 50cm to the left of the yellow bowl and 25cm on top of the blue circle.
+Query: a point 50cm to the left of the yellow bowl and 50cm on top of the blue circle.
+Query: anywhere within 25cm of the mug.
+Query: anywhere within 25cm of the plate.
+Query: anywhere within 25cm of the container.
+Query: anywhere within 25cm of the brown block.
+Query: anywhere within 25cm of the blue block.
+Query: anywhere within 10cm of the tray.
+Query: anywhere within 25cm of the tray.
+Query: anywhere within 10cm of the lemon.
+Query: anywhere within 25cm of the lemon.
+Query: anywhere within 10cm of the topmost drawer handle.
+Query: anywhere within 25cm of the topmost drawer handle.
+Query: a point 5cm from the container towards the yellow bowl.
+Query: a point 5cm from the brown block towards the yellow bowl.
+Query: a point 5cm from the blue block towards the yellow bowl.
+Query: a point 5cm from the green block towards the yellow bowl.
+Query: a point 5cm from the container towards the blue circle.
+Query: a point 5cm from the brown block towards the blue circle.
+Query: a point 5cm from the blue block towards the blue circle.
+Query: a point 5cm from the green block towards the blue circle.
+Query: a point 5cm from the yellow bowl towards the blue circle.
+Query: a point 5cm from the container towards the tray.
+Query: a point 5cm from the brown block towards the tray.
+Query: a point 5cm from the blue block towards the tray.
+Query: a point 5cm from the green block towards the tray.
+Query: a point 5cm from the yellow bowl towards the tray.
+Query: a point 50cm from the topmost drawer handle towards the lemon.
+Query: a point 50cm from the leftmost block towards the lemon.
+Query: a point 50cm from the lemon towards the topmost drawer handle.
+Query: a point 50cm from the leftmost block towards the topmost drawer handle.
+Query: a point 50cm from the lemon towards the leftmost block.
+Query: a point 50cm from the topmost drawer handle towards the leftmost block.
+Query: a point 50cm right and top of the blue block.
+Query: a point 50cm right and bottom of the blue block.
+Query: a point 50cm top and bottom of the blue block.
+Query: a point 50cm right and top of the green block.
+Query: a point 50cm right and bottom of the green block.
+Query: a point 50cm top and bottom of the green block.
+Query: a point 50cm right and top of the yellow bowl.
+Query: a point 50cm right and bottom of the yellow bowl.
+Query: a point 50cm top and bottom of the yellow bowl.

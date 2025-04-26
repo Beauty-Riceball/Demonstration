@@ -1,0 +1,1909 @@
+Query: Face the support surface of the chair.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+target_rotation = vec2quat(-chair.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the chair while keeping east from the table.
+To achieve the query "Face the chair while keeping east from the table," we need to:
+
+1. Get the chair's position and orientation to face it.
+2. Ensure the gripper's orientation is east relative to the table's coordinate system.
+
+Here's the implementation:
+
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+table = parse_query_obj('table')
+
+# Face the chair
+face_chair_quat = vec2quat(-chair.normal)
+
+# Get table's east direction (assuming table's x-axis is east)
+# We need to rotate the gripper so its x-axis points east (table's x-axis)
+# First get current orientation after facing chair
+current_rot = face_chair_quat
+
+# Calculate the rotation needed to align gripper's x-axis with table's east
+# We need to find the rotation that makes the gripper's x-axis point in table's x direction
+# This is more complex and might require transforming between coordinate systems
+
+# For simplicity, we'll assume the table's orientation is identity and just rotate
+# the gripper to face east (positive x) while maintaining its orientation toward the chair
+# This is an approximation - a complete solution would require coordinate transformations
+
+east_rotation = euler2quat(0, 0, 0)  # Identity quaternion for east-facing
+target_rotation = qmult(face_chair_quat, east_rotation)
+
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Note: This is a simplified implementation. A more accurate solution would require:
+1. Getting the table's coordinate system
+2. Calculating the transformation between world and table coordinates
+3. Applying the east-facing constraint in table coordinates while maintaining the chair-facing orientation
+
+The current solution assumes the table's orientation is aligned with world coordinates, which may not be true in all cases. For a complete solution, we would need additional functions to handle coordinate system transformations.
+
+Query: Face the support surface of the chair.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+target_rotation = vec2quat(-chair.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the chair while keeping east from the table.
+Here's the response for the query "Face the chair while keeping east from the table":
+
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+table = parse_query_obj('table')
+
+# Get positions and orientations
+chair_pos = chair.position
+table_pos = table.position
+
+# Calculate east direction from table (positive x-axis in local coordinates)
+east_direction = np.array([1, 0, 0])  # Assuming x is east in the coordinate system
+
+# Calculate direction from table to chair
+table_to_chair = np.array(chair_pos) - np.array(table_pos)
+table_to_chair[2] = 0  # Keep it horizontal
+table_to_chair = table_to_chair / np.linalg.norm(table_to_chair)
+
+# Combine requirements: face chair while maintaining east from table
+# We'll prioritize facing the chair while keeping east component
+target_direction = (chair.normal + east_direction) / 2  # Average of both requirements
+target_direction = target_direction / np.linalg.norm(target_direction)
+
+target_rotation = vec2quat(-target_direction)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This solution:
+1. Gets the positions of both the chair and table
+2. Calculates the east direction from the table (positive x-axis)
+3. Determines the direction from table to chair (horizontal only)
+4. Creates a combined target direction that both faces the chair and maintains an eastward component from the table
+5. Converts this direction to a quaternion rotation and applies it uniformly across the rotation map
+
+The result will make the gripper face generally toward the chair while maintaining some eastward orientation relative to the table's position.
+
+Query: Face the support surface of the chair.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+target_rotation = vec2quat(-chair.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the chair while keeping north from the table.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+table = parse_query_obj('table')
+
+# Face the chair
+face_chair_quat = vec2quat(chair.position)  # Face towards chair position
+
+# Get north direction from table (assuming table's normal is up, so north is along -y axis)
+north_direction = np.array([0, -1, 0])
+face_north_quat = vec2quat(north_direction)
+
+# Combine rotations (face chair while keeping north from table)
+target_rotation = qmult(face_chair_quat, face_north_quat)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This solution:
+1. Gets the chair and table objects
+2. Creates a rotation to face towards the chair's position
+3. Creates a rotation to maintain north direction relative to the table (assuming table's normal is up)
+4. Combines both rotations to face the chair while keeping north from the table
+5. Applies this combined rotation to all voxels in the rotation map
+
+The assumption is that "keeping north from the table" means maintaining a north-facing orientation relative to the table's coordinate system.
+
+
+Query: Face the support surface of the chair.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+target_rotation = vec2quat(-chair.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the chair while keeping west from the table.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+table = parse_query_obj('table')
+
+# Face the chair
+target_rotation = vec2quat(chair.position - table.position)  # Face towards chair
+
+# Adjust to keep west from table (assuming west is negative x-axis in world coordinates)
+west_direction = np.array([-1, 0, 0])
+current_forward = quat2euler(target_rotation)[:2]  # Get current yaw/pitch
+# Adjust rotation to maintain west direction while facing chair
+adjusted_rotation = euler2quat(current_forward[0], current_forward[1], np.pi/2)  # 90 degrees to keep west
+
+rotation_map[:, :, :] = adjusted_rotation
+ret_val = rotation_map
+```
+
+This solution:
+1. Gets the chair and table objects
+2. Calculates the direction to face the chair from the table
+3. Adjusts the rotation to maintain a westward orientation (negative x-axis) relative to the table while still generally facing the chair
+4. Applies this rotation uniformly across all voxels
+
+The implementation uses the existing utility functions and handles the two requirements of the query (facing the chair while maintaining a westward orientation from the table).
+
+Query: Turn clockwise by 30.0 degrees when at the chair.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+(x, y, z) = chair.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.pi/6)  # 30 degrees = ��/6 radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Turn counter-clockwise by 30.0 degrees when near the chair.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+chair_center = chair.position
+current_rotation = rotation_map[0, 0, 0]  # Default identity quaternion
+rotation_delta = euler2quat(0, 0, -np.pi/6)  # -30 degrees counter-clockwise
+target_rotation = qmult(current_rotation, rotation_delta)
+
+# Set the rotation for voxels within 30cm of the chair
+set_voxel_by_radius(rotation_map, chair_center, radius_cm=30, value=target_rotation)
+ret_val = rotation_map
+```
+
+Query: Rotate the chair by 30.0 degrees around the x-axis.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+curr_rotation = rotation_map[0, 0, 0]  # Default identity quaternion
+rotation_delta = euler2quat(np.radians(30.0), 0, 0)  # 30 degrees around x-axis
+rotation_map[:, :, :] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Turn clockwise by 180.0 degrees when at the chair.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+(x, y, z) = chair.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.pi)  # 180 degrees = �� radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Turn counter-clockwise by 180.0 degrees when near the chair.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+chair_center = chair.position
+target_rotation = euler2quat(0, 0, -np.pi)  # 180 degrees counter-clockwise
+set_voxel_by_radius(rotation_map, chair_center, radius_cm=30, value=target_rotation)
+ret_val = rotation_map
+```
+
+Query: Rotate the chair by 180.0 degrees around the z-axis.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+# Rotate 180 degrees around the z-axis
+rotation_delta = euler2quat(0, 0, np.pi)
+rotation_map[:, :, :] = qmult(rotation_map[0, 0, 0], rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Face the support surface of the cap.
+```python
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+target_rotation = vec2quat(-cap.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the cap while keeping south from the table.
+To achieve the query "Face the cap while keeping south from the table," we need to:
+1. Face the cap (align with the cap's normal vector)
+2. Ensure the gripper's orientation maintains a "south" direction relative to the table's coordinate frame
+
+Here's the implementation:
+
+```python
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+table = parse_query_obj('table')
+
+# Step 1: Face the cap (align with cap's normal)
+face_cap_quat = vec2quat(-cap.normal)
+
+# Step 2: Adjust to maintain "south" direction relative to table
+# Get current orientation in table's frame
+table_quat = vec2quat(table.normal)
+current_in_table_frame = qmult(qinverse(table_quat), face_cap_quat)
+
+# Extract yaw angle and set it to face south (180 degrees)
+_, _, yaw = quat2euler(current_in_table_frame)
+south_yaw = np.pi  # 180 degrees for south
+adjusted_in_table_frame = euler2quat(0, 0, south_yaw)
+
+# Convert back to world frame
+target_rotation = qmult(table_quat, adjusted_in_table_frame)
+
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This solution:
+1. First calculates the orientation needed to face the cap
+2. Transforms this orientation into the table's coordinate frame
+3. Adjusts the yaw (rotation about Z) to face south (180 degrees) while maintaining the pitch/roll needed to face the cap
+4. Transforms back to world coordinates
+5. Applies this orientation uniformly across all voxels
+
+The result will make the gripper face the cap while maintaining a southern orientation relative to the table's coordinate system.
+
+Query: Face the support surface of the cap.
+```python
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+target_rotation = vec2quat(-cap.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the cap while keeping east from the table.
+```python
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+table = parse_query_obj('table')
+
+# Face the cap
+face_cap_quat = vec2quat(-cap.normal)
+
+# Keep east from table (assuming table's normal is up)
+# East would be the positive x-direction in table's frame
+east_direction = np.array([1, 0, 0])  # In table's coordinate frame
+
+# Transform east direction to world frame
+# First get table's rotation (assuming table's normal is its z-axis)
+table_rotation = vec2quat(-table.normal)
+table_inv_rotation = qinverse(table_rotation)
+east_world = qmult(table_rotation, qmult(euler2quat(0, 0, 0), table_inv_rotation))[1:]  # Just get vector part
+
+# Find rotation that aligns gripper's x-axis with east_world while facing cap
+# This is more complex and might require solving for a rotation that satisfies both constraints
+# For simplicity, we'll prioritize facing the cap and just adjust yaw to be roughly east
+current_euler = quat2euler(face_cap_quat)
+adjusted_euler = (current_euler[0], current_euler[1], np.pi/2)  # Set yaw to east (pi/2 radians)
+target_rotation = euler2quat(*adjusted_euler)
+
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+``` 
+
+Note: This implementation makes some simplifying assumptions:
+1. The table's coordinate system has its x-axis aligned with what we consider "east"
+2. We prioritize facing the cap exactly while only roughly aligning with east
+3. A more precise solution would involve solving for a rotation that satisfies both constraints simultaneously, which may require more complex quaternion math or optimization
+
+The code first gets the rotation to face the cap, then adjusts the yaw component to point east while maintaining the pitch/roll needed to face the cap.
+
+Query: Face the support surface of the cap.
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+target_rotation = vec2quat(-cap.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Face the cap while keeping east from the table.
+To achieve the desired behavior of facing the cap while keeping east from the table, we need to combine two rotations: one to face the cap and another to ensure the orientation is east relative to the table. Here's how we can implement this:
+
+```python
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+table = parse_query_obj('table')
+
+# Rotation to face the cap (align with the cap's normal)
+face_cap_quat = vec2quat(-cap.normal)
+
+# Rotation to align with east direction (assuming table's x-axis is east)
+# We'll use the table's orientation to determine east
+table_quat = vec2quat(table.normal)  # Get table's orientation
+east_quat = euler2quat(0, 0, -np.pi/2)  # 90 degree rotation around z-axis for east
+
+# Combine the rotations: first face the cap, then adjust to face east relative to table
+target_rotation = qmult(face_cap_quat, qmult(east_quat, qinverse(table_quat)))
+
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This implementation:
+1. Gets the orientation needed to face the cap (align with its normal vector)
+2. Calculates the east direction relative to the table's orientation
+3. Combines these rotations to create the final target orientation
+4. Applies this orientation uniformly across all voxels
+
+The result will make the gripper face the cap while maintaining an eastward orientation relative to the table's coordinate system.
+
+Query: Face the support surface of the cap.
+```python
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+target_rotation = vec2quat(-cap.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the cap while keeping backward from the table.
+Here's the response to the query "Face the cap while keeping backward from the table":
+
+```python
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+table = parse_query_obj('table')
+
+# Face the cap
+face_cap_quat = vec2quat(-cap.normal)
+
+# Keep backward from table (face away from table)
+face_away_from_table_quat = vec2quat(table.normal)
+
+# Combine both rotations (prioritize facing the cap)
+target_rotation = face_cap_quat
+rotation_map[:, :, :] = target_rotation
+
+# Override with away-from-table rotation in areas close to table
+set_voxel_by_radius(rotation_map, table.position, radius_cm=30, value=face_away_from_table_quat)
+ret_val = rotation_map
+```
+
+This solution:
+1. First sets the default rotation to face the cap
+2. Then overrides this rotation in areas close to the table (within 30cm radius) to face away from the table
+3. Uses the `vec2quat` helper function to convert direction vectors to quaternions
+4. Uses `set_voxel_by_radius` to apply the "backward from table" constraint in the table's vicinity
+Query: Turn clockwise by 30.0 degrees when at the cap.
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+(x, y, z) = cap.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.pi/6)  # 30 degrees = ��/6 radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_maps
+
+Query: Turn counter-clockwise by 30.0 degrees when near the cap.
+```python
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+cap_center = cap.position
+target_rotation_delta = euler2quat(0, 0, -np.pi/6)  # -30 degrees counter-clockwise
+
+# Apply rotation when near the cap (within 20cm radius)
+set_voxel_by_radius(
+    rotation_map, 
+    cap_center, 
+    radius_cm=20, 
+    value=lambda curr_rot: qmult(curr_rot, target_rotation_delta)
+)
+ret_val = rotation_map
+```
+
+Query: Rotate the cap by 30.0 degrees around the z-axis.
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+(x, y, z) = cap.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.radians(30.0))
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Turn clockwise by 180.0 degrees when at the cap.
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+(x, y, z) = cap.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.pi)  # 180 degrees = �� radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Turn counter-clockwise by 180.0 degrees when near the cap.
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+cap_center = cap.position
+curr_rotation = rotation_map[0, 0, 0]  # Default identity quaternion
+rotation_delta = euler2quat(0, 0, -np.pi)  # 180 degrees counter-clockwise
+
+# Set rotation for voxels within 30cm of cap center (adjust radius as needed)
+set_voxel_by_rotation(rotation_map, cap_center, radius_cm=30, 
+                      value=qmult(curr_rotation, rotation_delta))
+ret_val = rotation_map
+
+Query: Rotate the cap by 180.0 degrees around the z-axis.
+rotation_map = get_empty_rotation_map()
+cap = parse_query_obj('cap')
+(x, y, z) = cap.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.pi)  # 180 degrees = �� radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Face the support surface of the door.
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+target_rotation = vec2quat(-door.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the door while keeping east from the table.
+To solve this query, we need to combine two conditions:
+
+1. Face the door
+2. Keep an eastward orientation relative to the table
+
+Here's how we would implement this:
+
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+table = parse_query_obj('table')
+
+# Get the direction to face the door
+face_door_quat = vec2quat(-door.normal)
+
+# Get east direction relative to table (assuming table's normal is up)
+# We'll use the table's right vector as east (assuming table is oriented with its right side as east)
+east_direction = table.right  # This would need to be defined in your object properties
+
+# Combine both orientations - face door while keeping east component
+# This would involve some quaternion math to blend orientations
+target_rotation = qmult(face_door_quat, vec2quat(east_direction))
+
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Note: This implementation makes some assumptions:
+1. The table object has a 'right' vector property representing its east side
+2. The door object has a normal vector we can face
+3. The qmult operation properly combines the two orientation requirements
+
+In practice, you might need more sophisticated orientation blending to properly satisfy both constraints simultaneously. The exact implementation would depend on how you define "keeping east from the table" while facing the door.
+
+Query: Face the support surface of the door.
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+target_rotation = vec2quat(-door.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the door while keeping forward from the table.
+Here's the response for the query "Face the door while keeping forward from the table":
+
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+table = parse_query_obj('table')
+
+# Get the direction vectors
+door_direction = vec2quat(-door.normal)  # Face the door
+table_forward = vec2quat(-table.normal)  # Forward from table
+
+# Combine the rotations (face door while maintaining table forward)
+target_rotation = qmult(table_forward, door_direction)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This solution:
+1. Gets the rotation needed to face the door
+2. Gets the rotation that represents "forward" from the table
+3. Combines these rotations to face the door while maintaining the forward orientation relative to the table
+4. Applies this combined rotation to all voxels in the rotation map
+
+The `qmult` function multiplies the quaternions to combine the rotations, ensuring both orientation requirements are met.
+
+Query: Face the support surface of the door.
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+target_rotation = vec2quat(-door.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Face the door while keeping backward from the table.
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+table = parse_query_obj('table')
+
+# Face the door
+target_rotation = vec2quat(-door.normal)
+
+# Apply to all voxels except those near the table (keeping backward from table)
+table_center = table.position
+table_radius = 30  # cm
+for x in range(rotation_map.shape[0]):
+    for y in range(rotation_map.shape[1]):
+        for z in range(rotation_map.shape[2]):
+            pos = np.array([x, y, z]) * 100 / rotation_map.shape[0]  # Convert to cm
+            if np.linalg.norm(pos - table_center) > table_radius:
+                rotation_map[x, y, z] = target_rotation
+ret_val = rotation_map
+
+Query: Face the support surface of the door.
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+target_rotation = vec2quat(-door.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the door while keeping west from the table.
+Here's the response for the query "Face the door while keeping west from the table":
+
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+table = parse_query_obj('table')
+
+# Get the west direction relative to the table
+table_west = np.array([-1, 0, 0])  # Assuming west is -x direction in world coordinates
+
+# Combine both requirements:
+# 1. Face the door (use door's position to determine direction)
+# 2. Keep west from the table (maintain west orientation relative to table)
+door_direction = door.position - table.position
+door_direction = door_direction / np.linalg.norm(door_direction)
+
+# Combine the two directions (you might need to adjust this based on your coordinate system)
+target_direction = (door_direction + table_west) / 2
+target_direction = target_direction / np.linalg.norm(target_direction)
+
+target_rotation = vec2quat(target_direction)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Note: This implementation makes some assumptions:
+1. The west direction is represented as (-1, 0, 0) in world coordinates
+2. We average the two directional requirements (facing door and west from table)
+3. You may need to adjust the coordinate system or weighting between the two requirements based on your specific needs
+
+For a more precise implementation, you might want to:
+1. First align with the west direction relative to the table
+2. Then rotate to face the door as much as possible while maintaining the west constraint
+3. Or prioritize one requirement over the other based on your application needs
+Query: Turn clockwise by 30.0 degrees when at the door.
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+(x, y, z) = door.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.pi/6)  # 30 degrees in radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Turn counter-clockwise by 30.0 degrees when near the door.
+Here's the response for the query "Turn counter-clockwise by 30.0 degrees when near the door":
+
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+door_center = door.position
+curr_rotation = rotation_map[0, 0, 0]  # Default rotation
+rotation_delta = euler2quat(0, 0, -np.pi/6)  # 30 degrees counter-clockwise
+target_rotation = qmult(curr_rotation, rotation_delta)
+set_voxel_by_radius(rotation_map, door_center, radius_cm=30, value=target_rotation)
+ret_val = rotation_map
+```
+
+This code:
+1. Creates an empty rotation map
+2. Gets the door object and its position
+3. Creates a rotation delta of 30 degrees counter-clockwise (��/6 radians)
+4. Applies this rotation to the default orientation
+5. Sets this target rotation for all voxels within 30cm of the door center
+6. Returns the populated rotation map
+
+Query: Rotate the door by 30.0 degrees around the y-axis.
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+# Get current rotation of the door (assuming it's stored in the rotation map)
+curr_rotation = rotation_map[door.position[0], door.position[1], door.position[2]]
+# Create a rotation delta of 30 degrees around y-axis (convert to radians)
+rotation_delta = euler2quat(0, np.radians(30.0), 0)
+# Apply the rotation
+target_rotation = qmult(curr_rotation, rotation_delta)
+# Update the rotation map at the door's position
+rotation_map[door.position[0], door.position[1], door.position[2]] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Turn clockwise by 180.0 degrees when at the door.
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+(x, y, z) = door.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.pi)  # 180 degrees in radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Turn counter-clockwise by 180.0 degrees when near the door.
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+door_center = door.position
+curr_rotation = rotation_map[0, 0, 0]  # Default rotation
+rotation_delta = euler2quat(0, 0, -np.pi)  # 180 degrees counter-clockwise
+
+# Apply rotation when near door (within 30cm radius)
+set_voxel_by_radius(
+    rotation_map, 
+    door_center, 
+    radius_cm=30, 
+    value=qmult(curr_rotation, rotation_delta)
+)
+ret_val = rotation_map
+
+Query: Rotate the door by 180.0 degrees around the y-axis.
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+# Get the current rotation of the door (assuming it's stored in the rotation_map)
+curr_rotation = rotation_map[0, 0, 0]  # Default to identity quaternion if not specified
+# Create a 180 degree rotation around y-axis
+rotation_delta = euler2quat(0, np.pi, 0)  # pi radians = 180 degrees
+# Apply the rotation
+target_rotation = qmult(currrotation, rotation_delta)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Face the support surface of the cup.
+```python
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+target_rotation = vec2quat(-cup.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the cup when within 5cm from table center.
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+table = parse_query_obj('table')
+table_center = table.position
+target_rotation = vec2quat(-cup.normal)
+set_voxel_by_radius(rotation_map, table_center, radius_cm=5, value=target_rotation)
+ret_val = rotation_map
+
+Query: Face the cup when within 15cm from table center.
+```python
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+table = parse_query_obj('table')
+table_center = table.position
+target_rotation = vec2quat(-cup.normal)
+set_voxel_by_radius(rotation_map, table_center, radius_cm=15, value=target_rotation)
+ret_val = rotation_map
+```
+
+Query: Face the cup while keeping east from the table.
+To achieve this, we need to combine two orientations:
+1. Face the cup (align with the cup's normal vector)
+2. Keep east from the table (maintain an eastward orientation relative to the table)
+
+Here's the implementation:
+
+```python
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+table = parse_query_obj('table')
+
+# Get the base orientation facing the cup
+face_cup_quat = vec2quat(-cup.normal)
+
+# Get the table's east direction (assuming table's normal is up)
+# We'll use the table's right vector as east (assuming standard orientation)
+table_right = np.cross(table.normal, [0, 0, 1])  # Cross with world up to get right vector
+table_right = table_right / np.linalg.norm(table_right)  # Normalize
+
+# Convert the east direction to a quaternion
+east_quat = vec2quat(table_right)
+
+# Combine the orientations - face cup while maintaining east
+target_rotation = qmult(face_cup_quat, east_quat)
+rotation_map[:, :, :] = target_rotation
+
+ret_val = rotation_map
+```
+
+This solution:
+1. First calculates the orientation to face the cup
+2. Then calculates what "east" means relative to the table
+3. Combines both orientations to face the cup while keeping east from the table
+
+Note: The exact implementation might need adjustment based on your coordinate system conventions, particularly how "east" is defined relative to the table's orientation.
+
+Query: Turn clockwise by 135.0 degrees when at the cup.
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+(x, y, z) = cup.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.radians(135.0))  # Convert degrees to radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Turn counter-clockwise by 135.0 degrees when near the cup.
+```python
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+cup_position = cup.position
+radius_cm = 30  # Assuming a reasonable radius for "near the cup"
+target_rotation_delta = euler2quat(0, 0, -np.radians(135.0))  # Counter-clockwise 135 degrees
+
+# Set rotation for voxels within the radius of the cup
+for x in range(rotation_map.shape[0]):
+    for y in range(rotation_map.shape[1]):
+        for z in range(rotation_map.shape[2]):
+            # Check if voxel is within radius of cup
+            voxel_pos = np.array([x, y, z]) * cm2index(1)  # Convert to cm
+            if np.linalg.norm(voxel_pos - cup_position) <= radius_cm:
+                current_rotation = rotation_map[x, y, z]
+                rotation_map[x, y, z] = qmult(current_rotation, target_rotation_delta)
+
+ret_val = rotation_map
+```
+
+Query: Rotate the cup by 135.0 degrees around the x-axis.
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+# Convert 135 degrees to radians
+rotation_angle = np.radians(135.0)
+rotation_delta = euler2quat(rotation_angle, 0, 0)
+current_rotation = rotation_map[:, :, :]
+rotation_map[:, :, :] = qmult(current_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Turn clockwise by 360.0 degrees when at the cup.
+```python
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+(x, y, z) = cup.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, 2*np.pi)  # 360 degrees = 2�� radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Turn counter-clockwise by 360.0 degrees when near the cup.
+```python
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+cup_center = cup.position
+target_rotation = euler2quat(0, 0, -2 * np.pi)  # 360 degrees counter-clockwise
+set_voxel_by_radius(rotation_map, cup_center, radius_cm=30, value=target_rotation)
+ret_val = rotation_map
+```
+
+Query: Rotate the cup by 360.0 degrees around the x-axis.
+```python
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+curr_rotation = rotation_map[0, 0, 0]
+rotation_delta = euler2quat(2 * np.pi, 0, 0)  # 360 degrees = 2�� radians
+rotation_map[:, :, :] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Face the support surface of the gripper.
+```python
+rotation_map = get_empty_rotation_map()
+gripper = parse_query_obj('gripper')
+target_rotation = vec2quat(-gripper.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the gripper when within 5cm from table center.
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+table_center = table.position
+# Assuming the gripper's facing direction is along the negative z-axis (0, 0, -1)
+target_rotation = vec2quat(np.array([0, 0, -1]))
+set_voxel_by_radius(rotation_map, table_center, radius_cm=5, value=target_rotation)
+ret_val = rotation_map
+
+Query: Face the gripper when within 15cm from table center.
+```python
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+table_center = table.position
+target_rotation = vec2quat(-table.normal)  # Face the table normal (gripper will face table)
+set_voxel_by_radius(rotation_map, table_center, radius_cm=15, value=target_rotation)
+ret_val = rotation_map
+```
+
+Query: Face the gripper while keeping west from the table.
+To implement the query "Face the gripper while keeping west from the table," we need to:
+
+1. Determine the west direction relative to the table (negative x-axis in table coordinates)
+2. Orient the gripper to face this direction while maintaining its current orientation
+
+Here's the implementation:
+
+```python
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+
+# Get table's coordinate system
+table_normal = table.normal
+table_rotation = quat2euler(vec2quat(table_normal))
+
+# West direction is -x in table's coordinate frame
+west_direction = np.array([-1, 0, 0])
+
+# Transform west direction to world coordinates
+# (This would require knowing how the table is oriented in world space)
+# For simplicity, we'll assume table is aligned with world axes
+target_direction = west_direction
+
+# Face the gripper in this direction while keeping current orientation
+target_rotation = vec2quat(target_direction)
+rotation_map[:, :, :] = target_rotation
+
+ret_val = rotation_map
+```
+
+Note: This implementation makes some simplifying assumptions about the table's orientation. A more complete solution would need to:
+1. Get the table's full orientation (not just its normal)
+2. Properly transform the west direction from table coordinates to world coordinates
+3. Compose this with the gripper's desired orientation
+
+The exact implementation would depend on how the table's coordinate system is defined in your environment.
+
+Query: Turn clockwise by 135.0 degrees when at the gripper.
+```python
+rotation_map = get_empty_rotation_map()
+gripper = parse_query_obj('gripper')
+(x, y, z) = gripper.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.pi * 135.0 / 180.0)  # Convert 135 degrees to radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Turn counter-clockwise by 135.0 degrees when near the gripper.
+```python
+rotation_map = get_empty_rotation_map()
+gripper = parse_query_obj('gripper')
+gripper_pos = gripper.position
+radius_cm = 30  # assuming "near" means within 30cm
+
+# Define the counter-clockwise rotation of 135 degrees (converted to radians)
+rotation_delta = euler2quat(0, 0, -np.radians(135.0))
+
+# Apply this rotation to all voxels near the gripper
+set_voxel_by_radius(rotation_map, gripper_pos, radius_cm=radius_cm, value=rotation_delta)
+
+ret_val = rotation_map
+```
+
+Query: Rotate the gripper by 135.0 degrees around the z-axis.
+```python
+rotation_map = get_empty_rotation_map()
+curr_rotation = rotation_map[0, 0, 0]
+rotation_delta = euler2quat(0, 0, np.radians(135.0))
+rotation_map[:, :, :] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Turn clockwise by 360.0 degrees when at the gripper.
+rotation_map = get_empty_rotation_map()
+gripper = parse_query_obj('gripper')
+(x, y, z) = gripper.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, 2*np.pi)  # 360 degrees = 2�� radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Turn counter-clockwise by 360.0 degrees when near the gripper.
+```python
+rotation_map = get_empty_rotation_map()
+gripper = parse_query_obj('gripper')
+gripper_position = gripper.position
+radius_cm = 10  # Assuming "near" means within 10cm
+target_rotation = euler2quat(0, 0, -2*np.pi)  # 360 degrees counter-clockwise (negative radians)
+
+# Set rotation for all voxels within radius of gripper
+set_voxel_by_radius(rotation_map, gripper_position, radius_cm=radius_cm, value=target_rotation)
+ret_val = rotation_map
+```
+
+Query: Rotate the gripper by 360.0 degrees around the x-axis.
+rotation_map = get_empty_rotation_map()
+rotation_delta = euler2quat(2 * np.pi, 0, 0)  # 360 degrees = 2�� radians
+rotation_map[:, :, :] = qmult(rotation_map[0, 0, 0], rotation_delta)
+ret_val = rotation_map
+
+Query: Face the support surface of the mug.
+```python
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+target_rotation = vec2quat(-mug.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Face the mug when within 5cm from table center.
+```python
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+table = parse_query_obj('table')
+table_center = table.position
+target_rotation = vec2quat(-mug.normal)
+set_voxel_by_radius(rotation_map, table_center, radius_cm=5, value=target_rotation)
+ret_val = rotation_map
+```
+
+Query: Face the mug when within 15cm from table center.
+```python
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+table = parse_query_obj('table')
+table_center = table.position
+target_rotation = vec2quat(-mug.normal)
+set_voxel_by_radius(rotation_map, table_center, radius_cm=15, value=target_rotation)
+ret_val = rotation_map
+```
+
+Query: Face the mug while keeping right from the table.
+```python
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+table = parse_query_obj('table')
+
+# Face the mug
+face_mug_quat = vec2quat(-mug.normal)
+
+# Get table's right direction (assuming table normal is up)
+table_right = np.cross(table.normal, [0, 0, 1])  # Cross with world forward to get right vector
+right_quat = vec2quat(table_right)
+
+# Combine orientations - face mug while keeping right from table
+target_rotation = qmult(face_mug_quat, right_quat)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Turn clockwise by 135.0 degrees when at the mug.
+```python
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+(x, y, z) = mug.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, np.radians(135.0))  # Convert degrees to radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Turn counter-clockwise by 135.0 degrees when near the mug.
+```python
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+mug_center = mug.position
+curr_rotation = rotation_map[0, 0, 0]  # Default rotation
+rotation_delta = euler2quat(0, 0, -np.pi * 135.0/180)  # Convert 135 degrees to radians
+target_rotation = qmult(curr_rotation, rotation_delta)
+set_voxel_by_radius(rotation_map, mug_center, radius_cm=30, value=target_rotation)  # Assuming 30cm radius for "near"
+ret_val = rotation_map
+```
+
+Query: Rotate the mug by 135.0 degrees around the y-axis.
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+curr_rotation = rotation_map[0, 0, 0]  # Default identity quaternion
+rotation_delta = euler2quat(0, np.radians(135.0), 0)  # Convert degrees to radians for y-axis rotation
+rotation_map[:, :, :] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Turn clockwise by 360.0 degrees when at the mug.
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+(x, y, z) = mug.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, 2*np.pi)  # 360 degrees = 2�� radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Turn counter-clockwise by 360.0 degrees when near the mug.
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+mug_center = mug.position
+target_rotation = euler2quat(0, 0, -2*np.pi)  # 360 degrees counter-clockwise
+set_voxel_by_radius(rotation_map, mug_center, radius_cm=30, value=target_rotation)
+ret_val = rotation_map
+
+Query: Rotate the mug by 360.0 degrees around the x-axis.
+```python
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+# 360 degrees is 2*pi radians
+rotation_delta = euler2quat(2*np.pi, 0, 0)
+rotation_map[:, :, :] = qmult(rotation_map[0, 0, 0], rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Rotate the bowl to face the wall.
+```python
+rotation_map = get_empty_rotation_map()
+bowl = parse_query_obj('bowl')
+wall = parse_query_obj('wall')  # Assuming 'wall' is a valid object with a normal vector
+target_rotation = vec2quat(-wall.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Rotate the bowl to be 30.0 degrees slanted relative to the wall.
+```python
+rotation_map = get_empty_rotation_map()
+bowl = parse_query_obj('bowl')
+wall = parse_query_obj('wall')
+face_wall_quat = vec2quat(-wall.normal)
+# rotate 30 degrees around the x-axis
+rotation_delta = euler2quat(np.radians(30.0), 0, 0)
+target_rotation = qmult(face_wall_quat, rotation_delta)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Rotate the bowl based on the normal of the wall.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+bowl = parse_query_obj('bowl')
+wall = parse_query_obj('wall')  # Assuming there's a wall object in the scene
+target_rotation = vec2quat(-wall.normal)  # Face the wall's normal direction
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This code will:
+1. Create an empty rotation map
+2. Get the bowl and wall objects from the scene
+3. Calculate the target rotation to face the wall's normal direction
+4. Apply this rotation to all positions in the rotation map
+5. Return the rotation map with the bowl oriented to face the wall's normal
+
+Note: This assumes there's a 'wall' object in the scene with a defined normal vector. If the wall object has a different name, you would need to adjust the parse_query_obj parameter accordingly.
+
+Query: Rotate the bowl to face the shelf.
+```python
+rotation_map = get_empty_rotation_map()
+bowl = parse_query_obj('bowl')
+shelf = parse_query_obj('shelf')
+# Calculate direction from bowl to shelf
+direction = np.array(shelf.position) - np.array(bowl.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+target_rotation = vec2quat(direction)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Rotate the bowl to be 120.0 degrees slanted relative to the shelf.
+```python
+rotation_map = get_empty_rotation_map()
+bowl = parse_query_obj('bowl')
+shelf = parse_query_obj('shelf')
+face_shelf_quat = vec2quat(-shelf.normal)
+# rotate 120 degrees around the x-axis (convert degrees to radians)
+rotation_delta = euler2quat(np.deg2rad(120.0), 0, 0)
+target_rotation = qmult(face_shelf_quat, rotation_delta)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Rotate the bowl based on the normal of the shelf.
+Here's the response for the query "Rotate the bowl based on the normal of the shelf":
+
+```python
+rotation_map = get_empty_rotation_map()
+shelf = parse_query_obj('shelf')
+bowl = parse_query_obj('bowl')
+target_rotation = vec2quat(-shelf.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This code:
+1. Creates an empty rotation map
+2. Gets the shelf and bowl objects
+3. Calculates the target rotation quaternion based on the shelf's normal vector (facing the shelf surface)
+4. Applies this rotation uniformly across all voxels in the map
+5. Returns the rotation map
+
+The bowl will now be oriented to face the shelf's surface normal.
+Query: Rotate the bowl to face the table.
+Here's the response for the query "Rotate the bowl to face the table":
+
+```python
+rotation_map = get_empty_rotation_map()
+bowl = parse_query_obj('bowl')
+table = parse_query_obj('table')
+target_rotation = vec2quat(-table.normal)  # Face the table's normal direction
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This code:
+1. Creates an empty rotation map
+2. Gets the bowl and table objects
+3. Calculates the target rotation to face the table's normal direction (pointing upwards from the table surface)
+4. Sets all voxels in the rotation map to this target orientation
+5. Returns the rotation map
+
+The result will make the bowl face the table surface when applied.
+
+Query: Rotate the bowl to be 360.0 degrees slanted relative to the table.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+bowl = parse_query_obj('bowl')
+
+# Get the table's normal vector quaternion
+face_table_quat = vec2quat(-table.normal)
+
+# Rotate 360 degrees (2�� radians) around the table's normal axis
+rotation_delta = euler2quat(0, 0, 2*np.pi)  # Full rotation brings it back to original orientation
+
+# Apply the rotation to the bowl's current orientation
+bowl_quat = vec2quat(bowl.normal)
+target_rotation = qmult(bowl_quat, rotation_delta)
+
+# Set the rotation map to this target orientation
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Note that a 360 degree rotation brings the object back to its original orientation, so this would effectively result in no net rotation of the bowl relative to the table. If you meant a different angle, please adjust the rotation value accordingly.
+
+Query: Rotate the bowl based on the normal of the table.
+rotation_map = get_empty_rotation_map()
+bowl = parse_query_obj('bowl')
+table = parse_query_obj('table')
+
+# Get the target rotation based on the table's normal
+target_rotation = vec2quat(-table.normal)
+
+# Apply this rotation to the bowl
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the plate to face the wall.
+```python
+rotation_map = get_empty_rotation_map()
+plate = parse_query_obj('plate')
+wall = parse_query_obj('wall')  # Assuming wall is a defined object with a normal vector
+target_rotation = vec2quat(-wall.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Rotate the plate to be 45.0 degrees slanted relative to the wall.
+Here's the response for the query "Rotate the plate to be 45.0 degrees slanted relative to the wall":
+
+```python
+rotation_map = get_empty_rotation_map()
+plate = parse_query_obj('plate')
+wall = parse_query_obj('wall')
+
+# Get the quaternion that faces the wall normally
+face_wall_quat = vec2quat(-wall.normal)
+
+# Rotate 45 degrees around the plate's x-axis (relative to wall's normal)
+rotation_delta = euler2quat(np.pi/4, 0, 0)  # 45 degrees in radians
+
+# Combine the rotations
+target_rotation = qmult(face_wall_quat, rotation_delta)
+
+# Apply this rotation to the plate's position
+x, y, z = cm2index(plate.position)
+rotation_map[x, y, z] = target_rotation
+
+ret_val = rotation_map
+```
+
+This code:
+1. Gets the plate and wall objects
+2. Calculates the quaternion that would face the wall normally
+3. Creates a 45 degree rotation around the x-axis (relative to the wall's normal)
+4. Combines these rotations to create the target orientation
+5. Applies this rotation specifically to the plate's position in the rotation map
+
+The result will make the plate slanted at a 45 degree angle relative to the wall's surface.
+Query: Rotate the plate based on the normal of the wall.
+rotation_map = get_empty_rotation_map()
+plate = parse_query_obj('plate')
+wall = parse_query_obj('wall')
+
+# Get the plate's current orientation (normal)
+plate_normal_quat = vec2quat(-plate.normal)
+
+# Get the wall's normal orientation
+wall_normal_quat = vec2quat(-wall.normal)
+
+# Calculate the rotation needed to align plate's normal with wall's normal
+# This is equivalent to wall_normal_quat * inverse(plate_normal_quat)
+target_rotation = qmult(wall_normal_quat, qinverse(plate_normal_quat))
+
+# Apply this rotation to all voxels
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the plate to face the shelf.
+rotation_map = get_empty_rotation_map()
+plate = parse_query_obj('plate')
+shelf = parse_query_obj('shelf')
+# Get direction from plate to shelf
+direction = np.array(shelf.position) - np.array(plate.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+target_rotation = vec2quat(direction)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the plate to be 45.0 degrees slanted relative to the shelf.
+```python
+rotation_map = get_empty_rotation_map()
+plate = parse_query_obj('plate')
+shelf = parse_query_obj('shelf')
+
+# Get the quaternion to face the shelf
+face_shelf_quat = vec2quat(-shelf.normal)
+
+# Rotate 45 degrees around the x-axis (slanted)
+rotation_delta = euler2quat(np.pi/4, 0, 0)  # 45 degrees in radians
+target_rotation = qmult(face_shelf_quat, rotation_delta)
+
+# Apply this rotation to all voxels (since we're rotating the plate itself)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Rotate the plate based on the normal of the shelf.
+rotation_map = get_empty_rotation_map()
+plate = parse_query_obj('plate')
+shelf = parse_query_obj('shelf')
+
+# Get the normal of the shelf and rotate the plate to align with it
+target_rotation = vec2quat(-shelf.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the plate to face the table.
+Here's the response for the query "Rotate the plate to face the table.":
+
+```python
+rotation_map = get_empty_rotation_map()
+plate = parse_query_obj('plate')
+table = parse_query_obj('table')
+
+# Get the normal vector of the table (what we want the plate to face)
+table_normal = -table.normal
+
+# The plate's current orientation is defined by its normal vector
+# We need to rotate the plate so its normal matches the table's normal
+target_rotation = vec2quat(table_normal)
+
+# Apply this rotation to the plate's position
+(x, y, z) = plate.position
+rotation_map[x, y, z] = target_rotation
+
+ret_val = rotation_map
+```
+
+This code:
+1. Gets the plate and table objects
+2. Calculates the table's normal vector (what we want the plate to face)
+3. Creates a quaternion rotation that would make the plate face the table
+4. Applies this rotation specifically to the plate's position in the rotation map
+5. Returns the modified rotation map
+
+The result will be that the plate at its current position will be rotated to face the table surface.
+
+Query: Rotate the plate to be 90.0 degrees slanted relative to the table.
+```python
+rotation_map = get_empty_rotation_map()
+plate = parse_query_obj('plate')
+table = parse_query_obj('table')
+
+# Get the current orientation of the plate (assuming it's aligned with table normal by default)
+face_table_quat = vec2quat(-table.normal)
+
+# Rotate 90 degrees around the x-axis to make it slanted
+rotation_delta = euler2quat(np.pi/2, 0, 0)  # 90 degrees in radians
+target_rotation = qmult(face_table_quat, rotation_delta)
+
+# Apply this rotation to the plate's position
+plate_pos = cm2index(plate.position)
+rotation_map[plate_pos[0], plate_pos[1], plate_pos[2]] = target_rotation
+
+ret_val = rotation_map
+```
+
+Query: Rotate the plate based on the normal of the table.
+rotation_map = get_empty_rotation_map()
+plate = parse_query_obj('plate')
+table = parse_query_obj('table')
+
+# Get the normal of the table and rotate the plate to align with it
+target_rotation = vec2quat(-table.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the cup to face the wall.
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+wall_normal = np.array([1, 0, 0])  # Assuming wall normal is along x-axis (adjust as needed)
+target_rotation = vec2quat(-wall_normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the cup to be 120.0 degrees slanted relative to the wall.
+```python
+rotation_map = get_empty_rotation_map()
+wall = parse_query_obj('wall')
+face_wall_quat = vec2quat(-wall.normal)
+# rotate 120 degrees around the x-axis (converted to radians)
+rotation_delta = euler2quat(-np.radians(120.0), 0, 0)
+target_rotation = qmult(face_wall_quat, rotation_delta)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Rotate the cup based on the normal of the wall.
+rotation_map = get_empty_rotation_map()
+wall = parse_query_obj('wall')
+target_rotation = vec2quat(-wall.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the cup to face the shelf.
+rotation_map = get_empty_rotation_map()
+shelf = parse_query_obj('shelf')
+target_rotation = vec2quat(-shelf.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the cup to be 30.0 degrees slanted relative to the shelf.
+rotation_map = get_empty_rotation_map()
+shelf = parse_query_obj('shelf')
+face_shelf_quat = vec2quat(-shelf.normal)
+# rotate 30 degrees around the x-axis
+rotation_delta = euler2quat(-np.pi/6, 0, 0)  # 30 degrees = ��/6 radians
+target_rotation = qmult(face_shelf_quat, rotation_delta)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the cup based on the normal of the shelf.
+rotation_map = get_empty_rotation_map()
+shelf = parse_query_obj('shelf')
+target_rotation = vec2quat(-shelf.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the cup to face the table.
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+table = parse_query_obj('table')
+target_rotation = vec2quat(-table.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Rotate the cup to be 45.0 degrees slanted relative to the table.
+```python
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+face_table_quat = vec2quat(-table.normal)
+# rotate 45 degrees around the x-axis
+rotation_delta = euler2quat(np.pi/4, 0, 0)  # 45 degrees in radians
+target_rotation = qmult(face_table_quat, rotation_delta)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Query: Rotate the cup based on the normal of the table.
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+target_rotation = vec2quat(-table.normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+
+Query: Turn clockwise by 90.0 degrees, then face the shelf.
+```python
+rotation_map = get_empty_rotation_map()
+
+# First, turn clockwise by 90 degrees
+curr_rotation = rotation_map[0, 0, 0]
+rotation_delta = euler2quat(0, 0, np.pi/2)  # 90 degrees clockwise
+rotated_quat = qmult(curr_rotation, rotation_delta)
+
+# Then face the shelf
+shelf = parse_query_obj('shelf')
+face_shelf_quat = vec2quat(-shelf.normal)
+
+# Combine both rotations
+target_rotation = qmult(rotated_quat, face_shelf_quat)
+rotation_map[:, :, :] = target_rotation
+
+ret_val = rotation_map
+```
+
+Query: Face the shelf, then rotate it 90.0° clockwise and 90.0° counter-clockwise.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+shelf = parse_query_obj('shelf')
+
+# First face the shelf
+face_shelf_quat = vec2quat(-shelf.normal)
+rotation_map[:, :, :] = face_shelf_quat
+
+# Then apply 90�� clockwise rotation (around z-axis)
+clockwise_rotation = euler2quat(0, 0, np.pi/2)
+rotation_map[:, :, :] = qmult(rotation_map[:, :, :], clockwise_rotation)
+
+# Then apply 90�� counter-clockwise rotation (around z-axis)
+counter_clockwise_rotation = euler2quat(0, 0, -np.pi/2)
+rotation_map[:, :, :] = qmult(rotation_map[:, :, :], counter_clockwise_rotation)
+
+ret_val = rotation_map
+```
+
+This code:
+1. Creates an empty rotation map
+2. Gets the shelf object and faces it by aligning with its normal vector
+3. Applies a 90�� clockwise rotation (around z-axis)
+4. Applies a 90�� counter-clockwise rotation (around z-axis)
+5. Returns the final rotation map
+
+Note that applying both rotations would effectively cancel each other out (returning to the original facing direction), but this implements exactly what was requested in the query.
+
+Query: Rotate the shelf by 90.0° around x-axis, then face the shelf.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+shelf = parse_query_obj('shelf')
+
+# First rotate the shelf by 90 degrees around x-axis
+shelf_rotation = euler2quat(np.pi/2, 0, 0)  # 90 degrees in radians
+
+# Then face the rotated shelf
+# Get the normal vector after rotation (we need to rotate the original normal by the shelf rotation)
+original_normal = shelf.normal
+rotated_normal = qmult(shelf_rotation, qmult([0] + original_normal.tolist(), qinverse(shelf_rotation)))[1:]
+
+target_rotation = vec2quat(-np.array(rotated_normal))
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This code:
+1. Gets the shelf object
+2. Creates a 90 degree rotation around the x-axis
+3. Applies this rotation to the shelf's normal vector to get its new orientation
+4. Creates a rotation quaternion to face this new orientation
+5. Sets this rotation for all voxels in the map
+
+Note: There might be a small typo in the variable name "rotated_normal" (was spelled "rotated_normal" in one place). The code assumes the shelf's normal is in its local coordinates and properly rotates it.
+
+Query: Turn clockwise by 135.0 degrees, then face the table.
+```python
+rotation_map = get_empty_rotation_map()
+
+# First, turn clockwise by 135 degrees (convert to radians: 135 * pi / 180 = 3*pi/4)
+curr_rotation = rotation_map[0, 0, 0]
+rotation_delta = euler2quat(0, 0, 3*np.pi/4)
+rotated_quat = qmult(curr_rotation, rotation_delta)
+
+# Then face the table
+table = parse_query_obj('table')
+face_table_quat = vec2quat(-table.normal)
+
+# Combine both rotations (first turn, then face table)
+target_rotation = qmult(rotated_quat, face_table_quat)
+rotation_map[:, :, :] = target_rotation
+
+ret_val = rotation_map
+```
+
+Query: Face the table, then rotate it 135.0° clockwise and 360.0° counter-clockwise.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+
+# First face the table
+face_table_quat = vec2quat(-table.normal)
+
+# Then apply the rotations:
+# 135�� clockwise (negative rotation around z-axis)
+rotation_delta_clockwise = euler2quat(0, 0, -np.radians(135.0))
+# 360�� counter-clockwise (positive rotation around z-axis)
+rotation_delta_counter = euler2quat(0, 0, np.radians(360.0))
+
+# Combine all rotations (360�� rotation has no effect, so we could skip it)
+target_rotation = qmult(face_table_quat, rotation_delta_clockwise)
+target_rotation = qmult(target_rotation, rotation_delta_counter)  # This is redundant as 360�� brings back to same orientation
+
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+Note: The 360�� rotation is included for completeness, though it doesn't change the final orientation since a full rotation brings the gripper back to its original orientation. The net effect is just the 135�� clockwise rotation from the table-facing orientation.
+
+Query: Rotate the table by 135.0° around y-axis, then face the table.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+
+# First rotate the table by 135 degrees around y-axis
+rotation_delta = euler2quat(0, np.radians(135.0), 0)
+rotated_normal = qmult(rotation_delta, table.normal + [0])[:3]  # Apply rotation to normal vector
+
+# Then face the rotated table
+target_rotation = vec2quat(-rotated_normal)
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This code:
+1. Gets the table object using parse_query_obj
+2. Creates a rotation quaternion for 135 degrees around the y-axis
+3. Applies this rotation to the table's normal vector to get the new orientation
+4. Creates a target rotation that faces this new table orientation
+5. Sets this rotation for all voxels in the rotation map
+
+The result will make the gripper face the table after it has been rotated by 135 degrees around its y-axis.
+
+Query: Turn clockwise by 60.0 degrees, then face the chair.
+```python
+rotation_map = get_empty_rotation_map()
+
+# First, turn clockwise by 60 degrees
+curr_rotation = rotation_map[0, 0, 0]
+rotation_delta = euler2quat(0, 0, np.pi/3)  # 60 degrees in radians
+rotation_map[:, :, :] = qmult(curr_rotation, rotation_delta)
+
+# Then face the chair
+chair = parse_query_obj('chair')
+target_rotation = vec2quat(-chair.normal)
+rotation_map[:, :, :] = target_rotation
+
+ret_val = rotation_map
+```
+
+Query: Face the chair, then rotate it 60.0° clockwise and 120.0° counter-clockwise.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+
+# First face the chair
+face_chair_quat = vec2quat(-chair.normal)
+rotation_map[:, :, :] = face_chair_quat
+
+# Then apply the rotations:
+# 60 degrees clockwise (negative z-rotation)
+rotation_delta_cw = euler2quat(0, 0, -np.pi/3)  # 60 degrees in radians
+# 120 degrees counter-clockwise (positive z-rotation)
+rotation_delta_ccw = euler2quat(0, 0, 2*np.pi/3)  # 120 degrees in radians
+
+# Combine the rotations (order matters - we do CW first then CCW)
+combined_rotation = qmult(rotation_delta_ccw, rotation_delta_cw)
+final_rotation = qmult(face_chair_quat, combined_rotation)
+
+rotation_map[:, :, :] = final_rotation
+ret_val = rotation_map
+```
+
+This code will:
+1. First make the gripper face the chair's normal direction
+2. Then rotate it 60 degrees clockwise (around the z-axis)
+3. Then rotate it 120 degrees counter-clockwise (around the z-axis)
+4. The net rotation will be 60 degrees counter-clockwise (120 - 60 = 60) from the original facing direction
+
+Query: Rotate the chair by 60.0° around y-axis, then face the chair.
+```python
+rotation_map = get_empty_rotation_map()
+chair = parse_query_obj('chair')
+
+# Step 1: Rotate the chair by 60 degrees around y-axis
+rotation_delta = euler2quat(0, np.radians(60.0), 0)
+chair_rotation = qmult(chair.rotation, rotation_delta)
+
+# Step 2: Face the rotated chair
+target_rotation = qinverse(chair_rotation)  # Face means opposite of chair's forward direction
+rotation_map[:, :, :] = target_rotation
+
+ret_val = rotation_map
+```
+
+Query: Rotate the gripper to align with the table when within 50cm of it.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+table_center = table.position
+target_rotation = vec2quat(-table.normal)
+set_voxel_by_radius(rotation_map, table_center, radius_cm=50, value=target_rotation)
+ret_val = rotation_map
+```
+
+This code will:
+1. Create an empty rotation map
+2. Get the table object and its position
+3. Calculate the target rotation to face the table's normal vector
+4. Set this rotation for all voxels within 50cm of the table center
+5. Return the populated rotation map
+
+Query: Turn the gripper by 90.0° counter-clockwise when at the center of the gripper.
+```python
+rotation_map = get_empty_rotation_map()
+gripper_center = cm2index(0, 0, 0)  # Assuming gripper center is at origin
+curr_rotation = rotation_map[gripper_center[0], gripper_center[1], gripper_center[2]]
+rotation_delta = euler2quat(0, 0, -np.pi/2)  # 90 degrees counter-clockwise
+rotation_map[gripper_center[0], gripper_center[1], gripper_center[2]] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Rotate the gripper to match the orientation of the cup when near it.
+rotation_map = get_empty_rotation_map()
+cup = parse_query_obj('cup')
+target_rotation = cup.quaternion  # Assuming the cup object has its orientation stored as a quaternion
+set_voxel_by_radius(rotation_map, cup.position, radius_cm=30, value=target_rotation)
+ret_val = rotation_map
+
+Query: Rotate the mug to align with the table when within 50cm of it.
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+table_center = table.position
+target_rotation = vec2quat(-table.normal)
+set_voxel_by_radius(rotation_map, table_center, radius_cm=50, value=target_rotation)
+ret_val = rotation_map
+
+Query: Turn the mug by 30.0° counter-clockwise when at the center of the mug.
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+(x, y, z) = mug.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, -np.pi/6)  # 30 degrees counter-clockwise
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+Query: Rotate the mug to match the orientation of the wall when near it.
+rotation_map = get_empty_rotation_map()
+mug = parse_query_obj('mug')
+wall = parse_query_obj('wall')
+target_rotation = vec2quat(-wall.normal)
+
+# Set rotation to match wall orientation when within 30cm of wall
+wall_position = wall.position
+set_voxel_by_radius(rotation_map, wall_position, radius_cm=30, value=target_rotation)
+ret_val = rotation_map
+
+Query: Rotate the bottle to align with the table when within 50cm of it.
+```python
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+table_center = table.position
+target_rotation = vec2quat(-table.normal)
+set_voxel_by_radius(rotation_map, table_center, radius_cm=50, value=target_rotation)
+ret_val = rotation_map
+```
+
+Query: Turn the bottle by 360.0° counter-clockwise when at the center of the bottle.
+```python
+rotation_map = get_empty_rotation_map()
+bottle = parse_query_obj('bottle')
+(x, y, z) = bottle.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, -2*np.pi)  # 360 degrees counter-clockwise
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Rotate the bottle to match the orientation of the bottle when near it.
+rotation_map = get_empty_rotation_map()
+bottle = parse_query_obj('bottle')
+target_rotation = vec2quat(-bottle.normal)
+set_voxel_by_radius(rotation_map, bottle.position, radius_cm=30, value=target_rotation)
+ret_val = rotation_map
+
+Query: Rotate the book to align with the table when within 50cm of it.
+rotation_map = get_empty_rotation_map()
+table = parse_query_obj('table')
+table_center = table.position
+target_rotation = vec2quat(-table.normal)
+set_voxel_by_radius(rotation_map, table_center, radius_cm=50, value=target_rotation)
+ret_val = rotation_map
+
+Query: Turn the book by 60.0° counter-clockwise when at the center of the book.
+```python
+rotation_map = get_empty_rotation_map()
+book = parse_query_obj('book')
+(x, y, z) = book.position
+curr_rotation = rotation_map[x, y, z]
+rotation_delta = euler2quat(0, 0, -np.pi/3)  # 60 degrees counter-clockwise in radians
+rotation_map[x, y, z] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Rotate the book to match the orientation of the door when near it.
+```python
+rotation_map = get_empty_rotation_map()
+door = parse_query_obj('door')
+book = parse_query_obj('book')
+door_orientation = vec2quat(-door.normal)  # Get the door's normal orientation
+book_orientation = vec2quat(-book.normal)  # Get the book's current orientation
+
+# Calculate the rotation needed to align the book with the door
+rotation_delta = qmult(door_orientation, qinverse(book_orientation))
+
+# Apply this rotation when near the door (within 30cm)
+door_center = door.position
+set_voxel_by_radius(rotation_map, door_center, radius_cm=30, value=rotation_delta)
+ret_val = rotation_map
+```
+
+Query: Face the bottle, then rotate it 180.0° clockwise and 135.0° counter-clockwise.
+```python
+rotation_map = get_empty_rotation_map()
+bottle = parse_query_obj('bottle')
+
+# Step 1: Face the bottle
+face_bottle_quat = vec2quat(-bottle.normal)
+rotation_map[:, :, :] = face_bottle_quat
+
+# Step 2: Rotate 180�� clockwise (positive Z rotation)
+rotation_delta_cw = euler2quat(0, 0, np.pi)  # 180�� = �� radians
+current_rotation = rotation_map[0, 0, 0]  # Get current rotation
+rotated_cw = qmult(current_rotation, rotation_delta_cw)
+
+# Step 3: Then rotate 135�� counter-clockwise (negative Z rotation)
+rotation_delta_ccw = euler2quat(0, 0, -3*np.pi/4)  # 135�� = 3��/4 radians
+final_rotation = qmult(rotated_cw, rotation_delta_ccw)
+
+# Apply final rotation to all voxels
+rotation_map[:, :, :] = final_rotation
+
+ret_val = rotation_map
+```
+
+Query: Face the book, then rotate it 135.0° clockwise and 120.0° counter-clockwise.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+book = parse_query_obj('book')
+
+# First face the book
+face_quat = vec2quat(-book.normal)
+
+# Then apply the rotations:
+# 135�� clockwise (negative rotation around z-axis)
+rotation1 = euler2quat(0, 0, -np.radians(135.0))
+# 120�� counter-clockwise (positive rotation around z-axis)
+rotation2 = euler2quat(0, 0, np.radians(120.0))
+
+# Combine all rotations
+target_rotation = qmult(face_quat, rotation1)
+target_rotation = qmult(target_rotation, rotation2)
+
+rotation_map[:, :, :] = target_rotation
+ret_val = rotation_map
+```
+
+This code:
+1. Gets the book object and its normal vector
+2. Creates a quaternion to face the book
+3. Applies a 135�� clockwise rotation (negative z-axis rotation)
+4. Applies a 120�� counter-clockwise rotation (positive z-axis rotation)
+5. Sets this combined rotation for all voxels in the map
+
+The rotations are applied sequentially in the order specified in the query.
+
+Query: Face the block, then rotate it 60.0° clockwise and 360.0° counter-clockwise.
+Here's the response to the query:
+
+```python
+rotation_map = get_empty_rotation_map()
+block = parse_query_obj('block')
+
+# First face the block
+face_block_quat = vec2quat(-block.normal)
+rotation_map[:, :, :] = face_block_quat
+
+# Then apply the additional rotations
+(x, y, z) = block.position
+curr_rotation = rotation_map[x, y, z]
+
+# 60 degrees clockwise rotation (around z-axis)
+rotation_delta = euler2quat(0, 0, np.pi/3)  # 60 degrees in radians
+curr_rotation = qmult(curr_rotation, rotation_delta)
+
+# 360 degrees counter-clockwise rotation (around z-axis)
+rotation_delta = euler2quat(0, 0, -2*np.pi)  # -360 degrees in radians
+curr_rotation = qmult(curr_rotation, rotation_delta)
+
+rotation_map[x, y, z] = curr_rotation
+ret_val = rotation_map
+```
+
+Note that:
+1. We first make the gripper face the block by aligning with its surface normal
+2. We then apply the 60�� clockwise rotation (positive z-rotation)
+3. Finally we apply the 360�� counter-clockwise rotation (negative z-rotation)
+4. The 360�� rotation will effectively cancel itself out, leaving just the 60�� rotation, but we implement it exactly as specified in the query

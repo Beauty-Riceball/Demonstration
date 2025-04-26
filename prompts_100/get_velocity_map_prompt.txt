@@ -1,0 +1,124 @@
+Query: faster when on the left side of the desk and slower on the right side of the desk.
+Query: faster when on the left side of the shelf and slower on the right side of the shelf.
+Query: faster when on the right side of the desk and slower on the left side of the desk.
+Query: faster when on the right side of the shelf and slower on the left side of the shelf.
+Query: faster when on the front side of the desk and slower on the back side of the desk.
+Query: faster when on the front side of the shelf and slower on the back side of the shelf.
+Query: faster when on the back side of the table and slower on the front side of the table.
+Query: faster when on the back side of the desk and slower on the front side of the desk.
+Query: faster when on the top side of the table and slower on the bottom side of the table.
+Query: faster when on the top side of the desk and slower on the bottom side of the desk.
+Query: faster when on the bottom side of the table and slower on the top side of the table.
+Query: faster when on the bottom side of the desk and slower on the top side of the desk.
+Query: slow down by a quarter.
+Query: slow down by a half.
+Query: increase speed by 25%.
+Query: decrease speed by 50%.
+Query: speed at 0.25x when within 5cm of the block.
+Query: speed at 0.25x when within 15cm of the block.
+Query: speed at 0.25x when within 40cm of the block.
+Query: speed at 0.5x when within 5cm of the block.
+Query: speed at 0.5x when within 15cm of the block.
+Query: speed at 0.5x when within 40cm of the block.
+Query: speed at 0.75x when within 5cm of the block.
+Query: speed at 0.75x when within 15cm of the block.
+Query: speed at 0.75x when within 40cm of the block.
+Query: speed at 0.25x when within 5cm of the bowl.
+Query: speed at 0.25x when within 15cm of the bowl.
+Query: speed at 0.25x when within 40cm of the bowl.
+Query: speed at 0.5x when within 5cm of the bowl.
+Query: speed at 0.5x when within 15cm of the bowl.
+Query: speed at 0.5x when within 40cm of the bowl.
+Query: speed at 0.75x when within 5cm of the bowl.
+Query: speed at 0.75x when within 15cm of the bowl.
+Query: speed at 0.75x when within 40cm of the bowl.
+Query: speed at 0.25x when within 5cm of the mug.
+Query: speed at 0.25x when within 15cm of the mug.
+Query: speed at 0.25x when within 40cm of the mug.
+Query: speed at 0.5x when within 5cm of the mug.
+Query: speed at 0.5x when within 15cm of the mug.
+Query: speed at 0.5x when within 40cm of the mug.
+Query: speed at 0.75x when within 5cm of the mug.
+Query: speed at 0.75x when within 15cm of the mug.
+Query: speed at 0.75x when within 40cm of the mug.
+Query: speed at 0.25x when within 5cm of the bottle.
+Query: speed at 0.25x when within 15cm of the bottle.
+Query: speed at 0.25x when within 40cm of the bottle.
+Query: speed at 0.5x when within 5cm of the bottle.
+Query: speed at 0.5x when within 15cm of the bottle.
+Query: speed at 0.5x when within 40cm of the bottle.
+Query: speed at 0.75x when within 5cm of the bottle.
+Query: speed at 0.75x when within 15cm of the bottle.
+Query: speed at 0.75x when within 40cm of the bottle.
+Query: speed at 0.75x when within 5cm of the phone.
+Query: speed at 0.75x when within 15cm of the phone.
+Query: speed at 0.75x when within 40cm of the phone.
+Query: speed at 1x when within 5cm of the phone.
+Query: speed at 1x when within 15cm of the phone.
+Query: speed at 1x when within 40cm of the phone.
+Query: speed at 1.5x when within 5cm of the phone.
+Query: speed at 1.5x when within 15cm of the phone.
+Query: speed at 1.5x when within 40cm of the phone.
+Query: speed at 2x when within 5cm of the phone.
+Query: speed at 2x when within 15cm of the phone.
+Query: speed at 2x when within 40cm of the phone.
+Query: speed at 0.75x when within 5cm of the plate.
+Query: speed at 0.75x when within 15cm of the plate.
+Query: speed at 0.75x when within 40cm of the plate.
+Query: speed at 1x when within 5cm of the plate.
+Query: speed at 1x when within 15cm of the plate.
+Query: speed at 1x when within 40cm of the plate.
+Query: speed at 1.5x when within 5cm of the plate.
+Query: speed at 1.5x when within 15cm of the plate.
+Query: speed at 1.5x when within 40cm of the plate.
+Query: speed at 2x when within 5cm of the plate.
+Query: speed at 2x when within 15cm of the plate.
+Query: speed at 2x when within 40cm of the plate.
+Query: speed at 0.75x when within 5cm of the chips.
+Query: speed at 0.75x when within 15cm of the chips.
+Query: speed at 0.75x when within 40cm of the chips.
+Query: speed at 1x when within 5cm of the chips.
+Query: speed at 1x when within 15cm of the chips.
+Query: speed at 1x when within 40cm of the chips.
+Query: speed at 1.5x when within 5cm of the chips.
+Query: speed at 1.5x when within 15cm of the chips.
+Query: speed at 1.5x when within 40cm of the chips.
+Query: speed at 2x when within 5cm of the chips.
+Query: speed at 2x when within 15cm of the chips.
+Query: speed at 2x when within 40cm of the chips.
+Query: speed at 0.75x when within 5cm of the glass.
+Query: speed at 0.75x when within 15cm of the glass.
+Query: speed at 0.75x when within 40cm of the glass.
+Query: speed at 1x when within 5cm of the glass.
+Query: speed at 1x when within 15cm of the glass.
+Query: speed at 1x when within 40cm of the glass.
+Query: speed at 1.5x when within 5cm of the glass.
+Query: speed at 1.5x when within 15cm of the glass.
+Query: speed at 1.5x when within 40cm of the glass.
+Query: speed at 2x when within 5cm of the glass.
+Query: speed at 2x when within 15cm of the glass.
+Query: speed at 2x when within 40cm of the glass.
+Query: speed at 0.25x everywhere except within 10cm of the block.
+Query: speed at 0.5x everywhere except within 10cm of the block.
+Query: speed at 0.25x everywhere except within 10cm of the bowl.
+Query: speed at 0.5x everywhere except within 10cm of the bowl.
+Query: speed at 0.25x everywhere except within 10cm of the mug.
+Query: speed at 0.5x everywhere except within 10cm of the mug.
+Query: speed at 0.25x everywhere except within 10cm of the bottle.
+Query: speed at 0.5x everywhere except within 10cm of the bottle.
+Query: speed at 0.75x everywhere except within 10cm of the phone.
+Query: speed at 1x everywhere except within 10cm of the phone.
+Query: speed at 1.5x everywhere except within 10cm of the phone.
+Query: speed at 2x everywhere except within 10cm of the phone.
+Query: speed at 0.75x everywhere except within 10cm of the plate.
+Query: speed at 1x everywhere except within 10cm of the plate.
+Query: speed at 1.5x everywhere except within 10cm of the plate.
+Query: speed at 2x everywhere except within 10cm of the plate.
+Query: speed at 0.75x everywhere except within 10cm of the chips.
+Query: speed at 1x everywhere except within 10cm of the chips.
+Query: speed at 1.5x everywhere except within 10cm of the chips.
+Query: speed at 2x everywhere except within 10cm of the chips.
+Query: speed at 0.75x everywhere except within 10cm of the glass.
+Query: speed at 1x everywhere except within 10cm of the glass.
+Query: speed at 1.5x everywhere except within 10cm of the glass.
+Query: speed at 2x everywhere except within 10cm of the glass.

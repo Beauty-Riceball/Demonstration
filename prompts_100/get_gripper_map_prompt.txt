@@ -1,0 +1,106 @@
+Query: open everywhere except 15cm around the brown bowl.
+Query: open everywhere except 30cm around the brown bowl.
+Query: open everywhere except 50cm around the brown bowl.
+Query: open everywhere except 15cm around the brown bottle.
+Query: open everywhere except 30cm around the brown bottle.
+Query: open everywhere except 50cm around the brown bottle.
+Query: open everywhere except 15cm around the white bowl.
+Query: open everywhere except 30cm around the white bowl.
+Query: open everywhere except 50cm around the white bowl.
+Query: open everywhere except 15cm around the white bottle.
+Query: open everywhere except 30cm around the white bottle.
+Query: open everywhere except 50cm around the white bottle.
+Query: open everywhere except 15cm around the black bowl.
+Query: open everywhere except 30cm around the black bowl.
+Query: open everywhere except 50cm around the black bowl.
+Query: open everywhere except 15cm around the black bottle.
+Query: open everywhere except 30cm around the black bottle.
+Query: open everywhere except 50cm around the black bottle.
+Query: close everywhere except 2cm around the red block.
+Query: close everywhere except 5cm around the red block.
+Query: close everywhere except 10cm around the red block.
+Query: close everywhere except 2cm around the red sphere.
+Query: close everywhere except 5cm around the red sphere.
+Query: close everywhere except 10cm around the red sphere.
+Query: close everywhere except 2cm around the red cylinder.
+Query: close everywhere except 5cm around the red cylinder.
+Query: close everywhere except 10cm around the red cylinder.
+Query: close everywhere except 2cm around the red cup.
+Query: close everywhere except 5cm around the red cup.
+Query: close everywhere except 10cm around the red cup.
+Query: close everywhere except 2cm around the blue block.
+Query: close everywhere except 5cm around the blue block.
+Query: close everywhere except 10cm around the blue block.
+Query: close everywhere except 2cm around the blue sphere.
+Query: close everywhere except 5cm around the blue sphere.
+Query: close everywhere except 10cm around the blue sphere.
+Query: close everywhere except 2cm around the blue cylinder.
+Query: close everywhere except 5cm around the blue cylinder.
+Query: close everywhere except 10cm around the blue cylinder.
+Query: close everywhere except 2cm around the blue cup.
+Query: close everywhere except 5cm around the blue cup.
+Query: close everywhere except 10cm around the blue cup.
+Query: close everywhere except 2cm around the green block.
+Query: close everywhere except 5cm around the green block.
+Query: close everywhere except 10cm around the green block.
+Query: close everywhere except 2cm around the green sphere.
+Query: close everywhere except 5cm around the green sphere.
+Query: close everywhere except 10cm around the green sphere.
+Query: close everywhere except 2cm around the green cylinder.
+Query: close everywhere except 5cm around the green cylinder.
+Query: close everywhere except 10cm around the green cylinder.
+Query: close everywhere except 2cm around the green cup.
+Query: close everywhere except 5cm around the green cup.
+Query: close everywhere except 10cm around the green cup.
+Query: close everywhere except 2cm around the yellow block.
+Query: close everywhere except 5cm around the yellow block.
+Query: close everywhere except 10cm around the yellow block.
+Query: close everywhere except 2cm around the yellow sphere.
+Query: close everywhere except 5cm around the yellow sphere.
+Query: close everywhere except 10cm around the yellow sphere.
+Query: close everywhere except 2cm around the yellow cylinder.
+Query: close everywhere except 5cm around the yellow cylinder.
+Query: close everywhere except 10cm around the yellow cylinder.
+Query: close everywhere except 2cm around the yellow cup.
+Query: close everywhere except 5cm around the yellow cup.
+Query: close everywhere except 10cm around the yellow cup.
+Query: always open except on the left side of the table.
+Query: always open except on the right side of the table.
+Query: always open except on the front side of the chair.
+Query: always open except on the back side of the shelf.
+Query: always open except on the top of the cabinet.
+Query: always open except on the bottom of the box.
+Query: always open except on the front-left corner of the desk.
+Query: always open except on the back-right corner of the bench.
+Query: always open except on the wall next to the table.
+Query: always open except on the window near the desk.
+Query: always close except on the left side of the table.
+Query: always close except on the right side of the table.
+Query: always close except on the front side of the chair.
+Query: always close except on the back side of the shelf.
+Query: always close except on the top of the cabinet.
+Query: always close except on the bottom of the box.
+Query: always close except on the front-left corner of the desk.
+Query: always close except on the back-right corner of the bench.
+Query: always close except on the wall next to the table.
+Query: always close except on the window near the desk.
+Query: open only when above the red block.
+Query: open only when below the blue sphere.
+Query: open only when in front of the yellow cylinder.
+Query: open only when behind the green cup.
+Query: open only when between the bowl and the plate.
+Query: open only when at the center of the table.
+Query: open only when at the back-left corner of the shelf.
+Query: open only when on top of the chair.
+Query: open only when under the desk.
+Query: open only when on the right side of the cabinet.
+Query: close only when above the red block.
+Query: close only when below the blue sphere.
+Query: close only when in front of the yellow cylinder.
+Query: close only when behind the green cup.
+Query: close only when between the bowl and the plate.
+Query: close only when at the center of the table.
+Query: close only when at the back-left corner of the shelf.
+Query: close only when on top of the chair.
+Query: close only when under the desk.
+Query: close only when on the right side of the cabinet.

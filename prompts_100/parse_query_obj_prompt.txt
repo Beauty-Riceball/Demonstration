@@ -1,0 +1,128 @@
+Query: detect('red block').
+Query: detect('green block').
+Query: detect('blue block').
+Query: detect('yellow block').
+Query: detect('black block').
+Query: detect('white bowl').
+Query: detect('brown bowl').
+Query: detect('ceramic bowl').
+Query: detect('plastic bowl').
+Query: detect('handle1').
+Query: detect('handle2').
+Query: detect('handle3').
+Query: detect('handle4').
+Query: detect('wood tray').
+Query: detect('metal tray').
+Query: detect('plastic tray').
+Query: detect('glass').
+Query: detect('vase').
+Query: detect('porcelain plate').
+Query: detect('ceramic mug').
+Query: detect('monitor').
+Query: detect('mouse').
+Query: detect('keyboard').
+Query: detect('phone case').
+Query: detect('tablet').
+Query: detect('chair').
+Query: detect('table').
+Query: detect('gripper').
+Query: topmost handle between 'handle1' and 'handle2'.
+Query: topmost handle between 'handle1' and 'handle3'.
+Query: topmost handle between 'handle1' and 'handle4'.
+Query: topmost handle between 'handle2' and 'handle3'.
+Query: topmost handle between 'handle2' and 'handle4'.
+Query: topmost handle between 'handle3' and 'handle4'.
+Query: which of 'red block' and 'green block' is closest to the 'monitor'.
+Query: which of 'red block' and 'green block' is closest to the 'mouse'.
+Query: which of 'red block' and 'green block' is closest to the 'keyboard'.
+Query: which of 'red block' and 'green block' is closest to the 'phone case'.
+Query: which of 'red block' and 'green block' is closest to the 'tablet'.
+Query: which of 'red block' and 'green block' is closest to the 'chair'.
+Query: which of 'red block' and 'green block' is closest to the 'table'.
+Query: which of 'red block' and 'blue block' is closest to the 'monitor'.
+Query: which of 'red block' and 'blue block' is closest to the 'mouse'.
+Query: which of 'red block' and 'blue block' is closest to the 'keyboard'.
+Query: which of 'red block' and 'blue block' is closest to the 'phone case'.
+Query: which of 'red block' and 'blue block' is closest to the 'tablet'.
+Query: which of 'red block' and 'blue block' is closest to the 'chair'.
+Query: which of 'red block' and 'blue block' is closest to the 'table'.
+Query: which of 'red block' and 'yellow block' is closest to the 'monitor'.
+Query: which of 'red block' and 'yellow block' is closest to the 'mouse'.
+Query: which of 'red block' and 'yellow block' is closest to the 'keyboard'.
+Query: which of 'red block' and 'yellow block' is closest to the 'phone case'.
+Query: which of 'red block' and 'yellow block' is closest to the 'tablet'.
+Query: which of 'red block' and 'yellow block' is closest to the 'chair'.
+Query: which of 'red block' and 'yellow block' is closest to the 'table'.
+Query: which of 'red block' and 'black block' is closest to the 'monitor'.
+Query: which of 'red block' and 'black block' is closest to the 'mouse'.
+Query: which of 'red block' and 'black block' is closest to the 'keyboard'.
+Query: which of 'red block' and 'black block' is closest to the 'phone case'.
+Query: which of 'red block' and 'black block' is closest to the 'tablet'.
+Query: which of 'red block' and 'black block' is closest to the 'chair'.
+Query: which of 'red block' and 'black block' is closest to the 'table'.
+Query: which of 'green block' and 'blue block' is closest to the 'monitor'.
+Query: which of 'green block' and 'blue block' is closest to the 'mouse'.
+Query: which of 'green block' and 'blue block' is closest to the 'keyboard'.
+Query: which of 'green block' and 'blue block' is closest to the 'phone case'.
+Query: which of 'green block' and 'blue block' is closest to the 'tablet'.
+Query: which of 'green block' and 'blue block' is closest to the 'chair'.
+Query: which of 'green block' and 'blue block' is closest to the 'table'.
+Query: which of 'green block' and 'yellow block' is closest to the 'monitor'.
+Query: which of 'green block' and 'yellow block' is closest to the 'mouse'.
+Query: which of 'green block' and 'yellow block' is closest to the 'keyboard'.
+Query: which of 'green block' and 'yellow block' is closest to the 'phone case'.
+Query: which of 'green block' and 'yellow block' is closest to the 'tablet'.
+Query: which of 'green block' and 'yellow block' is closest to the 'chair'.
+Query: which of 'green block' and 'yellow block' is closest to the 'table'.
+Query: which of 'green block' and 'black block' is closest to the 'monitor'.
+Query: which of 'green block' and 'black block' is closest to the 'mouse'.
+Query: which of 'green block' and 'black block' is closest to the 'keyboard'.
+Query: which of 'green block' and 'black block' is closest to the 'phone case'.
+Query: which of 'green block' and 'black block' is closest to the 'tablet'.
+Query: which of 'green block' and 'black block' is closest to the 'chair'.
+Query: which of 'green block' and 'black block' is closest to the 'table'.
+Query: which of 'blue block' and 'yellow block' is closest to the 'monitor'.
+Query: which of 'blue block' and 'yellow block' is closest to the 'mouse'.
+Query: which of 'blue block' and 'yellow block' is closest to the 'keyboard'.
+Query: which of 'blue block' and 'yellow block' is closest to the 'phone case'.
+Query: which of 'blue block' and 'yellow block' is closest to the 'tablet'.
+Query: which of 'blue block' and 'yellow block' is closest to the 'chair'.
+Query: which of 'blue block' and 'yellow block' is closest to the 'table'.
+Query: which of 'blue block' and 'black block' is closest to the 'monitor'.
+Query: which of 'blue block' and 'black block' is closest to the 'mouse'.
+Query: which of 'blue block' and 'black block' is closest to the 'keyboard'.
+Query: which of 'blue block' and 'black block' is closest to the 'phone case'.
+Query: which of 'blue block' and 'black block' is closest to the 'tablet'.
+Query: which of 'blue block' and 'black block' is closest to the 'chair'.
+Query: which of 'blue block' and 'black block' is closest to the 'table'.
+Query: which of 'yellow block' and 'black block' is closest to the 'monitor'.
+Query: which of 'yellow block' and 'black block' is closest to the 'mouse'.
+Query: which of 'yellow block' and 'black block' is closest to the 'keyboard'.
+Query: which of 'yellow block' and 'black block' is closest to the 'phone case'.
+Query: which of 'yellow block' and 'black block' is closest to the 'tablet'.
+Query: which of 'yellow block' and 'black block' is closest to the 'chair'.
+Query: which of 'yellow block' and 'black block' is closest to the 'table'.
+Query: tray that contains the 'bread'.
+Query: tray that contains the 'apple'.
+Query: tray that contains the 'banana'.
+Query: tray that contains the 'cookie'.
+Query: tray that contains the 'egg'.
+Query: tray that contains the 'bread'.
+Query: tray that contains the 'apple'.
+Query: tray that contains the 'banana'.
+Query: tray that contains the 'cookie'.
+Query: tray that contains the 'egg'.
+Query: tray that contains the 'bread'.
+Query: tray that contains the 'apple'.
+Query: tray that contains the 'banana'.
+Query: tray that contains the 'cookie'.
+Query: tray that contains the 'egg'.
+Query: any block.
+Query: any bowl.
+Query: anything fragile.
+Query: table.
+Query: gripper.
+Query: handle at the front-left corner of the drawer.
+Query: handle at the front-right corner of the drawer.
+Query: handle at the back-left corner of the drawer.
+Query: handle at the back-right corner of the drawer.

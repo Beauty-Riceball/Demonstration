@@ -1,0 +1,123 @@
+Query: Face the support surface of the chair.
+Query: Face the chair while keeping east from the table.
+Query: Face the support surface of the chair.
+Query: Face the chair while keeping east from the table.
+Query: Face the support surface of the chair.
+Query: Face the chair while keeping north from the table.
+Query: Face the support surface of the chair.
+Query: Face the chair while keeping west from the table.
+Query: Turn clockwise by 30.0 degrees when at the chair.
+Query: Turn counter-clockwise by 30.0 degrees when near the chair.
+Query: Rotate the chair by 30.0 degrees around the x-axis.
+Query: Turn clockwise by 180.0 degrees when at the chair.
+Query: Turn counter-clockwise by 180.0 degrees when near the chair.
+Query: Rotate the chair by 180.0 degrees around the z-axis.
+Query: Face the support surface of the cap.
+Query: Face the cap while keeping south from the table.
+Query: Face the support surface of the cap.
+Query: Face the cap while keeping east from the table.
+Query: Face the support surface of the cap.
+Query: Face the cap while keeping east from the table.
+Query: Face the support surface of the cap.
+Query: Face the cap while keeping backward from the table.
+Query: Turn clockwise by 30.0 degrees when at the cap.
+Query: Turn counter-clockwise by 30.0 degrees when near the cap.
+Query: Rotate the cap by 30.0 degrees around the z-axis.
+Query: Turn clockwise by 180.0 degrees when at the cap.
+Query: Turn counter-clockwise by 180.0 degrees when near the cap.
+Query: Rotate the cap by 180.0 degrees around the z-axis.
+Query: Face the support surface of the door.
+Query: Face the door while keeping east from the table.
+Query: Face the support surface of the door.
+Query: Face the door while keeping forward from the table.
+Query: Face the support surface of the door.
+Query: Face the door while keeping backward from the table.
+Query: Face the support surface of the door.
+Query: Face the door while keeping west from the table.
+Query: Turn clockwise by 30.0 degrees when at the door.
+Query: Turn counter-clockwise by 30.0 degrees when near the door.
+Query: Rotate the door by 30.0 degrees around the y-axis.
+Query: Turn clockwise by 180.0 degrees when at the door.
+Query: Turn counter-clockwise by 180.0 degrees when near the door.
+Query: Rotate the door by 180.0 degrees around the y-axis.
+Query: Face the support surface of the cup.
+Query: Face the cup when within 5cm from table center.
+Query: Face the cup when within 15cm from table center.
+Query: Face the cup while keeping east from the table.
+Query: Turn clockwise by 135.0 degrees when at the cup.
+Query: Turn counter-clockwise by 135.0 degrees when near the cup.
+Query: Rotate the cup by 135.0 degrees around the x-axis.
+Query: Turn clockwise by 360.0 degrees when at the cup.
+Query: Turn counter-clockwise by 360.0 degrees when near the cup.
+Query: Rotate the cup by 360.0 degrees around the x-axis.
+Query: Face the support surface of the gripper.
+Query: Face the gripper when within 5cm from table center.
+Query: Face the gripper when within 15cm from table center.
+Query: Face the gripper while keeping west from the table.
+Query: Turn clockwise by 135.0 degrees when at the gripper.
+Query: Turn counter-clockwise by 135.0 degrees when near the gripper.
+Query: Rotate the gripper by 135.0 degrees around the z-axis.
+Query: Turn clockwise by 360.0 degrees when at the gripper.
+Query: Turn counter-clockwise by 360.0 degrees when near the gripper.
+Query: Rotate the gripper by 360.0 degrees around the x-axis.
+Query: Face the support surface of the mug.
+Query: Face the mug when within 5cm from table center.
+Query: Face the mug when within 15cm from table center.
+Query: Face the mug while keeping right from the table.
+Query: Turn clockwise by 135.0 degrees when at the mug.
+Query: Turn counter-clockwise by 135.0 degrees when near the mug.
+Query: Rotate the mug by 135.0 degrees around the y-axis.
+Query: Turn clockwise by 360.0 degrees when at the mug.
+Query: Turn counter-clockwise by 360.0 degrees when near the mug.
+Query: Rotate the mug by 360.0 degrees around the x-axis.
+Query: Rotate the bowl to face the wall.
+Query: Rotate the bowl to be 30.0 degrees slanted relative to the wall.
+Query: Rotate the bowl based on the normal of the wall.
+Query: Rotate the bowl to face the shelf.
+Query: Rotate the bowl to be 120.0 degrees slanted relative to the shelf.
+Query: Rotate the bowl based on the normal of the shelf.
+Query: Rotate the bowl to face the table.
+Query: Rotate the bowl to be 360.0 degrees slanted relative to the table.
+Query: Rotate the bowl based on the normal of the table.
+Query: Rotate the plate to face the wall.
+Query: Rotate the plate to be 45.0 degrees slanted relative to the wall.
+Query: Rotate the plate based on the normal of the wall.
+Query: Rotate the plate to face the shelf.
+Query: Rotate the plate to be 45.0 degrees slanted relative to the shelf.
+Query: Rotate the plate based on the normal of the shelf.
+Query: Rotate the plate to face the table.
+Query: Rotate the plate to be 90.0 degrees slanted relative to the table.
+Query: Rotate the plate based on the normal of the table.
+Query: Rotate the cup to face the wall.
+Query: Rotate the cup to be 120.0 degrees slanted relative to the wall.
+Query: Rotate the cup based on the normal of the wall.
+Query: Rotate the cup to face the shelf.
+Query: Rotate the cup to be 30.0 degrees slanted relative to the shelf.
+Query: Rotate the cup based on the normal of the shelf.
+Query: Rotate the cup to face the table.
+Query: Rotate the cup to be 45.0 degrees slanted relative to the table.
+Query: Rotate the cup based on the normal of the table.
+Query: Turn clockwise by 90.0 degrees, then face the shelf.
+Query: Face the shelf, then rotate it 90.0° clockwise and 90.0° counter-clockwise.
+Query: Rotate the shelf by 90.0° around x-axis, then face the shelf.
+Query: Turn clockwise by 135.0 degrees, then face the table.
+Query: Face the table, then rotate it 135.0° clockwise and 360.0° counter-clockwise.
+Query: Rotate the table by 135.0° around y-axis, then face the table.
+Query: Turn clockwise by 60.0 degrees, then face the chair.
+Query: Face the chair, then rotate it 60.0° clockwise and 120.0° counter-clockwise.
+Query: Rotate the chair by 60.0° around y-axis, then face the chair.
+Query: Rotate the gripper to align with the table when within 50cm of it.
+Query: Turn the gripper by 90.0° counter-clockwise when at the center of the gripper.
+Query: Rotate the gripper to match the orientation of the cup when near it.
+Query: Rotate the mug to align with the table when within 50cm of it.
+Query: Turn the mug by 30.0° counter-clockwise when at the center of the mug.
+Query: Rotate the mug to match the orientation of the wall when near it.
+Query: Rotate the bottle to align with the table when within 50cm of it.
+Query: Turn the bottle by 360.0° counter-clockwise when at the center of the bottle.
+Query: Rotate the bottle to match the orientation of the bottle when near it.
+Query: Rotate the book to align with the table when within 50cm of it.
+Query: Turn the book by 60.0° counter-clockwise when at the center of the book.
+Query: Rotate the book to match the orientation of the door when near it.
+Query: Face the bottle, then rotate it 180.0° clockwise and 135.0° counter-clockwise.
+Query: Face the book, then rotate it 135.0° clockwise and 120.0° counter-clockwise.
+Query: Face the block, then rotate it 60.0° clockwise and 360.0° counter-clockwise.

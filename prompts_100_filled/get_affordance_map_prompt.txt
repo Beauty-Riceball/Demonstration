@@ -1,0 +1,2300 @@
+Query: a point 5cm top of the bowl.
+affordance_map = get_empty_affordance_map()
+bowl = parse_query_obj('bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = bowl.aabb
+center_x, center_y, center_z = bowl.position
+# 5cm top of so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm bottom of the bowl.
+affordance_map = get_empty_affordance_map()
+bowl = parse_query_obj('bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = bowl.aabb
+center_x, center_y, center_z = bowl.position
+# 5cm bottom of so we subtract from z-axis
+x = center_x
+y = center_y
+z = min_z - cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm top of the mug.
+affordance_map = get_empty_affordance_map()
+mug = parse_query_obj('mug')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = mug.aabb
+center_x, center_y, center_z = mug.position
+# 5cm on top of so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm bottom of the mug.
+affordance_map = get_empty_affordance_map()
+mug = parse_query_obj('mug')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = mug.aabb
+center_x, center_y, center_z = mug.position
+# 5cm bottom of so we subtract from z-axis
+x = center_x
+y = center_y
+z = min_z - cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm top of the plate.
+affordance_map = get_empty_affordance_map()
+plate = parse_query_obj('plate')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = plate.aabb
+center_x, center_y, center_z = plate.position
+# 5cm on top of so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm bottom of the plate.
+affordance_map = get_empty_affordance_map()
+plate = parse_query_obj('plate')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = plate.aabb
+center_x, center_y, center_z = plate.position
+# 5cm bottom of so we subtract from z-axis
+x = center_x
+y = center_y
+z = min_z - cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 10cm back of the tray.
+affordance_map = get_empty_affordance_map()
+tray = parse_query_obj('tray')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = tray.aabb
+center_x, center_y, center_z = tray.position
+# 10cm back of so we subtract from x-axis (assuming back is negative x direction)
+x = min_x - cm2index(10, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm back of the tray.
+affordance_map = get_empty_affordance_map()
+tray = parse_query_obj('tray')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = tray.aabb
+center_x, center_y, center_z = tray.position
+# 25cm back of so we subtract from x-axis (assuming back is negative x direction)
+x = min_x - cm2index(25, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm back of the tray.
+affordance_map = get_empty_affordance_map()
+tray = parse_query_obj('tray')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = tray.aabb
+center_x, center_y, center_z = tray.position
+# 50cm back of so we subtract from x-axis (assuming back is negative x direction)
+x = min_x - cm2index(50, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 10cm back of the lemon.
+affordance_map = get_empty_affordance_map()
+lemon = parse_query_obj('lemon')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = lemon.aabb
+center_x, center_y, center_z = lemon.position
+# 10cm back of so we subtract from x-axis (assuming front is +x direction)
+x = min_x - cm2index(10, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm back of the lemon.
+affordance_map = get_empty_affordance_map()
+lemon = parse_query_obj('lemon')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = lemon.aabb
+center_x, center_y, center_z = lemon.position
+# 25cm back of so we subtract from x-axis (assuming back is negative x direction)
+x = min_x - cm2index(25, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm back of the lemon.
+affordance_map = get_empty_affordance_map()
+lemon = parse_query_obj('lemon')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = lemon.aabb
+center_x, center_y, center_z = lemon.position
+# 50cm back of so we subtract from x-axis (assuming back is negative x direction)
+x = min_x - cm2index(50, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 10cm back of the topmost drawer handle.
+affordance_map = get_empty_affordance_map()
+top_handle = parse_query_obj('topmost drawer handle')
+# back of the handle is along the negative normal direction
+moving_dir = -top_handle.normal
+affordance_xyz = top_handle.position + cm2index(10, moving_dir)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 25cm back of the topmost drawer handle.
+affordance_map = get_empty_affordance_map()
+top_handle = parse_query_obj('topmost drawer handle')
+# back of the handle is in the negative normal direction
+moving_dir = -top_handle.normal
+affordance_xyz = top_handle.position + cm2index(25, moving_dir)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 50cm back of the topmost drawer handle.
+affordance_map = get_empty_affordance_map()
+top_handle = parse_query_obj('topmost drawer handle')
+# negative normal because we are moving back of the handle.
+moving_dir = -top_handle.normal
+affordance_xyz = top_handle.position + cm2index(50, moving_dir)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 10cm back of the leftmost block.
+affordance_map = get_empty_affordance_map()
+leftmost_block = parse_query_obj('leftmost block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = leftmost_block.aabb
+center_x, center_y, center_z = leftmost_block.position
+# 10cm back of so we subtract from x-axis (assuming back is along negative x-axis)
+x = min_x - cm2index(10, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm back of the leftmost block.
+affordance_map = get_empty_affordance_map()
+leftmost_block = parse_query_obj('leftmost block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = leftmost_block.aabb
+center_x, center_y, center_z = leftmost_block.position
+# 25cm back of so we subtract from x-axis (assuming "back" refers to negative x direction)
+x = min_x - cm2index(25, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm back of the leftmost block.
+affordance_map = get_empty_affordance_map()
+leftmost_block = parse_query_obj('leftmost block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = leftmost_block.aabb
+center_x, center_y, center_z = leftmost_block.position
+# 50cm back of so we subtract from x-axis (assuming x is front-back axis where smaller x is back)
+x = min_x - cm2index(50, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm in front of the bowl.
+affordance_map = get_empty_affordance_map()
+bowl = parse_query_obj('bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = bowl.aabb
+center_x, center_y, center_z = bowl.position
+# 25cm in front of so we add to x-axis (assuming front is along positive x-axis)
+x = max_x + cm2index(25, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm above the bowl.
+affordance_map = get_empty_affordance_map()
+bowl = parse_query_obj('bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = bowl.aabb
+center_x, center_y, center_z = bowl.position
+# 25cm above so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(25, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm in front of the mug.
+affordance_map = get_empty_affordance_map()
+mug = parse_query_obj('mug')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = mug.aabb
+center_x, center_y, center_z = mug.position
+# 25cm in front of so we add to x-axis (assuming front is +x direction)
+x = max_x + cm2index(25, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm above the mug.
+affordance_map = get_empty_affordance_map()
+mug = parse_query_obj('mug')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = mug.aabb
+center_x, center_y, center_z = mug.position
+# 25cm above so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(25, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm in front of the plate.
+affordance_map = get_empty_affordance_map()
+plate = parse_query_obj('plate')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = plate.aabb
+center_x, center_y, center_z = plate.position
+# 25cm in front of so we add to x-axis (assuming front is positive x direction)
+x = max_x + cm2index(25, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm above the plate.
+affordance_map = get_empty_affordance_map()
+plate = parse_query_obj('plate')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = plate.aabb
+center_x, center_y, center_z = plate.position
+# 25cm above so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(25, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm in front of the container.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+center_x, center_y, center_z = container.position
+# 25cm in front of so we add to x-axis (assuming front is +x direction)
+x = max_x + cm2index(25, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm above the container.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+center_x, center_y, center_z = container.position
+# 25cm above so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(25, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm in front of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+center_x, center_y, center_z = yellow_bowl.position
+# 5cm in front of so we add to x-axis (assuming front is +x direction)
+x = max_x + cm2index(5, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm above the yellow bowl.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+center_x, center_y, center_z = yellow_bowl.position
+# 5cm above so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm in front of the blue circle.
+affordance_map = get_empty_affordance_map()
+blue_circle = parse_query_obj('blue circle')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_circle.aabb
+center_x, center_y, center_z = blue_circle.position
+# 5cm in front of so we add to x-axis (assuming front is positive x direction)
+x = max_x + cm2index(5, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm above the blue circle.
+affordance_map = get_empty_affordance_map()
+blue_circle = parse_query_obj('blue circle')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_circle.aabb
+center_x, center_y, center_z = blue_circle.position
+# 5cm above so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm in front of the tray.
+affordance_map = get_empty_affordance_map()
+tray = parse_query_obj('tray')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = tray.aabb
+center_x, center_y, center_z = tray.position
+# 5cm in front of so we add to x-axis (assuming front is +x direction)
+x = max_x + cm2index(5, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm above the tray.
+affordance_map = get_empty_affordance_map()
+tray = parse_query_obj('tray')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = tray.aabb
+center_x, center_y, center_z = tray.position
+# 5cm above so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm in front of the lemon.
+affordance_map = get_empty_affordance_map()
+lemon = parse_query_obj('lemon')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = lemon.aabb
+center_x, center_y, center_z = lemon.position
+# 5cm in front of so we add to x-axis (assuming front is +x direction)
+x = max_x + cm2index(5, 'x')
+y = center_y
+z = center_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm above the lemon.
+affordance_map = get_empty_affordance_map()
+lemon = parse_query_obj('lemon')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = lemon.aabb
+center_x, center_y, center_z = lemon.position
+# 5cm above so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(5, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 25cm on top of the brown block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+center_x, center_y, center_z = container.position
+# 25cm to the left of container (subtract from y-axis)
+y_container = min_y - cm2index(25, 'y')
+
+brown_block = parse_query_obj('brown block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = brown_block.aabb
+center_x, center_y, center_z = brown_block.position
+# 25cm on top of brown block (add to z-axis)
+z_block = max_z + cm2index(25, 'z')
+
+# Combine both offsets (using container's x position)
+x = center_x  # container's x position
+y = y_container  # 25cm left of container
+z = z_block  # 25cm above brown block
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 50cm on top of the brown block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+brown_block = parse_query_obj('brown block')
+
+# Get container position and dimensions
+(min_x_c, min_y_c, min_z_c), (max_x_c, max_y_c, max_z_c) = container.aabb
+center_x_c, center_y_c, center_z_c = container.position
+
+# Get brown block position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = brown_block.aabb
+center_x_b, center_y_b, center_z_b = brown_block.position
+
+# 25cm to the left of container (subtract from y-axis)
+x1 = center_x_c
+y1 = min_y_c - cm2index(25, 'y')
+z1 = center_z_c
+
+# 50cm on top of brown block (add to z-axis)
+x2 = center_x_b
+y2 = center_y_b
+z2 = max_z_b + cm2index(50, 'z')
+
+# Combine both positions (average them)
+x = (x1 + x2) // 2
+y = (y1 + y2) // 2
+z = (z1 + z2) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 25cm on top of the brown block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+center_x, center_y, center_z = container.position
+# 50cm to the left of container so we subtract from y-axis
+x = center_x
+y = min_y - cm2index(50, 'y')
+z = center_z
+
+brown_block = parse_query_obj('brown block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = brown_block.aabb
+center_x, center_y, center_z = brown_block.position
+# 25cm on top of brown block so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(25, 'z')
+
+# Combine the two positions by averaging
+x_combined = (x + center_x) // 2
+y_combined = (y + center_y) // 2
+z_combined = (z + max_z + cm2index(25, 'z')) // 2
+
+affordance_map[x_combined, y_combined, z_combined] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 50cm on top of the brown block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+center_x, center_y, center_z = container.position
+# 50cm to the left of container (subtract from y-axis)
+x_container = center_x
+y_container = min_y - cm2index(50, 'y')
+z_container = center_z
+
+brown_block = parse_query_obj('brown block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = brown_block.aabb
+center_x, center_y, center_z = brown_block.position
+# 50cm on top of brown block (add to z-axis)
+x_block = center_x
+y_block = center_y
+z_block = max_z + cm2index(50, 'z')
+
+# Combine both positions by averaging
+x = (x_container + x_block) // 2
+y = (y_container + y_block) // 2
+z = (z_container + z_block) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 25cm on top of the blue block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+blue_block = parse_query_obj('blue block')
+
+# Get container's left side position (min_y)
+container_min_y = container.aabb[0][1]
+container_center_x, container_center_y, container_center_z = container.position
+
+# Get blue block's top position (max_z)
+blue_block_max_z = blue_block.aabb[1][2]
+blue_block_center_x, blue_block_center_y, blue_block_center_z = blue_block.position
+
+# Calculate positions:
+# 25cm to left of container (subtract from y-axis)
+left_of_container_y = container_min_y - cm2index(25, 'y')
+
+# 25cm on top of blue block (add to z-axis)
+top_of_block_z = blue_block_max_z + cm2index(25, 'z')
+
+# The final point combines these offsets with the container's x position
+x = container_center_x
+y = left_of_container_y
+z = top_of_block_z
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 50cm on top of the blue block.
+affordance_map = get_empty_affordance_map()
+
+# Get container position
+container = parse_query_obj('container')
+cont_min_x, cont_min_y, cont_min_z = container.aabb[0]
+cont_center_x, cont_center_y, cont_center_z = container.position
+
+# Get blue block position
+blue_block = parse_query_obj('blue block')
+blue_min_x, blue_min_y, blue_min_z = blue_block.aabb[0]
+blue_max_x, blue_max_y, blue_max_z = blue_block.aabb[1]
+blue_center_x, blue_center_y, blue_center_z = blue_block.position
+
+# Calculate position 25cm left of container (subtract from y-axis)
+left_of_container_x = cont_center_x
+left_of_container_y = cont_min_y - cm2index(25, 'y')  # left is -y direction
+left_of_container_z = cont_center_z
+
+# Calculate position 50cm on top of blue block (add to z-axis)
+on_top_blue_x = blue_center_x
+on_top_blue_y = blue_center_y
+on_top_blue_z = blue_max_z + cm2index(50, 'z')  # top is +z direction
+
+# Combine both requirements by averaging positions
+final_x = (left_of_container_x + on_top_blue_x) // 2
+final_y = (left_of_container_y + on_top_blue_y) // 2
+final_z = (left_of_container_z + on_top_blue_z) // 2
+
+affordance_map[final_x, final_y, final_z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 25cm on top of the blue block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+blue_block = parse_query_obj('blue block')
+
+# Get container's left side (min_y)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+container_center_x, container_center_y, container_center_z = container.position
+
+# Get blue block's top side (max_z)
+(_, _, block_min_z), (_, _, block_max_z) = blue_block.aabb
+block_center_x, block_center_y, block_center_z = blue_block.position
+
+# 50cm to the left of container (subtract from y-axis)
+x = container_center_x
+y = min_y - cm2index(50, 'y')
+
+# 25cm on top of blue block (add to z-axis)
+z = block_max_z + cm2index(25, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 50cm on top of the blue block.
+affordance_map = get_empty_affordance_map()
+
+# Get container and blue block objects
+container = parse_query_obj('container')
+blue_block = parse_query_obj('blue block')
+
+# Get container's left position (min_y)
+container_min_y = container.aabb[0][1]
+container_center_x, container_center_z = container.position[0], container.position[2]
+
+# Get blue block's top position (max_z)
+blue_block_max_z = blue_block.aabb[1][2]
+blue_block_center_x, blue_block_center_y = blue_block.position[0], blue_block.position[1]
+
+# Calculate final position:
+# x: average of container and blue block x positions
+# y: 50cm left of container (container_min_y - 50cm)
+# z: 50cm above blue block (blue_block_max_z + 50cm)
+x = (container_center_x + blue_block_center_x) / 2
+y = container_min_y - cm2index(50, 'y')
+z = blue_block_max_z + cm2index(50, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 25cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+green_block = parse_query_obj('green block')
+
+# Get container's left side position (min_y)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+container_center_x, container_center_y, container_center_z = container.position
+
+# Get green block's top position (max_z)
+(min_x_gb, min_y_gb, min_z_gb), (max_x_gb, max_y_gb, max_z_gb) = green_block.aabb
+green_block_center_x, green_block_center_y, green_block_center_z = green_block.position
+
+# Calculate final position:
+# 25cm to left of container (subtract from y-axis)
+# 25cm on top of green block (add to z-axis)
+x = container_center_x
+y = min_y - cm2index(25, 'y')  # Left side of container
+z = max_z_gb + cm2index(25, 'z')  # Top of green block
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 50cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+center_x, center_y, center_z = container.position
+# 25cm to the left of container (subtract from y-axis)
+x_container = center_x
+y_container = min_y - cm2index(25, 'y')
+z_container = center_z
+
+green_block = parse_query_obj('green block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+center_x, center_y, center_z = green_block.position
+# 50cm on top of green block (add to z-axis)
+x_block = center_x
+y_block = center_y
+z_block = max_z + cm2index(50, 'z')
+
+# Combine both conditions by averaging the positions
+x = (x_container + x_block) // 2
+y = (y_container + y_block) // 2
+z = (z_container + z_block) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 25cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+center_x, center_y, center_z = container.position
+# 50cm to the left of container so we subtract from y-axis
+x = center_x
+y = min_y - cm2index(50, 'y')
+z = center_z
+
+green_block = parse_query_obj('green block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+center_x, center_y, center_z = green_block.position
+# 25cm on top of green block so we add to z-axis
+x = center_x
+y = center_y
+z = max_z + cm2index(25, 'z')
+
+# Combine both positions by averaging them
+x_combined = (x + center_x) // 2
+y_combined = (y + center_y) // 2
+z_combined = (z + z) // 2
+
+affordance_map[x_combined, y_combined, z_combined] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 50cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+green_block = parse_query_obj('green block')
+
+# Get container's left side (min_y)
+container_min_y = container.aabb[0][1]
+container_center_x, _, container_center_z = container.position
+
+# Get green block's top (max_z)
+green_block_max_z = green_block.aabb[1][2]
+green_block_center_x, green_block_center_y, _ = green_block.position
+
+# Calculate positions:
+# 50cm left of container (subtract from y-axis)
+x1 = container_center_x
+y1 = container_min_y - cm2index(50, 'y')
+z1 = container_center_z
+
+# 50cm on top of green block (add to z-axis)
+x2 = green_block_center_x
+y2 = green_block_center_y
+z2 = green_block_max_z + cm2index(50, 'z')
+
+# Combine both positions (average them)
+x = (x1 + x2) // 2
+y = (y1 + y2) // 2
+z = (z1 + z2) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 25cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+center_x, center_y, center_z = container.position
+# 25cm to the left of container so subtract from y-axis
+x_container = center_x
+y_container = min_y - cm2index(25, 'y')
+z_container = center_z
+
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+center_x, center_y, center_z = yellow_bowl.position
+# 25cm on top of yellow bowl so add to z-axis
+x_bowl = center_x
+y_bowl = center_y
+z_bowl = max_z + cm2index(25, 'z')
+
+# Combine both positions by averaging
+x = (x_container + x_bowl) // 2
+y = (y_container + y_bowl) // 2
+z = (z_container + z_bowl) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 50cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+
+# Get container position
+container = parse_query_obj('container')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+center_x, center_y, center_z = container.position
+
+# Get yellow bowl position
+yellow_bowl = parse_query_obj('yellow bowl')
+(_, _, bowl_min_z), (_, _, bowl_max_z) = yellow_bowl.aabb
+
+# Calculate left position relative to container (subtract from y-axis)
+left_x = center_x
+left_y = min_y - cm2index(25, 'y')  # 25cm to the left
+left_z = center_z
+
+# Calculate top position relative to yellow bowl (add to z-axis)
+top_x = center_x  # using same x as container for consistency
+top_y = center_y  # using same y as container for consistency
+top_z = bowl_max_z + cm2index(50, 'z')  # 50cm on top
+
+# Combine positions (averaging coordinates)
+combined_x = (left_x + top_x) // 2
+combined_y = (left_y + top_y) // 2
+combined_z = (left_z + top_z) // 2
+
+affordance_map[combined_x, combined_y, combined_z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 25cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get container position and move 50cm left (subtract from y-axis)
+cont_x, cont_y, cont_z = container.position
+left_of_container_y = cont_y - cm2index(50, 'y')
+
+# Get yellow bowl position and move 25cm on top (add to z-axis)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+bowl_center_x, bowl_center_y, bowl_center_z = yellow_bowl.position
+top_of_bowl_z = max_z + cm2index(25, 'z')
+
+# Combine both positions by averaging x, using left y from container, and top z from bowl
+x = (cont_x + bowl_center_x) // 2
+y = left_of_container_y
+z = top_of_bowl_z
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 50cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get container position and move 50cm left (subtract from y-axis)
+container_x, container_y, container_z = container.position
+left_point_y = container_y - cm2index(50, 'y')
+
+# Get yellow bowl position and move 50cm on top (add to z-axis)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+bowl_center_x, bowl_center_y, bowl_center_z = yellow_bowl.position
+top_point_z = max_z + cm2index(50, 'z')
+
+# Combine both offsets (using container's x coordinate and bowl's y coordinate)
+x = container_x
+y = left_point_y
+z = top_point_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+blue_circle = parse_query_obj('blue circle')
+
+# Get container position and dimensions
+(cont_min_x, cont_min_y, cont_min_z), (cont_max_x, cont_max_y, cont_max_z) = container.aabb
+cont_center_x, cont_center_y, cont_center_z = container.position
+
+# Get blue circle position and dimensions
+(circ_min_x, circ_min_y, circ_min_z), (circ_max_x, circ_max_y, circ_max_z) = blue_circle.aabb
+circ_center_x, circ_center_y, circ_center_z = blue_circle.position
+
+# 25cm to the left of container (subtract from y-axis)
+x = cont_center_x
+y = cont_min_y - cm2index(25, 'y')
+# 25cm on top of blue circle (add to z-axis)
+z = circ_max_z + cm2index(25, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the container and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+blue_circle = parse_query_obj('blue circle')
+
+# Get container's left side (min_y) and blue circle's top (max_z)
+container_min_y = container.aabb[0][1]
+blue_circle_max_z = blue_circle.aabb[1][2]
+
+# Calculate positions:
+# 25cm left of container (subtract from y-axis)
+y_pos = container_min_y - cm2index(25, 'y')
+# 50cm on top of blue circle (add to z-axis)
+z_pos = blue_circle_max_z + cm2index(50, 'z')
+
+# Use container's x position (center) as x coordinate
+x_pos = container.position[0]
+
+affordance_map[x_pos, y_pos, z_pos] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+blue_circle = parse_query_obj('blue circle')
+
+# Get container's left position (min_y)
+container_min_y = container.aabb[0][1]
+
+# Get blue circle's top position (max_z)
+blue_circle_max_z = blue_circle.aabb[1][2]
+
+# Calculate positions:
+# 50cm to left of container (subtract from y-axis)
+y_pos = container_min_y - cm2index(50, 'y')
+
+# 25cm on top of blue circle (add to z-axis)
+z_pos = blue_circle_max_z + cm2index(25, 'z')
+
+# Use container's x position as reference
+x_pos = container.position[0]
+
+affordance_map[x_pos, y_pos, z_pos] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the container and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+blue_circle = parse_query_obj('blue circle')
+
+# Get container's left position (min_y)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = container.aabb
+container_left_y = min_y - cm2index(50, 'y')  # 50cm to left
+
+# Get blue circle's top position (max_z)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_circle.aabb
+blue_circle_top_z = max_z + cm2index(50, 'z')  # 50cm on top
+
+# Use container's x position and combine with left and top offsets
+x = container.position[0]
+y = container_left_y
+z = blue_circle_top_z
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the brown block and 25cm on top of the blue block.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+blue_block = parse_query_obj('blue block')
+
+# Get position and bounds for brown block
+(min_x_brown, min_y_brown, min_z_brown), (max_x_brown, max_y_brown, max_z_brown) = brown_block.aabb
+center_x_brown, center_y_brown, center_z_brown = brown_block.position
+
+# Get position and bounds for blue block
+(min_x_blue, min_y_blue, min_z_blue), (max_x_blue, max_y_blue, max_z_blue) = blue_block.aabb
+center_x_blue, center_y_blue, center_z_blue = blue_block.position
+
+# Calculate position 25cm left of brown block (subtract from y-axis)
+x = center_x_brown
+y = min_y_brown - cm2index(25, 'y')
+# Calculate position 25cm on top of blue block (add to z-axis)
+z = max_z_blue + cm2index(25, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the brown block and 50cm on top of the blue block.
+affordance_map = get_empty_affordance_map()
+
+# Get position of brown block
+brown_block = parse_query_obj('brown block')
+(min_x_brown, min_y_brown, min_z_brown), (max_x_brown, max_y_brown, max_z_brown) = brown_block.aabb
+center_x_brown, center_y_brown, center_z_brown = brown_block.position
+
+# Get position of blue block
+blue_block = parse_query_obj('blue block')
+(min_x_blue, min_y_blue, min_z_blue), (max_x_blue, max_y_blue, max_z_blue) = blue_block.aabb
+center_x_blue, center_y_blue, center_z_blue = blue_block.position
+
+# Calculate x position: 25cm to left of brown block (subtract from y-axis)
+x = center_x_brown
+y = min_y_brown - cm2index(25, 'y')
+
+# Calculate z position: 50cm on top of blue block (add to z-axis)
+z = max_z_blue + cm2index(50, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the brown block and 25cm on top of the blue block.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+blue_block = parse_query_obj('blue block')
+
+# Get position and dimensions for brown block
+(min_x_brown, min_y_brown, min_z_brown), (max_x_brown, max_y_brown, max_z_brown) = brown_block.aabb
+center_x_brown, center_y_brown, center_z_brown = brown_block.position
+
+# Get position and dimensions for blue block
+(min_x_blue, min_y_blue, min_z_blue), (max_x_blue, max_y_blue, max_z_blue) = blue_block.aabb
+center_x_blue, center_y_blue, center_z_blue = blue_block.position
+
+# Calculate position 50cm to left of brown block (subtract from y-axis)
+x = center_x_brown
+y = min_y_brown - cm2index(50, 'y')
+z = max_z_blue + cm2index(25, 'z')  # 25cm on top of blue block
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the brown block and 50cm on top of the blue block.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+blue_block = parse_query_obj('blue block')
+
+# Get position of brown block and move 50cm left (subtract from y-axis)
+brown_x, brown_y, brown_z = brown_block.position
+left_point = (brown_x, brown_y - cm2index(50, 'y'), brown_z)
+
+# Get position of blue block and move 50cm on top (add to z-axis)
+blue_x, blue_y, blue_z = blue_block.position
+top_point = (blue_x, blue_y, blue_z + cm2index(50, 'z'))
+
+# Combine both movements to get final position
+final_x = (left_point[0] + top_point[0]) // 2  # Average x position
+final_y = left_point[1]  # Take y from left movement
+final_z = top_point[2]  # Take z from top movement
+
+affordance_map[final_x, final_y, final_z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the brown block and 25cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+green_block = parse_query_obj('green block')
+
+# Get brown block's left position (min_y)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = brown_block.aabb
+left_of_brown_x = brown_block.position[0]
+left_of_brown_y = min_y - cm2index(25, 'y')  # 25cm to the left
+left_of_brown_z = brown_block.position[2]
+
+# Get green block's top position (max_z)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+top_of_green_x = green_block.position[0]
+top_of_green_y = green_block.position[1]
+top_of_green_z = max_z + cm2index(25, 'z')  # 25cm on top
+
+# The final point is the combination of both offsets
+final_x = left_of_brown_x
+final_y = left_of_brown_y
+final_z = top_of_green_z
+
+affordance_map[final_x, final_y, final_z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the brown block and 50cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+green_block = parse_query_obj('green block')
+
+# Get brown block position and dimensions
+(min_x_brown, min_y_brown, min_z_brown), (max_x_brown, max_y_brown, max_z_brown) = brown_block.aabb
+center_x_brown, center_y_brown, center_z_brown = brown_block.position
+
+# Get green block position and dimensions
+(min_x_green, min_y_green, min_z_green), (max_x_green, max_y_green, max_z_green) = green_block.aabb
+center_x_green, center_y_green, center_z_green = green_block.position
+
+# Calculate position 25cm to left of brown block (subtract from y-axis)
+x = center_x_brown
+y = min_y_brown - cm2index(25, 'y')
+z = max_z_green + cm2index(50, 'z')  # 50cm on top of green block (add to z-axis)
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the brown block and 25cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+green_block = parse_query_obj('green block')
+
+# Get brown block's left position (min_y)
+(min_x_brown, min_y_brown, min_z_brown), _ = brown_block.aabb
+x_left = brown_block.position[0]
+y_left = min_y_brown - cm2index(50, 'y')  # 50cm to the left
+z_left = brown_block.position[2]
+
+# Get green block's top position (max_z)
+_, (max_x_green, max_y_green, max_z_green) = green_block.aabb
+x_top = green_block.position[0]
+y_top = green_block.position[1]
+z_top = max_z_green + cm2index(25, 'z')  # 25cm on top
+
+# Combine both conditions (AND operation)
+# We'll create a line between the two points and mark all voxels along it
+from scipy.ndimage import line_nd
+start = np.array([x_left, y_left, z_left])
+end = np.array([x_top, y_top, z_top])
+indices = line_nd(start, end).astype(int)
+affordance_map[indices[:,0], indices[:,1], indices[:,2]] = 1
+
+ret_val = affordance_map
+Query: a point 50cm to the left of the brown block and 50cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+green_block = parse_query_obj('green block')
+
+# Get brown block position and dimensions
+(min_x_brown, min_y_brown, min_z_brown), (max_x_brown, max_y_brown, max_z_brown) = brown_block.aabb
+center_x_brown, center_y_brown, center_z_brown = brown_block.position
+
+# Get green block position and dimensions
+(min_x_green, min_y_green, min_z_green), (max_x_green, max_y_green, max_z_green) = green_block.aabb
+center_x_green, center_y_green, center_z_green = green_block.position
+
+# Calculate 50cm to the left of brown block (subtract from y-axis)
+x_left = center_x_brown
+y_left = min_y_brown - cm2index(50, 'y')
+z_left = center_z_brown
+
+# Calculate 50cm on top of green block (add to z-axis)
+x_top = center_x_green
+y_top = center_y_green
+z_top = max_z_green + cm2index(50, 'z')
+
+# The final position is the average of these two points (midpoint)
+x_final = (x_left + x_top) // 2
+y_final = (y_left + y_top) // 2
+z_final = (z_left + z_top) // 2
+
+affordance_map[x_final, y_final, z_final] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the brown block and 25cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get brown block position and subtract 25cm in y-axis (left)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = brown_block.aabb
+block_x = brown_block.position[0]
+block_y = min_y - cm2index(25, 'y')  # Left side is negative y
+block_z = brown_block.position[2]
+
+# Get yellow bowl position and add 25cm in z-axis (top)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+bowl_x = yellow_bowl.position[0]
+bowl_y = yellow_bowl.position[1]
+bowl_z = max_z + cm2index(25, 'z')  # Top is positive z
+
+# The combined position is the average of both adjusted positions
+x = (block_x + bowl_x) // 2
+y = (block_y + bowl_y) // 2
+z = (block_z + bowl_z) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the brown block and 50cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get brown block position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = brown_block.aabb
+center_x_b, center_y_b, center_z_b = brown_block.position
+
+# Get yellow bowl position and dimensions
+(min_x_y, min_y_y, min_z_y), (max_x_y, max_y_y, max_z_y) = yellow_bowl.aabb
+center_x_y, center_y_y, center_z_y = yellow_bowl.position
+
+# Calculate position 25cm to left of brown block (subtract from y-axis)
+x = center_x_b
+y = min_y_b - cm2index(25, 'y')
+z = max_z_y + cm2index(50, 'z')  # 50cm on top of yellow bowl (add to z-axis)
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the brown block and 25cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+
+# Get brown block position
+brown_block = parse_query_obj('brown block')
+(min_x_brown, min_y_brown, min_z_brown), (max_x_brown, max_y_brown, max_z_brown) = brown_block.aabb
+center_x_brown, center_y_brown, center_z_brown = brown_block.position
+
+# Get yellow bowl position
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x_bowl, min_y_bowl, min_z_bowl), (max_x_bowl, max_y_bowl, max_z_bowl) = yellow_bowl.aabb
+center_x_bowl, center_y_bowl, center_z_bowl = yellow_bowl.position
+
+# Calculate 50cm to left of brown block (subtract from y-axis)
+x_brown = center_x_brown
+y_brown = min_y_brown - cm2index(50, 'y')
+z_brown = center_z_brown
+
+# Calculate 25cm on top of yellow bowl (add to z-axis)
+x_bowl = center_x_bowl
+y_bowl = center_y_bowl
+z_bowl = max_z_bowl + cm2index(25, 'z')
+
+# The final point is the average of these two positions
+final_x = (x_brown + x_bowl) // 2
+final_y = (y_brown + y_bowl) // 2
+final_z = (z_brown + z_bowl) // 2
+
+affordance_map[final_x, final_y, final_z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the brown block and 50cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get position and dimensions for brown block
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = brown_block.aabb
+center_x_b, center_y_b, center_z_b = brown_block.position
+
+# Get position and dimensions for yellow bowl
+(min_x_y, min_y_y, min_z_y), (max_x_y, max_y_y, max_z_y) = yellow_bowl.aabb
+center_x_y, center_y_y, center_z_y = yellow_bowl.position
+
+# Calculate 50cm to the left of brown block (subtract from y-axis)
+x_left = center_x_b
+y_left = min_y_b - cm2index(50, 'y')
+z_left = center_z_b
+
+# Calculate 50cm on top of yellow bowl (add to z-axis)
+x_top = center_x_y
+y_top = center_y_y
+z_top = max_z_y + cm2index(50, 'z')
+
+# The final point is the combination of both offsets
+x_final = (x_left + x_top) // 2  # Average x position
+y_final = (y_left + y_top) // 2  # Average y position
+z_final = (z_left + z_top) // 2  # Average z position
+
+affordance_map[x_final, y_final, z_final] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the brown block and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get brown block position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = brown_block.aabb
+center_x_b, center_y_b, center_z_b = brown_block.position
+
+# Get blue circle position and dimensions
+(min_x_c, min_y_c, min_z_c), (max_x_c, max_y_c, max_z_c) = blue_circle.aabb
+center_x_c, center_y_c, center_z_c = blue_circle.position
+
+# Calculate position 25cm to left of brown block (subtract from y-axis)
+x = center_x_b
+y = min_y_b - cm2index(25, 'y')
+z = max_z_c + cm2index(25, 'z')  # 25cm on top of blue circle (add to z-axis)
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the brown block and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get brown block position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = brown_block.aabb
+center_x_b, center_y_b, center_z_b = brown_block.position
+
+# Get blue circle position and dimensions
+(min_x_c, min_y_c, min_z_c), (max_x_c, max_y_c, max_z_c) = blue_circle.aabb
+center_x_c, center_y_c, center_z_c = blue_circle.position
+
+# Calculate 25cm to left of brown block (subtract from y-axis)
+x = center_x_b
+y = min_y_b - cm2index(25, 'y')
+# Calculate 50cm on top of blue circle (add to z-axis)
+z = max_z_c + cm2index(50, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the brown block and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get positions and dimensions
+(min_x_brown, min_y_brown, min_z_brown), (max_x_brown, max_y_brown, max_z_brown) = brown_block.aabb
+(min_x_blue, min_y_blue, min_z_blue), (max_x_blue, max_y_blue, max_z_blue) = blue_circle.aabb
+
+# 50cm to the left of brown block (subtract from y-axis)
+x_brown = brown_block.position[0]
+y_brown = min_y_brown - cm2index(50, 'y')
+z_brown = brown_block.position[2]
+
+# 25cm on top of blue circle (add to z-axis)
+x_blue = blue_circle.position[0]
+y_blue = blue_circle.position[1]
+z_blue = max_z_blue + cm2index(25, 'z')
+
+# Combine both positions (average them)
+x = (x_brown + x_blue) // 2
+y = (y_brown + y_blue) // 2
+z = (z_brown + z_blue) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the brown block and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get position components for brown block
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = brown_block.aabb
+center_x_b, center_y_b, center_z_b = brown_block.position
+
+# Get position components for blue circle
+(min_x_c, min_y_c, min_z_c), (max_x_c, max_y_c, max_z_c) = blue_circle.aabb
+center_x_c, center_y_c, center_z_c = blue_circle.position
+
+# Calculate 50cm to left of brown block (subtract from y-axis)
+x = center_x_b
+y = min_y_b - cm2index(50, 'y')  # Left is negative y direction
+z = max_z_c + cm2index(50, 'z')  # On top is positive z direction
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the blue block and 25cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+green_block = parse_query_obj('green block')
+
+# Get blue block position and dimensions
+(min_x_blue, min_y_blue, min_z_blue), (max_x_blue, max_y_blue, max_z_blue) = blue_block.aabb
+center_x_blue, center_y_blue, center_z_blue = blue_block.position
+
+# Get green block position and dimensions
+(min_x_green, min_y_green, min_z_green), (max_x_green, max_y_green, max_z_green) = green_block.aabb
+center_x_green, center_y_green, center_z_green = green_block.position
+
+# Calculate position 25cm to the left of blue block (subtract from y-axis)
+x = center_x_blue
+y = min_y_blue - cm2index(25, 'y')
+z = max_z_green + cm2index(25, 'z')  # 25cm on top of green block (add to z-axis)
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the blue block and 50cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_block.aabb
+center_x, center_y, center_z = blue_block.position
+# 25cm to the left of blue block (subtract from y-axis)
+x_blue = center_x
+y_blue = min_y - cm2index(25, 'y')
+z_blue = center_z
+
+green_block = parse_query_obj('green block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+center_x, center_y, center_z = green_block.position
+# 50cm on top of green block (add to z-axis)
+x_green = center_x
+y_green = center_y
+z_green = max_z + cm2index(50, 'z')
+
+# Combine both conditions (AND operation)
+x = x_blue  # x position from blue block
+y = y_blue  # y position from blue block
+z = z_green  # z position from green block
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the blue block and 25cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+
+# Get blue block position
+blue_block = parse_query_obj('blue block')
+blue_x, blue_y, blue_z = blue_block.position
+
+# Get green block position
+green_block = parse_query_obj('green block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+green_center_x, green_center_y, green_center_z = green_block.position
+
+# Calculate position 50cm to left of blue block (subtract from y-axis)
+target_y = blue_y - cm2index(50, 'y')
+
+# Calculate position 25cm on top of green block (add to z-axis)
+target_z = max_z + cm2index(25, 'z')
+
+# Use blue block's x coordinate for x position
+target_x = blue_x
+
+affordance_map[target_x, target_y, target_z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the blue block and 50cm on top of the green block.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_block.aabb
+center_x, center_y, center_z = blue_block.position
+# 50cm to the left of blue block (subtract from y-axis)
+x_blue = center_x
+y_blue = min_y - cm2index(50, 'y')
+z_blue = center_z
+
+green_block = parse_query_obj('green block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+center_x, center_y, center_z = green_block.position
+# 50cm on top of green block (add to z-axis)
+x_green = center_x
+y_green = center_y
+z_green = max_z + cm2index(50, 'z')
+
+# Combine both conditions (AND operation)
+x = (x_blue + x_green) // 2  # Average x position
+y = y_blue  # From blue block condition
+z = z_green  # From green block condition
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the blue block and 25cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get blue block's position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = blue_block.aabb
+center_x_b, center_y_b, center_z_b = blue_block.position
+
+# Get yellow bowl's position and dimensions
+(min_x_y, min_y_y, min_z_y), (max_x_y, max_y_y, max_z_y) = yellow_bowl.aabb
+center_x_y, center_y_y, center_z_y = yellow_bowl.position
+
+# 25cm to the left of blue block (subtract from y-axis)
+x = center_x_b
+y = min_y_b - cm2index(25, 'y')
+z = center_z_b
+
+# 25cm on top of yellow bowl (add to z-axis)
+x = center_x_y
+y = center_y_y
+z = max_z_y + cm2index(25, 'z')
+
+# Combine both positions (this would create two separate points - need clarification on whether we want one point satisfying both conditions)
+# If we want a single point satisfying both conditions, we need to find a point that is:
+# y = blue_block_left_y (min_y_b - 25cm) AND z = yellow_bowl_top_z (max_z_y + 25cm)
+# x can be either center_x_b or center_x_y or some combination
+
+# Assuming we want a single point that satisfies both conditions:
+x = (center_x_b + center_x_y) // 2  # average x position
+y = min_y_b - cm2index(25, 'y')     # 25cm left of blue block
+z = max_z_y + cm2index(25, 'z')     # 25cm above yellow bowl
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the blue block and 50cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get blue block position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = blue_block.aabb
+center_x_b, center_y_b, center_z_b = blue_block.position
+
+# Get yellow bowl position and dimensions
+(min_x_y, min_y_y, min_z_y), (max_x_y, max_y_y, max_z_y) = yellow_bowl.aabb
+center_x_y, center_y_y, center_z_y = yellow_bowl.position
+
+# 25cm to the left of blue block (subtract from y-axis)
+x = center_x_b
+y = min_y_b - cm2index(25, 'y')
+z = center_z_b
+
+# 50cm on top of yellow bowl (add to z-axis)
+x = center_x_y
+y = center_y_y
+z = max_z_y + cm2index(50, 'z')
+
+# Combine both positions (average them)
+combined_x = (x + center_x_y) // 2
+combined_y = (y + center_y_y) // 2
+combined_z = (z + (max_z_y + cm2index(50, 'z'))) // 2
+
+affordance_map[combined_x, combined_y, combined_z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the blue block and 25cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_block.aabb
+center_x, center_y, center_z = blue_block.position
+# 50cm to the left of blue block (subtract from y-axis)
+x_blue = center_x
+y_blue = min_y - cm2index(50, 'y')
+z_blue = center_z
+
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+center_x, center_y, center_z = yellow_bowl.position
+# 25cm on top of yellow bowl (add to z-axis)
+x_yellow = center_x
+y_yellow = center_y
+z_yellow = max_z + cm2index(25, 'z')
+
+# Combine both positions by averaging
+x = (x_blue + x_yellow) // 2
+y = (y_blue + y_yellow) // 2
+z = (z_blue + z_yellow) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the blue block and 50cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+
+# Get blue block position
+blue_block = parse_query_obj('blue block')
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = blue_block.aabb
+center_x_b, center_y_b, center_z_b = blue_block.position
+
+# Get yellow bowl position
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x_y, min_y_y, min_z_y), (max_x_y, max_y_y, max_z_y) = yellow_bowl.aabb
+center_x_y, center_y_y, center_z_y = yellow_bowl.position
+
+# Calculate left position from blue block (subtract from y-axis)
+x_left = center_x_b
+y_left = min_y_b - cm2index(50, 'y')
+z_left = center_z_b
+
+# Calculate top position from yellow bowl (add to z-axis)
+x_top = center_x_y
+y_top = center_y_y
+z_top = max_z_y + cm2index(50, 'z')
+
+# Average the two positions to get a point between them
+x = (x_left + x_top) // 2
+y = (y_left + y_top) // 2
+z = (z_left + z_top) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the blue block and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get position and dimensions of blue block
+(min_x_block, min_y_block, min_z_block), (max_x_block, max_y_block, max_z_block) = blue_block.aabb
+center_x_block, center_y_block, center_z_block = blue_block.position
+
+# 25cm to the left of blue block (subtract from y-axis)
+x_block = center_x_block
+y_block = min_y_block - cm2index(25, 'y')
+z_block = center_z_block
+
+# Get position and dimensions of blue circle
+(min_x_circle, min_y_circle, min_z_circle), (max_x_circle, max_y_circle, max_z_circle) = blue_circle.aabb
+center_x_circle, center_y_circle, center_z_circle = blue_circle.position
+
+# 25cm on top of blue circle (add to z-axis)
+x_circle = center_x_circle
+y_circle = center_y_circle
+z_circle = max_z_circle + cm2index(25, 'z')
+
+# Combine both positions (average them)
+x = (x_block + x_circle) // 2
+y = (y_block + y_circle) // 2
+z = (z_block + z_circle) // 2
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the blue block and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get blue block position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = blue_block.aabb
+center_x_b, center_y_b, center_z_b = blue_block.position
+
+# Get blue circle position and dimensions
+(min_x_c, min_y_c, min_z_c), (max_x_c, max_y_c, max_z_c) = blue_circle.aabb
+center_x_c, center_y_c, center_z_c = blue_circle.position
+
+# 25cm to the left of blue block (subtract from y-axis)
+x = center_x_b
+y = min_y_b - cm2index(25, 'y')
+
+# 50cm on top of blue circle (add to z-axis)
+z = max_z_c + cm2index(50, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the blue block and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get blue block position and subtract 50cm from y-axis (left)
+block_x, block_y, block_z = blue_block.position
+left_point_y = block_y - cm2index(50, 'y')
+
+# Get blue circle position and add 25cm to z-axis (on top)
+circle_x, circle_y, circle_z = blue_circle.position
+top_point_z = circle_z + cm2index(25, 'z')
+
+# The final point combines both adjustments
+# We take x from either object (assuming they're in same x-plane)
+x = block_x  # or circle_x if different
+y = left_point_y
+z = top_point_z
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the blue block and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get blue block position and compute 50cm to its left (subtract from y-axis)
+block_x, block_y, block_z = blue_block.position
+left_point_y = block_y - cm2index(50, 'y')
+
+# Get blue circle position and compute 50cm on top (add to z-axis)
+circle_x, circle_y, circle_z = blue_circle.position
+top_point_z = circle_z + cm2index(50, 'z')
+
+# The final point combines both offsets (using block x and circle y/z)
+x = block_x
+y = left_point_y
+z = top_point_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the green block and 25cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get green block's left position (min_y)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+left_point = min_y - cm2index(25, 'y')  # 25cm left of green block
+
+# Get yellow bowl's top position (max_z)
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+top_point = max_z + cm2index(25, 'z')  # 25cm above yellow bowl
+
+# Use green block's x position and yellow bowl's y position as references
+x = green_block.position[0]
+y = left_point
+z = top_point
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the green block and 50cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get position for 25cm left of green block
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+center_x, center_y, center_z = green_block.position
+x_block = center_x
+y_block = min_y - cm2index(25, 'y')  # left is -y direction
+z_block = center_z
+
+# Get position for 50cm on top of yellow bowl
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+center_x, center_y, center_z = yellow_bowl.position
+x_bowl = center_x
+y_bowl = center_y
+z_bowl = max_z + cm2index(50, 'z')  # top is +z direction
+
+# The final position is the combination of both offsets
+x_final = x_block
+y_final = y_block
+z_final = z_bowl
+
+affordance_map[x_final, y_final, z_final] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the green block and 25cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get position information for both objects
+(min_x_g, min_y_g, min_z_g), (max_x_g, max_y_g, max_z_g) = green_block.aabb
+center_x_g, center_y_g, center_z_g = green_block.position
+
+(min_x_y, min_y_y, min_z_y), (max_x_y, max_y_y, max_z_y) = yellow_bowl.aabb
+center_x_y, center_y_y, center_z_y = yellow_bowl.position
+
+# Calculate position 50cm to the left of green block (subtract from y-axis)
+x = center_x_g
+y = min_y_g - cm2index(50, 'y')
+z = max_z_y + cm2index(25, 'z')  # 25cm on top of yellow bowl (add to z-axis)
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the green block and 50cm on top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Get positions and dimensions
+(min_x_g, min_y_g, min_z_g), (max_x_g, max_y_g, max_z_g) = green_block.aabb
+center_x_g, center_y_g, center_z_g = green_block.position
+
+(min_x_y, min_y_y, min_z_y), (max_x_y, max_y_y, max_z_y) = yellow_bowl.aabb
+center_x_y, center_y_y, center_z_y = yellow_bowl.position
+
+# Calculate 50cm left of green block (subtract from y-axis)
+x_left = center_x_g
+y_left = min_y_g - cm2index(50, 'y')
+z_left = center_z_g
+
+# Calculate 50cm on top of yellow bowl (add to z-axis)
+x_top = center_x_y
+y_top = center_y_y
+z_top = max_z_y + cm2index(50, 'z')
+
+# Set both points in the affordance map
+affordance_map[x_left, y_left, z_left] = 1
+affordance_map[x_top, y_top, z_top] = 1
+
+ret_val = affordance_map
+Query: a point 25cm to the left of the green block and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get green block position and dimensions
+(min_x_g, min_y_g, min_z_g), (max_x_g, max_y_g, max_z_g) = green_block.aabb
+center_x_g, center_y_g, center_z_g = green_block.position
+
+# Get blue circle position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = blue_circle.aabb
+center_x_b, center_y_b, center_z_b = blue_circle.position
+
+# Calculate position 25cm to left of green block (subtract from y-axis)
+x = center_x_g
+y = min_y_g - cm2index(25, 'y')
+z = max_z_b + cm2index(25, 'z')  # 25cm on top of blue circle (add to z-axis)
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the green block and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get green block position and dimensions
+(min_x_g, min_y_g, min_z_g), (max_x_g, max_y_g, max_z_g) = green_block.aabb
+center_x_g, center_y_g, center_z_g = green_block.position
+
+# Get blue circle position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = blue_circle.aabb
+center_x_b, center_y_b, center_z_b = blue_circle.position
+
+# 25cm to the left of green block (subtract from y-axis)
+x = center_x_g
+y = min_y_g - cm2index(25, 'y')
+# 50cm on top of blue circle (add to z-axis)
+z = max_z_b + cm2index(50, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the green block and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+center_x, center_y, center_z = green_block.position
+# 50cm to the left of green block (subtract from y-axis)
+x = center_x
+y = min_y - cm2index(50, 'y')
+z = center_z
+
+blue_circle = parse_query_obj('blue circle')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_circle.aabb
+# 25cm on top of blue circle (add to z-axis)
+z = max_z + cm2index(25, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the green block and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+blue_circle = parse_query_obj('blue circle')
+
+# Get green block position and dimensions
+(min_x_g, min_y_g, min_z_g), (max_x_g, max_y_g, max_z_g) = green_block.aabb
+center_x_g, center_y_g, center_z_g = green_block.position
+
+# Get blue circle position and dimensions
+(min_x_b, min_y_b, min_z_b), (max_x_b, max_y_b, max_z_b) = blue_circle.aabb
+center_x_b, center_y_b, center_z_b = blue_circle.position
+
+# Calculate position 50cm left of green block (subtract from y-axis)
+x = center_x_g
+y = min_y_g - cm2index(50, 'y')
+z = center_z_g
+
+# Then calculate position 50cm on top of that point (add to z-axis)
+z = z + cm2index(50, 'z')
+
+# Also ensure this point is 50cm on top of blue circle's top surface
+z_above_circle = max_z_b + cm2index(50, 'z')
+
+# Take the higher z value to satisfy both conditions
+final_z = max(z, z_above_circle)
+
+affordance_map[x, y, final_z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the yellow bowl and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+blue_circle = parse_query_obj('blue circle')
+
+# Get position and dimensions of yellow bowl
+(min_x_bowl, min_y_bowl, min_z_bowl), (max_x_bowl, max_y_bowl, max_z_bowl) = yellow_bowl.aabb
+center_x_bowl, center_y_bowl, center_z_bowl = yellow_bowl.position
+
+# Get position and dimensions of blue circle
+(min_x_circle, min_y_circle, min_z_circle), (max_x_circle, max_y_circle, max_z_circle) = blue_circle.aabb
+center_x_circle, center_y_circle, center_z_circle = blue_circle.position
+
+# Calculate position 25cm to left of yellow bowl (subtract from y-axis)
+x = center_x_bowl
+y = min_y_bowl - cm2index(25, 'y')  # 25cm left of bowl
+z = max_z_circle + cm2index(25, 'z')  # 25cm above circle
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 25cm to the left of the yellow bowl and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+blue_circle = parse_query_obj('blue circle')
+
+# Get position and dimensions for yellow bowl
+(min_x_bowl, min_y_bowl, min_z_bowl), (max_x_bowl, max_y_bowl, max_z_bowl) = yellow_bowl.aabb
+center_x_bowl, center_y_bowl, center_z_bowl = yellow_bowl.position
+
+# Get position and dimensions for blue circle
+(min_x_circle, min_y_circle, min_z_circle), (max_x_circle, max_y_circle, max_z_circle) = blue_circle.aabb
+center_x_circle, center_y_circle, center_z_circle = blue_circle.position
+
+# 25cm to the left of yellow bowl (subtract from y-axis)
+x = center_x_bowl
+y = min_y_bowl - cm2index(25, 'y')
+# 50cm on top of blue circle (add to z-axis)
+z = max_z_circle + cm2index(50, 'z')
+
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm to the left of the yellow bowl and 25cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+
+# Get yellow bowl position
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+center_x, center_y, center_z = yellow_bowl.position
+
+# Get blue circle position
+blue_circle = parse_query_obj('blue circle')
+circle_center_x, circle_center_y, circle_center_z = blue_circle.position
+(min_z, max_z) = blue_circle.aabb[1][2], blue_circle.aabb[1][2]  # z dimension for circle
+
+# Calculate position 50cm left of yellow bowl (subtract from y-axis)
+x = center_x
+y = min_y - cm2index(50, 'y')
+
+# Calculate position 25cm on top of blue circle (add to z-axis)
+z = max_z + cm2index(25, 'z')
+
+# Set the combined position
+affordance_map[x, y, z] = 1
+
+ret_val = affordance_map
+Query: a point 50cm to the left of the yellow bowl and 50cm on top of the blue circle.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+blue_circle = parse_query_obj('blue circle')
+
+# Get positions and dimensions
+(min_x_bowl, min_y_bowl, min_z_bowl), (max_x_bowl, max_y_bowl, max_z_bowl) = yellow_bowl.aabb
+center_x_bowl, center_y_bowl, center_z_bowl = yellow_bowl.position
+
+(min_x_circle, min_y_circle, min_z_circle), (max_x_circle, max_y_circle, max_z_circle) = blue_circle.aabb
+center_x_circle, center_y_circle, center_z_circle = blue_circle.position
+
+# Calculate 50cm to the left of yellow bowl (subtract from y-axis)
+x_bowl = center_x_bowl
+y_bowl = min_y_bowl - cm2index(50, 'y')
+z_bowl = center_z_bowl
+
+# Calculate 50cm on top of blue circle (add to z-axis)
+x_circle = center_x_circle
+y_circle = center_y_circle
+z_circle = max_z_circle + cm2index(50, 'z')
+
+# Average the two positions to get the final point
+x_final = (x_bowl + x_circle) // 2
+y_final = (y_bowl + y_circle) // 2
+z_final = (z_bowl + z_circle) // 2
+
+affordance_map[x_final, y_final, z_final] = 1
+ret_val = affordance_map
+Query: anywhere within 25cm of the mug.
+affordance_map = get_empty_affordance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(affordance_map, mug.position, radius_cm=25, value=1)
+ret_val = affordance_map
+Query: anywhere within 25cm of the plate.
+affordance_map = get_empty_affordance_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(affordance_map, plate.position, radius_cm=25, value=1)
+ret_val = affordance_map
+Query: anywhere within 25cm of the container.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+set_voxel_by_radius(affordance_map, container.position, radius_cm=25, value=1)
+ret_val = affordance_map
+Query: anywhere within 25cm of the brown block.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+set_voxel_by_radius(affordance_map, brown_block.position, radius_cm=25, value=1)
+ret_val = affordance_map
+Query: anywhere within 25cm of the blue block.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(affordance_map, blue_block.position, radius_cm=25, value=1)
+ret_val = affordance_map
+Query: anywhere within 10cm of the tray.
+affordance_map = get_empty_affordance_map()
+tray = parse_query_obj('tray')
+set_voxel_by_radius(affordance_map, tray.position, radius_cm=10, value=1)
+ret_val = affordance_map
+Query: anywhere within 25cm of the tray.
+affordance_map = get_empty_affordance_map()
+tray = parse_query_obj('tray')
+set_voxel_by_radius(affordance_map, tray.position, radius_cm=25, value=1)
+ret_val = affordance_map
+Query: anywhere within 10cm of the lemon.
+affordance_map = get_empty_affordance_map()
+lemon = parse_query_obj('lemon')
+set_voxel_by_radius(affordance_map, lemon.position, radius_cm=10, value=1)
+ret_val = affordance_map
+Query: anywhere within 25cm of the lemon.
+affordance_map = get_empty_affordance_map()
+lemon = parse_query_obj('lemon')
+set_voxel_by_radius(affordance_map, lemon.position, radius_cm=25, value=1)
+ret_val = affordance_map
+Query: anywhere within 10cm of the topmost drawer handle.
+affordance_map = get_empty_affordance_map()
+top_handle = parse_query_obj('topmost drawer handle')
+set_voxel_by_radius(affordance_map, top_handle.position, radius_cm=10, value=1)
+ret_val = affordance_map
+Query: anywhere within 25cm of the topmost drawer handle.
+affordance_map = get_empty_affordance_map()
+top_handle = parse_query_obj('topmost drawer handle')
+set_voxel_by_radius(affordance_map, top_handle.position, radius_cm=25, value=1)
+ret_val = affordance_map
+Query: a point 5cm from the container towards the yellow bowl.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Calculate direction vector from container to yellow bowl
+container_pos = np.array(container.position)
+bowl_pos = np.array(yellow_bowl.position)
+direction = bowl_pos - container_pos
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate point 5cm along this direction from container
+affordance_xyz = container_pos + cm2index(5, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 5cm from the brown block towards the yellow bowl.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Calculate direction vector from brown block to yellow bowl
+direction = yellow_bowl.position - brown_block.position
+direction = direction / np.linalg.norm(direction)  # Normalize to unit vector
+
+# Calculate target position 5cm along this direction
+target_position = brown_block.position + cm2index(5, direction)
+
+# Set the voxel at the target position
+affordance_map[target_position[0], target_position[1], target_position[2]] = 1
+ret_val = affordance_map
+Query: a point 5cm from the blue block towards the yellow bowl.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Calculate the direction vector from blue block to yellow bowl
+direction = np.array(yellow_bowl.position) - np.array(blue_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize to unit vector
+
+# Calculate the target position 5cm along this direction
+target_position = np.array(blue_block.position) + cm2index(5, direction)
+
+x, y, z = target_position.astype(int)
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm from the green block towards the yellow bowl.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+yellow_bowl = parse_query_obj('yellow bowl')
+
+# Calculate direction vector from green block to yellow bowl
+direction = np.array(yellow_bowl.position) - np.array(green_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate point 5cm from green block towards yellow bowl
+affordance_xyz = green_block.position + cm2index(5, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 5cm from the container towards the blue circle.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+blue_circle = parse_query_obj('blue circle')
+
+# Calculate direction vector from container to blue circle
+direction = np.array(blue_circle.position) - np.array(container.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Move 5cm from container position towards blue circle
+affordance_xyz = container.position + cm2index(5, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 5cm from the brown block towards the blue circle.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+blue_circle = parse_query_obj('blue circle')
+
+# Calculate direction vector from brown block to blue circle
+direction = np.array(blue_circle.position) - np.array(brown_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate target position 5cm along this direction
+target_position = np.array(brown_block.position) + cm2index(5, direction)
+
+x, y, z = target_position.astype(int)
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm from the blue block towards the blue circle.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+blue_circle = parse_query_obj('blue circle')
+
+# Calculate direction vector from blue block to blue circle
+direction = np.array(blue_circle.position) - np.array(blue_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize to unit vector
+
+# Calculate 5cm in this direction (convert cm to voxel units)
+offset = cm2index(5, direction)
+
+# Set the point
+x, y, z = np.array(blue_block.position) + offset
+affordance_map[int(x), int(y), int(z)] = 1
+ret_val = affordance_map
+Query: a point 5cm from the green block towards the blue circle.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+blue_circle = parse_query_obj('blue circle')
+
+# Calculate direction vector from green block to blue circle
+direction = np.array(blue_circle.position) - np.array(green_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize to unit vector
+
+# Calculate target position 5cm along this direction from green block
+target_position = np.array(green_block.position) + cm2index(5, direction)
+
+x, y, z = target_position.astype(int)
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm from the yellow bowl towards the blue circle.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+blue_circle = parse_query_obj('blue circle')
+
+# Calculate direction vector from yellow bowl to blue circle
+direction = blue_circle.position - yellow_bowl.position
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate point 5cm along this direction from the yellow bowl
+affordance_xyz = yellow_bowl.position + cm2index(5, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 5cm from the container towards the tray.
+affordance_map = get_empty_affordance_map()
+container = parse_query_obj('container')
+tray = parse_query_obj('tray')
+
+# Calculate direction from container to tray
+direction = np.array(tray.position) - np.array(container.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate target position 5cm from container towards tray
+target_position = container.position + cm2index(5, direction)
+
+x, y, z = target_position
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm from the brown block towards the tray.
+affordance_map = get_empty_affordance_map()
+brown_block = parse_query_obj('brown block')
+tray = parse_query_obj('tray')
+
+# Get direction vector from brown block to tray
+direction = np.array(tray.position) - np.array(brown_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate point 5cm from brown block towards tray
+target_position = brown_block.position + cm2index(5, direction)
+
+x, y, z = target_position
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm from the blue block towards the tray.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+tray = parse_query_obj('tray')
+
+# Get direction vector from blue block to tray
+direction = np.array(tray.position) - np.array(blue_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate position 5cm along this direction from blue block
+affordance_xyz = blue_block.position + cm2index(5, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 5cm from the green block towards the tray.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+tray = parse_query_obj('tray')
+
+# Calculate direction from green block to tray
+direction = np.array(tray.position) - np.array(green_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Move 5cm in this direction from green block's position
+x, y, z = green_block.position + cm2index(5, direction)
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 5cm from the yellow bowl towards the tray.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+tray = parse_query_obj('tray')
+
+# Calculate direction vector from bowl to tray
+direction = np.array(tray.position) - np.array(yellow_bowl.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Move 5cm from bowl position towards tray
+affordance_xyz = yellow_bowl.position + cm2index(5, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 50cm from the topmost drawer handle towards the lemon.
+affordance_map = get_empty_affordance_map()
+top_handle = parse_query_obj('topmost drawer handle')
+lemon = parse_query_obj('lemon')
+
+# Calculate direction vector from handle to lemon
+direction = np.array(lemon.position) - np.array(top_handle.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate target position 50cm away from handle towards lemon
+affordance_xyz = top_handle.position + cm2index(50, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 50cm from the leftmost block towards the lemon.
+affordance_map = get_empty_affordance_map()
+leftmost_block = parse_query_obj('leftmost block')
+lemon = parse_query_obj('lemon')
+
+# Calculate direction vector from leftmost block to lemon
+direction = np.array(lemon.position) - np.array(leftmost_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate point 50cm from leftmost block in direction of lemon
+affordance_xyz = leftmost_block.position + cm2index(50, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 50cm from the lemon towards the topmost drawer handle.
+affordance_map = get_empty_affordance_map()
+lemon = parse_query_obj('lemon')
+top_handle = parse_query_obj('topmost drawer handle')
+
+# Get direction vector from lemon to top handle
+direction = top_handle.position - lemon.position
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate point 50cm from lemon in direction of top handle
+affordance_xyz = lemon.position + cm2index(50, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 50cm from the leftmost block towards the topmost drawer handle.
+Here's the response for the query:
+
+```python
+affordance_map = get_empty_affordance_map()
+leftmost_block = parse_query_obj('leftmost block')
+top_handle = parse_query_obj('topmost drawer handle')
+
+# Calculate direction vector from leftmost block to top handle
+direction = np.array(top_handle.position) - np.array(leftmost_block.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate point 50cm along this direction from the leftmost block
+affordance_xyz = leftmost_block.position + cm2index(50, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+```
+
+This code:
+1. Gets the positions of both the leftmost block and topmost drawer handle
+2. Calculates the normalized direction vector from the block to the handle
+3. Places a point 50cm along this direction from the block's position
+4. Returns the affordance map with this point marked
+Query: a point 50cm from the lemon towards the leftmost block.
+affordance_map = get_empty_affordance_map()
+lemon = parse_query_obj('lemon')
+leftmost_block = parse_query_obj('leftmost block')
+
+# Calculate direction vector from lemon to leftmost block
+direction = np.array(leftmost_block.position) - np.array(lemon.position)
+direction = direction / np.linalg.norm(direction)  # Normalize
+
+# Calculate point 50cm from lemon towards leftmost block
+affordance_xyz = lemon.position + cm2index(50, direction)
+affordance_map[affordance_xyz[0], affordance_xyz[1], affordance_xyz[2]] = 1
+ret_val = affordance_map
+Query: a point 50cm from the topmost drawer handle towards the leftmost block.
+To solve this query, we need to:
+
+1. Find the position of the topmost drawer handle
+2. Find the position of the leftmost block
+3. Calculate the direction vector from the handle to the block
+4. Normalize this vector and scale it to 50cm
+5. Add this scaled vector to the handle's position to get the target point
+
+Here's the implementation:
+
+```python
+affordance_map = get_empty_affordance_map()
+top_handle = parse_query_obj('topmost drawer handle')
+leftmost_block = parse_query_obj('leftmost block')
+
+# Get positions
+handle_pos = np.array(top_handle.position)
+block_pos = np.array(leftmost_block.position)
+
+# Calculate direction vector from handle to block
+direction = block_pos - handle_pos
+
+# Normalize and scale to 50cm
+distance_cm = 50
+direction_normalized = direction / np.linalg.norm(direction)
+scaled_direction = direction_normalized * cm2index(distance_cm, 'all')
+
+# Calculate target position
+target_pos = handle_pos + scaled_direction
+target_pos = np.round(target_pos).astype(int)
+
+# Set the point in the affordance map
+affordance_map[target_pos[0], target_pos[1], target_pos[2]] = 1
+
+ret_val = affordance_map
+```
+
+This code will create an affordance map with a single point that is exactly 50cm from the topmost drawer handle in the direction towards the leftmost block. The cm2index('all') function converts centimeters to voxel indices while maintaining the correct proportions across all axes.
+Query: a point 50cm right and top of the blue block.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_block.aabb
+center_x, center_y, center_z = blue_block.position
+# 50cm right (add to y-axis) and top (add to z-axis)
+x = center_x
+y = center_y + cm2index(50, 'y')
+z = max_z + cm2index(50, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm right and bottom of the blue block.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_block.aabb
+center_x, center_y, center_z = blue_block.position
+# 50cm right (add to y-axis) and bottom (min_z) of the blue block
+x = center_x
+y = max_y + cm2index(50, 'y')
+z = min_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm top and bottom of the blue block.
+affordance_map = get_empty_affordance_map()
+blue_block = parse_query_obj('blue block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = blue_block.aabb
+center_x, center_y, center_z = blue_block.position
+
+# 50cm top (above) - add to z-axis
+top_x = center_x
+top_y = center_y
+top_z = max_z + cm2index(50, 'z')
+affordance_map[top_x, top_y, top_z] = 1
+
+# 50cm bottom (below) - subtract from z-axis
+bottom_x = center_x
+bottom_y = center_y
+bottom_z = min_z - cm2index(50, 'z')
+affordance_map[bottom_x, bottom_y, bottom_z] = 1
+
+ret_val = affordance_map
+Query: a point 50cm right and top of the green block.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+center_x, center_y, center_z = green_block.position
+# 50cm right (add to y-axis) and top (add to z-axis)
+x = center_x
+y = max_y + cm2index(50, 'y')
+z = max_z + cm2index(50, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm right and bottom of the green block.
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+center_x, center_y, center_z = green_block.position
+
+# 50cm right (add to y-axis) and bottom (subtract from z-axis)
+x = center_x
+y = center_y + cm2index(50, 'y')
+z = min_z - cm2index(50, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm top and bottom of the green block.
+Here's the response for the query "a point 50cm top and bottom of the green block":
+
+```python
+affordance_map = get_empty_affordance_map()
+green_block = parse_query_obj('green block')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = green_block.aabb
+center_x, center_y, center_z = green_block.position
+
+# 50cm top (above) - add to z-axis
+x_top = center_x
+y_top = center_y
+z_top = max_z + cm2index(50, 'z')
+
+# 50cm bottom (below) - subtract from z-axis
+x_bottom = center_x
+y_bottom = center_y
+z_bottom = min_z - cm2index(50, 'z')
+
+affordance_map[x_top, y_top, z_top] = 1
+affordance_map[x_bottom, y_bottom, z_bottom] = 1
+ret_val = affordance_map
+```
+
+This creates two points:
+1. One point 50cm above the green block (top)
+2. One point 50cm below the green block (bottom)
+
+Both points are marked in the affordance map with value 1.
+Query: a point 50cm right and top of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+center_x, center_y, center_z = yellow_bowl.position
+# 50cm right (add to y-axis) and top (add to z-axis) of the yellow bowl
+x = center_x
+y = center_y + cm2index(50, 'y')
+z = max_z + cm2index(50, 'z')
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm right and bottom of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+center_x, center_y, center_z = yellow_bowl.position
+# 50cm right (add to y-axis) and bottom (min_z) of the yellow bowl
+x = center_x
+y = max_y + cm2index(50, 'y')
+z = min_z
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+Query: a point 50cm top and bottom of the yellow bowl.
+affordance_map = get_empty_affordance_map()
+yellow_bowl = parse_query_obj('yellow bowl')
+(min_x, min_y, min_z), (max_x, max_y, max_z) = yellow_bowl.aabb
+center_x, center_y, center_z = yellow_bowl.position
+
+# 50cm top of the bowl (add to z-axis)
+top_z = max_z + cm2index(50, 'z')
+affordance_map[center_x, center_y, top_z] = 1
+
+# 50cm bottom of the bowl (subtract from z-axis)
+bottom_z = min_z - cm2index(50, 'z')
+affordance_map[center_x, center_y, bottom_z] = 1
+
+ret_val = affordance_map

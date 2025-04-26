@@ -1,0 +1,894 @@
+Query: 25cm from the bowl.
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm near the bowl.
+```python
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+```
+
+Query: 25cm around the bowl.
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm from the mug.
+avoidance_map = get_empty_avoidance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm near the mug.
+avoidance_map = get_empty_avoidance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the mug.
+avoidance_map = get_empty_avoidance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm from the plate.
+avoidance_map = get_empty_avoidance_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm near the plate.
+avoidance_map = get_empty_avoidance_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the plate.
+avoidance_map = get_empty_avoidance_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm from the bottle.
+avoidance_map = get_empty_avoidance_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm near the bottle.
+avoidance_map = get_empty_avoidance_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the bottle.
+avoidance_map = get_empty_avoidance_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm from the bowl.
+```python
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+```
+
+Query: 50cm near the bowl.
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the bowl.
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm from the mug.
+```python
+avoidance_map = get_empty_avoidance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+```
+
+Query: 50cm near the mug.
+avoidance_map = get_empty_avoidance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the mug.
+avoidance_map = get_empty_avoidance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm from the plate.
+avoidance_map = get_empty_avoidance_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm near the plate.
+avoidance_map = get_empty_avoidance_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the plate.
+avoidance_map = get_empty_avoidance_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm from the bottle.
+avoidance_map = get_empty_avoidance_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm near the bottle.
+avoidance_map = get_empty_avoidance_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the bottle.
+avoidance_map = get_empty_avoidance_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 5cm from the green cylinder.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm near the green cylinder.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the green cylinder.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm from the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm near the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm from the cup.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm near the cup.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm from the fork.
+avoidance_map = get_empty_avoidance_map()
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm near the fork.
+avoidance_map = get_empty_avoidance_map()
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 15cm from the green cylinder.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm near the green cylinder.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm around the green cylinder.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm from the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm near the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm from the cup.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm near the cup.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm from the fork.
+avoidance_map = get_empty_avoidance_map()
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm near the fork.
+avoidance_map = get_empty_avoidance_map()
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 5cm from anything soft.
+avoidance_map = get_empty_avoidance_map()
+soft_objects = parse_query_obj('anything soft')
+for obj in soft_objects:
+    set_voxel_by_radius(avoidance_map, obj.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 5cm from anything sharp.
+avoidance_map = get_empty_avoidance_map()
+sharp_objects = parse_query_obj('anything sharp')
+for obj in sharp_objects:
+    set_voxel_by_radius(avoidance_map, obj.position, radius_cm=5, value=1)
+ret_val = avoidance_map
+
+Query: 15cm from anything soft.
+avoidance_map = get_empty_avoidance_map()
+soft_objects = parse_query_obj('anything soft')
+for obj in soft_objects:
+    set_voxel_by_radius(avoidance_map, obj.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 15cm from anything sharp.
+avoidance_map = get_empty_avoidance_map()
+sharp_objects = parse_query_obj('anything sharp')
+for obj in sharp_objects:
+    set_voxel_by_radius(avoidance_map, obj.position, radius_cm=15, value=1)
+ret_val = avoidance_map
+
+Query: 25cm from anything fragile.
+avoidance_map = get_empty_avoidance_map()
+fragile_objects = parse_query_obj('anything fragile')
+for obj in fragile_objects:
+    set_voxel_by_radius(avoidance_map, obj.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm from anything metallic.
+avoidance_map = get_empty_avoidance_map()
+metallic_objects = parse_query_obj('anything metallic')
+for obj in metallic_objects:
+    set_voxel_by_radius(avoidance_map, obj.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm from anything fragile.
+avoidance_map = get_empty_avoidance_map()
+fragile_objects = parse_query_obj('anything fragile')
+for obj in fragile_objects:
+    set_voxel_by_radius(avoidance_map, obj.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm from anything metallic.
+avoidance_map = get_empty_avoidance_map()
+metallic_objects = parse_query_obj('anything metallic')
+for obj in metallic_objects:
+    set_voxel_by_radius(avoidance_map, obj.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the bowl and 50cm around the mug.
+```python
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=5, value=1)
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+```
+
+Query: 5cm around the bowl and 50cm around the plate.
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=5, value=1)
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the bowl and 50cm around the bottle.
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=5, value=1)
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the bowl and 50cm around the red block.
+```python
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=5, value=1)
+red_block = parse_query_obj('red block')
+set_voxel_by_radius(avoidance_map, red_block.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+```
+
+Query: 5cm around the mug and 50cm around the plate.
+```python
+avoidance_map = get_empty_avoidance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=5, value=1)
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+```
+
+Query: 5cm around the mug and 50cm around the bottle.
+```python
+avoidance_map = get_empty_avoidance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=5, value=1)
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+```
+
+Query: 5cm around the mug and 50cm around the red block.
+avoidance_map = get_empty_avoidance_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(avoidance_map, mug.position, radius_cm=5, value=1)
+red_block = parse_query_obj('red block')
+set_voxel_by_radius(avoidance_map, red_block.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the plate and 50cm around the bottle.
+avoidance_map = get_empty_avoidance_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=5, value=1)
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the plate and 50cm around the red block.
+avoidance_map = get_empty_avoidance_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(avoidance_map, plate.position, radius_cm=5, value=1)
+red_block = parse_query_obj('red block')
+set_voxel_by_radius(avoidance_map, red_block.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 5cm around the bottle and 50cm around the red block.
+```python
+avoidance_map = get_empty_avoidance_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(avoidance_map, bottle.position, radius_cm=5, value=1)
+red_block = parse_query_obj('red block')
+set_voxel_by_radius(avoidance_map, red_block.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+```
+
+Query: 25cm around the blue block and 25cm around the green cylinder.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=25, value=1)
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the blue block and 25cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=25, value=1)
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the blue block and 25cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=25, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the blue block and 25cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=25, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the green cylinder and 25cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=25, value=1)
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the green cylinder and 25cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=25, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the green cylinder and 25cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=25, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the yellow sphere and 25cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=25, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the yellow sphere and 25cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=25, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the cup and 25cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=25, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the blue block and 50cm around the green cylinder.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=25, value=1)
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the blue block and 50cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=25, value=1)
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the blue block and 50cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=25, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the blue block and 50cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=25, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the green cylinder and 50cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=25, value=1)
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the green cylinder and 50cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=25, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the green cylinder and 50cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=25, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the yellow sphere and 50cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=25, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the yellow sphere and 50cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=25, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 25cm around the cup and 50cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=25, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the blue block and 25cm around the green cylinder.
+```python
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=50, value=1)
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+```
+
+Query: 50cm around the blue block and 25cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=50, value=1)
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the blue block and 25cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=50, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the blue block and 25cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=50, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the green cylinder and 25cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=50, value=1)
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the green cylinder and 25cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=50, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the green cylinder and 25cm around the fork.
+```python
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=50, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+```
+
+Query: 50cm around the yellow sphere and 25cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=50, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the yellow sphere and 25cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=50, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the cup and 25cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=50, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=25, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the blue block and 50cm around the green cylinder.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=50, value=1)
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the blue block and 50cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=50, value=1)
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the blue block and 50cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=50, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the blue block and 50cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+blue_block = parse_query_obj('blue block')
+set_voxel_by_radius(avoidance_map, blue_block.position, radius_cm=50, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the green cylinder and 50cm around the yellow sphere.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=50, value=1)
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the green cylinder and 50cm around the cup.
+```python
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=50, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+```
+
+Query: 50cm around the green cylinder and 50cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+green_cylinder = parse_query_obj('green cylinder')
+set_voxel_by_radius(avoidance_map, green_cylinder.position, radius_cm=50, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the yellow sphere and 50cm around the cup.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=50, value=1)
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the yellow sphere and 50cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+yellow_sphere = parse_query_obj('yellow sphere')
+set_voxel_by_radius(avoidance_map, yellow_sphere.position, radius_cm=50, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: 50cm around the cup and 50cm around the fork.
+avoidance_map = get_empty_avoidance_map()
+cup = parse_query_obj('cup')
+set_voxel_by_radius(avoidance_map, cup.position, radius_cm=50, value=1)
+fork = parse_query_obj('fork')
+set_voxel_by_radius(avoidance_map, fork.position, radius_cm=50, value=1)
+ret_val = avoidance_map
+
+Query: slower when within 5cm of the bowl and faster when outside 5cm.
+To implement the query "slower when within 5cm of the bowl and faster when outside 5cm," we can create a speed modulation map where values represent the speed multiplier (e.g., 0.5 for slower, 1.5 for faster). Here's how to generate it:
+
+```python
+speed_map = np.ones_like(get_empty_avoidance_map()) * 1.5  # Default speed (faster)
+bowl = parse_query_obj('bowl')
+bowl_pos_index = cm2index(bowl.position)
+
+# Set slower speed (e.g., 0.5) within 5cm of the bowl
+radius_indices = cm2index(5)
+x_min = max(0, bowl_pos_index[0] - radius_indices)
+x_max = min(speed_map.shape[0], bowl_pos_index[0] + radius_indices + 1)
+y_min = max(0, bowl_pos_index[1] - radius_indices)
+y_max = min(speed_map.shape[1], bowl_pos_index[1] + radius_indices + 1)
+z_min = max(0, bowl_pos_index[2] - radius_indices)
+z_max = min(speed_map.shape[2], bowl_pos_index[2] + radius_indices + 1)
+
+speed_map[x_min:x_max, y_min:y_max, z_min:z_max] = 0.5  # Slower speed near bowl
+
+ret_val = speed_map
+```
+
+This creates a 3D map where:
+- Voxels within 5cm of the bowl have a value of 0.5 (indicating slower speed)
+- All other voxels have a value of 1.5 (indicating faster speed)
+
+The actual speed controller would use these values to modulate the robot's velocity as it moves through different regions of the space.
+
+Query: slower when within 15cm of the bowl and faster when outside 15cm.
+To implement the query "slower when within 15cm of the bowl and faster when outside 15cm," we can create an avoidance map where the value represents the speed multiplier (lower values for slower, higher values for faster). Here's the implementation:
+
+```python
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+
+# Set slower speed (e.g., 0.5x) within 15cm of the bowl
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=15, value=0.5)
+
+# Set faster speed (e.g., 1.5x) outside 15cm by inverting the region
+# Note: This requires modifying the avoidance_map to have default values of 1.5 outside the bowl's radius
+# Since set_voxel_by_radius only sets specific regions, we'll need to handle this logic in the planner
+
+# Alternative approach: Return both the avoidance region and the speed settings
+speed_settings = {
+    'inside_radius': {
+        'position': bowl.position,
+        'radius_cm': 15,
+        'speed_multiplier': 0.5  # Slower speed
+    },
+    'outside_radius': {
+        'speed_multiplier': 1.5  # Faster speed
+    }
+}
+
+ret_val = {
+    'avoidance_map': avoidance_map,
+    'speed_settings': speed_settings
+}
+```
+
+Note: The exact implementation might depend on how your planning system handles speed adjustments. The above code provides both an avoidance map (for visualization/planning) and explicit speed settings that can be used by the motion planner to adjust velocities accordingly.
+
+Query: slower when within 25cm of the bowl and faster when outside 25cm.
+To implement the query "slower when within 25cm of the bowl and faster when outside 25cm," we can create an avoidance map where the value represents the speed multiplier (lower values for slower speeds, higher values for faster speeds). Here's how we can do it:
+
+```python
+avoidance_map = get_empty_avoidance_map()
+bowl = parse_query_obj('bowl')
+
+# Set slower speed (e.g., 0.5x) within 25cm of the bowl
+set_voxel_by_radius(avoidance_map, bowl.position, radius_cm=25, value=0.5)
+
+# Set faster speed (e.g., 1.5x) outside 25cm (we'll set the rest of the map)
+# First get the bowl's position in index coordinates
+bowl_idx = cm2index(bowl.position)
+radius_idx = cm2index(25)
+
+# Iterate through the entire map and set values outside the 25cm radius
+for x in range(avoidance_map.shape[0]):
+    for y in range(avoidance_map.shape[1]):
+        for z in range(avoidance_map.shape[2]):
+            # Calculate distance from bowl in index coordinates
+            dist = np.sqrt((x - bowl_idx[0])**2 + 
+                          (y - bowl_idx[1])**2 + 
+                          (z - bowl_idx[2])**2)
+            if dist > radius_idx and avoidance_map[x, y, z] == 0:
+                avoidance_map[x, y, z] = 1.5
+
+ret_val = avoidance_map
+```
+
+This creates a map where:
+- Voxels within 25cm of the bowl have a value of 0.5 (indicating slower speed)
+- Voxels outside 25cm have a value of 1.5 (indicating faster speed)
+- The transition between speeds happens sharply at the 25cm boundary
+
+Note: The exact speed multipliers (0.5 and 1.5) can be adjusted based on your specific requirements for "slower" and "faster" speeds.
+
+Query: slower when within 50cm of the bowl and faster when outside 50cm.
+To implement this behavior, we'll need to create a speed modulation map based on distance from the bowl. Here's how we can do it:
+
+```python
+# Create speed modulation map (values between 0 and 1 where 1 is full speed)
+speed_map = np.ones(avoidance_map.shape)  # Default to full speed (1.0)
+
+bowl = parse_query_obj('bowl')
+bowl_pos_index = cm2index(bowl.position)
+
+# Get all positions in the grid
+x, y, z = np.indices(avoidance_map.shape)
+
+# Calculate distances from bowl in cm
+distances = np.sqrt((x - bowl_pos_index[0])**2 + 
+                   (y - bowl_pos_index[1])**2 + 
+                   (z - bowl_pos_index[2])**2) * (100/avoidance_map.shape[0])
+
+# Within 50cm - slower (0.5 speed)
+speed_map[distances <= 50] = 0.5
+
+# Outside 50cm - faster (1.0 speed, already set by default)
+ret_val = speed_map
+```
+
+This creates a 3D map where:
+- Any position within 50cm of the bowl has a speed value of 0.5 (slower)
+- Positions beyond 50cm from the bowl have a speed value of 1.0 (normal/faster)
+
+You can adjust the speed values (0.5 and 1.0) to achieve different speed ratios between the near and far zones.

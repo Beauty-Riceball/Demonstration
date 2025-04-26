@@ -1,0 +1,836 @@
+Query: faster when on the left side of the desk and slower on the right side of the desk.
+velocity_map = get_empty_velocity_map()
+desk = parse_query_obj('desk')
+center_x, center_y, center_z = desk.position
+# faster on left side so 1.5 when y < center_y, slower on right side so 0.5 when y > center_y
+velocity_map[:, :center_y, :] = 1.5
+velocity_map[:, center_y:, :] = 0.5
+ret_val = velocity_map
+
+Query: faster when on the left side of the shelf and slower on the right side of the shelf.
+velocity_map = get_empty_velocity_map()
+shelf = parse_query_obj('shelf')
+center_x, center_y, center_z = shelf.position
+# faster on left side so 1.5 when x < center_x, slower on right side so 0.5 when x > center_x
+velocity_map[:center_x, :, :] = 1.5
+velocity_map[center_x:, :, :] = 0.5
+ret_val = velocity_map
+
+Query: faster when on the right side of the desk and slower on the left side of the desk.
+```python
+velocity_map = get_empty_velocity_map()
+desk = parse_query_obj('desk')
+center_x, center_y, center_z = desk.position
+# faster on right side so 1.5 when y > center_y, slower on left side so 0.5 when y < center_y
+velocity_map[:, center_y:, :] = 1.5
+velocity_map[:, :center_y, :] = 0.5
+ret_val = velocity_map
+```
+
+Query: faster when on the right side of the shelf and slower on the left side of the shelf.
+```python
+velocity_map = get_empty_velocity_map()
+shelf = parse_query_obj('shelf')
+center_x, center_y, center_z = shelf.position
+# faster on right side so 1.5 when x > center_x, slower on left side so 0.5 when x < center_x
+velocity_map[center_x:, :, :] = 1.5
+velocity_map[:center_x, :, :] = 0.5
+ret_val = velocity_map
+```
+
+Query: faster when on the front side of the desk and slower on the back side of the desk.
+velocity_map = get_empty_velocity_map()
+desk = parse_query_obj('desk')
+center_x, center_y, center_z = desk.position
+# faster on front side (assuming front is lower x values) so 1.5 when x < center_x, slower on back side so 0.5 when x > center_x
+velocity_map[:center_x, :, :] = 1.5
+velocity_map[center_x:, :, :] = 0.5
+ret_val = velocity_map
+
+Query: faster when on the front side of the shelf and slower on the back side of the shelf.
+velocity_map = get_empty_velocity_map()
+shelf = parse_query_obj('shelf')
+center_x, center_y, center_z = shelf.position
+# faster on front side (assuming front is positive x) so 1.5 when x > center_x
+# slower on back side so 0.5 when x < center_x
+velocity_map[center_x:, :, :] = 1.5
+velocity_map[:center_x, :, :] = 0.5
+ret_val = velocity_map
+
+Query: faster when on the back side of the table and slower on the front side of the table.
+velocity_map = get_empty_velocity_map()
+table = parse_query_obj('table')
+center_x, center_y, center_z = table.position
+# faster on back side (positive z) so 1.5 when z > center_z, slower on front side (negative z) so 0.5 when z < center_z
+velocity_map[:, :, center_z:] = 1.5
+velocity_map[:, :, :center_z] = 0.5
+ret_val = velocity_map
+
+Query: faster when on the back side of the desk and slower on the front side of the desk.
+velocity_map = get_empty_velocity_map()
+desk = parse_query_obj('desk')
+center_x, center_y, center_z = desk.position
+# faster on back side (z > center_z) so 1.5, slower on front side (z < center_z) so 0.5
+velocity_map[:, :, center_z:] = 1.5
+velocity_map[:, :, :center_z] = 0.5
+ret_val = velocity_map
+
+Query: faster when on the top side of the table and slower on the bottom side of the table.
+```python
+velocity_map = get_empty_velocity_map()
+table = parse_query_obj('table')
+center_x, center_y, center_z = table.position
+# faster on top side (positive x) so 1.5 when x > center_x, slower on bottom side (negative x) so 0.5 when x < center_x
+velocity_map[center_x:, :, :] = 1.5
+velocity_map[:center_x, :, :] = 0.5
+ret_val = velocity_map
+```
+
+Query: faster when on the top side of the desk and slower on the bottom side of the desk.
+```python
+velocity_map = get_empty_velocity_map()
+desk = parse_query_obj('desk')
+center_x, center_y, center_z = desk.position
+# faster on top side (higher z) so 1.5 when z > center_z, slower on bottom side so 0.5 when z < center_z
+velocity_map[:, :, center_z:] = 1.5
+velocity_map[:, :, :center_z] = 0.5
+ret_val = velocity_map
+```
+
+Query: faster when on the bottom side of the table and slower on the top side of the table.
+```python
+velocity_map = get_empty_velocity_map()
+table = parse_query_obj('table')
+center_x, center_y, center_z = table.position
+# faster on bottom side (lower z values) so 1.5 when z < center_z, slower on top side so 0.5 when z > center_z
+velocity_map[:, :, :center_z] = 1.5
+velocity_map[:, :, center_z:] = 0.5
+ret_val = velocity_map
+```
+
+Query: faster when on the bottom side of the desk and slower on the top side of the desk.
+```python
+velocity_map = get_empty_velocity_map()
+desk = parse_query_obj('desk')
+center_x, center_y, center_z = desk.position
+# faster on bottom side so 1.5 when z < center_z, slower on top side so 0.5 when z > center_z
+velocity_map[:, :, :center_z] = 1.5
+velocity_map[:, :, center_z:] = 0.5
+ret_val = velocity_map
+```
+
+Query: slow down by a quarter.
+```python
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.75  # Slow down by a quarter (1 - 0.25 = 0.75)
+ret_val = velocity_map
+```
+
+Query: slow down by a half.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.5
+ret_val = velocity_map
+
+Query: increase speed by 25%.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 1.25
+ret_val = velocity_map
+
+Query: decrease speed by 50%.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.5
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 5cm of the block.
+velocity_map = get_empty_velocity_map()
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=5, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 15cm of the block.
+velocity_map = get_empty_velocity_map()
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=15, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 40cm of the block.
+velocity_map = get_empty_velocity_map()
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=40, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 5cm of the block.
+velocity_map = get_empty_velocity_map()
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=5, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 15cm of the block.
+```python
+velocity_map = get_empty_velocity_map()
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=15, value=0.5)
+ret_val = velocity_map
+```
+
+Query: speed at 0.5x when within 40cm of the block.
+velocity_map = get_empty_velocity_map()
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=40, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 5cm of the block.
+velocity_map = get_empty_velocity_map()
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=5, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 15cm of the block.
+velocity_map = get_empty_velocity_map()
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=15, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 40cm of the block.
+velocity_map = get_empty_velocity_map()
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=40, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 5cm of the bowl.
+velocity_map = get_empty_velocity_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=5, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 15cm of the bowl.
+velocity_map = get_empty_velocity_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=15, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 40cm of the bowl.
+velocity_map = get_empty_velocity_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=40, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 5cm of the bowl.
+velocity_map = get_empty_velocity_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=5, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 15cm of the bowl.
+velocity_map = get_empty_velocity_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=15, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 40cm of the bowl.
+velocity_map = get_empty_velocity_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=40, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 5cm of the bowl.
+velocity_map = get_empty_velocity_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=5, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 15cm of the bowl.
+velocity_map = get_empty_velocity_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=15, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 40cm of the bowl.
+velocity_map = get_empty_velocity_map()
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=40, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 5cm of the mug.
+velocity_map = get_empty_velocity_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=5, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 15cm of the mug.
+velocity_map = get_empty_velocity_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=15, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 40cm of the mug.
+velocity_map = get_empty_velocity_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=40, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 5cm of the mug.
+velocity_map = get_empty_velocity_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=5, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 15cm of the mug.
+velocity_map = get_empty_velocity_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=15, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 40cm of the mug.
+velocity_map = get_empty_velocity_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=40, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 5cm of the mug.
+velocity_map = get_empty_velocity_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=5, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 15cm of the mug.
+velocity_map = get_empty_velocity_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=15, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 40cm of the mug.
+```python
+velocity_map = get_empty_velocity_map()
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=40, value=0.75)
+ret_val = velocity_map
+```
+
+Query: speed at 0.25x when within 5cm of the bottle.
+velocity_map = get_empty_velocity_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=5, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 15cm of the bottle.
+velocity_map = get_empty_velocity_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=15, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.25x when within 40cm of the bottle.
+velocity_map = get_empty_velocity_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=40, value=0.25)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 5cm of the bottle.
+velocity_map = get_empty_velocity_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=5, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 15cm of the bottle.
+velocity_map = get_empty_velocity_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=15, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.5x when within 40cm of the bottle.
+velocity_map = get_empty_velocity_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=40, value=0.5)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 5cm of the bottle.
+velocity_map = get_empty_velocity_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=5, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 15cm of the bottle.
+velocity_map = get_empty_velocity_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=15, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 40cm of the bottle.
+velocity_map = get_empty_velocity_map()
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=40, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 5cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=5, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 15cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=15, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 40cm of the phone.
+```python
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=40, value=0.75)
+ret_val = velocity_map
+```
+
+Query: speed at 1x when within 5cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=5, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1x when within 15cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=15, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1x when within 40cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=40, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 5cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=5, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 15cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=15, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 40cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=40, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 2x when within 5cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=5, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 2x when within 15cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=15, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 2x when within 40cm of the phone.
+velocity_map = get_empty_velocity_map()
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=40, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 5cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=5, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 15cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=15, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 40cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=40, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 1x when within 5cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=5, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1x when within 15cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=15, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1x when within 40cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=40, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 5cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=5, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 15cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=15, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 40cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=40, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 2x when within 5cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=5, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 2x when within 15cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=15, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 2x when within 40cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=40, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 5cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=5, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 15cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=15, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 40cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=40, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 1x when within 5cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=5, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1x when within 15cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=15, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1x when within 40cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=40, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 5cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=5, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 15cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=15, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 40cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=40, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 2x when within 5cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=5, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 2x when within 15cm of the chips.
+```python
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=15, value=2.0)
+ret_val = velocity_map
+```
+
+Query: speed at 2x when within 40cm of the chips.
+velocity_map = get_empty_velocity_map()
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=40, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 5cm of the glass.
+```python
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=5, value=0.75)
+ret_val = velocity_map
+```
+
+Query: speed at 0.75x when within 15cm of the glass.
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=15, value=0.75)
+ret_val = velocity_map
+
+Query: speed at 0.75x when within 40cm of the glass.
+```python
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=40, value=0.75)
+ret_val = velocity_map
+```
+
+Query: speed at 1x when within 5cm of the glass.
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=5, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1x when within 15cm of the glass.
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=15, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1x when within 40cm of the glass.
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=40, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 5cm of the glass.
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=5, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 15cm of the glass.
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=15, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 1.5x when within 40cm of the glass.
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=40, value=1.5)
+ret_val = velocity_map
+
+Query: speed at 2x when within 5cm of the glass.
+```python
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=5, value=2.0)
+ret_val = velocity_map
+```
+
+Query: speed at 2x when within 15cm of the glass.
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=15, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 2x when within 40cm of the glass.
+velocity_map = get_empty_velocity_map()
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=40, value=2.0)
+ret_val = velocity_map
+
+Query: speed at 0.25x everywhere except within 10cm of the block.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.25
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=10, value=1.0)  # Default speed (1.0x) within 10cm of block
+ret_val = velocity_map
+
+Query: speed at 0.5x everywhere except within 10cm of the block.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.5
+block = parse_query_obj('block')
+set_voxel_by_radius(velocity_map, block.position, radius_cm=10, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 0.25x everywhere except within 10cm of the bowl.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.25  # Set default speed to 0.25x everywhere
+
+bowl = parse_query_obj('bowl')
+# Reset speed to normal (1.0x) within 10cm of the bowl
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=10, value=1.0)
+
+ret_val = velocity_map
+
+Query: speed at 0.5x everywhere except within 10cm of the bowl.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.5
+bowl = parse_query_obj('bowl')
+set_voxel_by_radius(velocity_map, bowl.position, radius_cm=10, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 0.25x everywhere except within 10cm of the mug.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.25  # Set default speed to 0.25x everywhere
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=10, value=1.0)  # Normal speed (1.0x) within 10cm of mug
+ret_val = velocity_map
+
+Query: speed at 0.5x everywhere except within 10cm of the mug.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.5  # Set default speed to 0.5x everywhere
+
+mug = parse_query_obj('mug')
+set_voxel_by_radius(velocity_map, mug.position, radius_cm=10, value=1.0)  # Normal speed (1.0x) within 10cm of mug
+
+ret_val = velocity_map
+
+Query: speed at 0.25x everywhere except within 10cm of the bottle.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.25
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=10, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 0.5x everywhere except within 10cm of the bottle.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.5  # Set default speed to 0.5x everywhere
+bottle = parse_query_obj('bottle')
+set_voxel_by_radius(velocity_map, bottle.position, radius_cm=10, value=1.0)  # Normal speed (1.0x) within 10cm of bottle
+ret_val = velocity_map
+
+Query: speed at 0.75x everywhere except within 10cm of the phone.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.75
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=10, value=1.0)  # Default speed (1.0) near phone
+ret_val = velocity_map
+
+Query: speed at 1x everywhere except within 10cm of the phone.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 1.0  # Set default speed to 1x everywhere
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=10, value=1.0)  # Keep same speed near phone
+ret_val = velocity_map
+
+Query: speed at 1.5x everywhere except within 10cm of the phone.
+```python
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 1.5  # Set default speed to 1.5x everywhere
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=10, value=1.0)  # Normal speed (1x) within 10cm of phone
+ret_val = velocity_map
+```
+
+Query: speed at 2x everywhere except within 10cm of the phone.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 2.0  # Set speed to 2x everywhere
+phone = parse_query_obj('phone')
+set_voxel_by_radius(velocity_map, phone.position, radius_cm=10, value=1.0)  # Reset to normal speed within 10cm of phone
+ret_val = velocity_map
+
+Query: speed at 0.75x everywhere except within 10cm of the plate.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.75
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=10, value=1.0)  # Default speed (1.0) near plate
+ret_val = velocity_map
+
+Query: speed at 1x everywhere except within 10cm of the plate.
+velocity_map = get_empty_velocity_map()
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=10, value=1.0)
+velocity_map[:] = 1.0  # Set everywhere to 1x first
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=10, value=1.0)  # Reset plate area to 1x (since that's the exception)
+ret_val = velocity_map
+
+Query: speed at 1.5x everywhere except within 10cm of the plate.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 1.5
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=10, value=1.0)  # Default speed (1.0) near plate
+ret_val = velocity_map
+
+Query: speed at 2x everywhere except within 10cm of the plate.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 2.0
+plate = parse_query_obj('plate')
+set_voxel_by_radius(velocity_map, plate.position, radius_cm=10, value=1.0)  # Default speed (1x) near plate
+ret_val = velocity_map
+
+Query: speed at 0.75x everywhere except within 10cm of the chips.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.75
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=10, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 1x everywhere except within 10cm of the chips.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 1.0  # Set default speed to 1x everywhere
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=10, value=0.0)  # Speed becomes 0 within 10cm of chips
+ret_val = velocity_map
+
+Query: speed at 1.5x everywhere except within 10cm of the chips.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 1.5
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=10, value=1.0)
+ret_val = velocity_map
+
+Query: speed at 2x everywhere except within 10cm of the chips.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 2.0  # Set speed to 2x everywhere
+chips = parse_query_obj('chips')
+set_voxel_by_radius(velocity_map, chips.position, radius_cm=10, value=1.0)  # Reset to normal speed near chips
+ret_val = velocity_map
+
+Query: speed at 0.75x everywhere except within 10cm of the glass.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 0.75
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=10, value=1.0)  # Default speed (1.0) near glass
+ret_val = velocity_map
+
+Query: speed at 1x everywhere except within 10cm of the glass.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 1.0
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=10, value=1.0)  # Default speed near glass
+ret_val = velocity_map
+
+Query: speed at 1.5x everywhere except within 10cm of the glass.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 1.5  # Set default speed to 1.5x everywhere
+glass = parse_query_obj('glass')  # Get glass object position
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=10, value=1.0)  # Reset to normal speed (1.0) within 10cm of glass
+ret_val = velocity_map
+
+Query: speed at 2x everywhere except within 10cm of the glass.
+velocity_map = get_empty_velocity_map()
+velocity_map[:] = 2.0  # Set speed to 2x everywhere
+glass = parse_query_obj('glass')
+set_voxel_by_radius(velocity_map, glass.position, radius_cm=10, value=1.0)  # Reset to normal speed within 10cm of glass
+ret_val = velocity_map
